@@ -157,13 +157,569 @@ Each plugin follows a similar structure:
 - **`filterwidget.ui`**: The Qt Designer UI file for the filter widget.
 - **`main.cpp`**: Contains the plugin entry point and functions for retrieving plugin information and creating filter instances.
 
-### Example Plugin: `imagefilter_adaptivemanifoldfilter`
 
-This plugin implements an adaptive manifold filter.
+Okay, I can help you with that. Here's a detailed description of each plugin found in the `src/plugins/` directory of the Image Batch Processor (IBP) project, formatted in Markdown:
 
-- **`filter.h/cpp`**: Defines and implements the `Filter` class, which applies the adaptive manifold filter using OpenCV.
-- **`filterwidget.h/cpp/ui`**: Defines and implements the `FilterWidget` class, providing UI elements for configuring the filter parameters.
-- **`main.cpp`**: Contains the plugin entry point and the `getIBPPluginInfo` function, which returns information about the plugin.
+## IBP Image Filter Plugins
+
+This document describes the individual image filter plugins available in the Image Batch Processor. Each plugin is a dynamically loaded library that extends IBP's functionality by providing a specific image transformation.
+
+### Adaptive Manifold Filter
+
+**ID:** `ibp.imagefilter.adaptivemanifoldfilter`
+**Version:** 0.1.0
+**Description:** This filter smooths the image while preserving hard edges. It utilizes the Adaptive Manifolds algorithm, an edge-preserving smoothing filter that adapts to the underlying image structure.
+**Tags:** Smooth, Noise
+**Dependencies:** OpenCV (`opencv_ximgproc`)
+**Parameters:**
+-   **Radius:** Controls the spatial extent of the smoothing.
+-   **Edge Preservation:** Controls the degree to which edges are preserved during smoothing. Higher values preserve edges more effectively.
+
+**Implementation Details:**
+
+The plugin uses the `cv::ximgproc::amFilter()` function from the OpenCV library to perform adaptive manifold filtering. This filter computes a weighted average of neighboring pixels, where the weights are determined by the similarity of pixel intensities and their spatial proximity. The `sigmaS` parameter controls spatial weighting, and `sigmaR` controls range weighting (intensity similarity).
+
+### Add Noise
+
+**ID:** `ibp.imagefilter.addnoise`
+**Version:** 0.1.0
+**Description:** Adds random noise to the image. The noise can be either uniformly or normally distributed. It can also be monochromatic or colored.
+**Tags:** Noise
+**Parameters:**
+-   **Amount:** Controls the intensity of the added noise.
+-   **Distribution:** Selects between uniform and Gaussian (normal) distribution for noise generation.
+-   **Color Mode:** Toggles between monochromatic and color noise.
+
+**Implementation Details:**
+
+The plugin generates random noise values using `qrand()` and scales them according to the selected distribution (uniform or Gaussian) and the specified amount. In color mode, it adds different random values to each color channel. In monochromatic mode, it adds the same random value to all color channels.
+
+### Auto Levels
+
+**ID:** `ibp.imagefilter.autolevels`
+**Version:** 0.1.0
+**Description:** Automatically adjusts the image's levels to enhance contrast and brightness.
+**Tags:** Levels
+**Parameters:**
+-   **Enhance Channels Separately:** If checked, it adjusts each color channel independently. Otherwise, it adjusts the luma channel.
+-   **Adjust Midtones:** If checked, it allows adjustment of the midtones.
+-   **Target Color Shadows:** The desired color for the shadows.
+-   **Target Color Midtones:** The desired color for the midtones.
+-   **Target Color Highlights:** The desired color for the highlights.
+-   **Clipping Shadows:** Percentage of pixels to clip in the shadows.
+-   **Clipping Highlights:** Percentage of pixels to clip in the highlights.
+
+**Implementation Details:**
+
+The filter calculates histograms for the selected channels (RGB or Luma) and determines the black and white points based on the specified clipping percentages. It then computes linear interpolation parameters for each channel to map input pixel values to output pixel values, adjusting the overall brightness and contrast.
+
+### Auto Threshold
+
+**ID:** `ibp.imagefilter.autothreshold`
+**Version:** 0.1.0
+**Description:** Converts the image to a binary (black and white) image using an automatically determined threshold value.
+**Tags:** Levels
+**Parameters:**
+-   **Threshold Mode:** Either global thresholding using Otsu's method or local adaptive thresholding.
+-   **Color Mode:** Toggles between working on the luma channel or each color channel separately.
+-   **Affected Channels:** Allows selecting which channels (Luma/Red/Green/Blue/Alpha) are affected by the thresholding.
+
+**Implementation Details:**
+
+The plugin uses either Otsu's global thresholding algorithm (`cv::threshold`) or a local adaptive thresholding method (`adaptiveThresholdIntegral`) to determine the threshold value for each channel. It then applies the threshold to convert the image into a binary representation.
+
+### Auto Trim
+
+**ID:** `ibp.imagefilter.autotrim`
+**Version:** 0.1.0
+**Description:** Automatically trims the image by removing transparent borders.
+**Tags:** Geometry
+**Parameters:**
+-   **Reference:** Specifies the channel to use for determining transparency (Alpha or Luma).
+-   **Threshold:** The threshold value to determine transparent pixels.
+-   **Margins:** Additional margin to add around the trimmed area.
+
+**Implementation Details:**
+
+The plugin analyzes each pixel in the image based on the selected reference channel (alpha or luma) and the given threshold. It determines the bounding rectangle of the non-transparent region and crops the image accordingly, adding optional margins.
+
+### Basic Rotation
+
+**ID:** `ibp.imagefilter.basicrotation`
+**Version:** 0.1.0
+**Description:** Rotates the image by 90-degree increments.
+**Tags:** Geometry
+**Parameters:**
+-   **Angle:** The angle of rotation in 90-degree increments (90, 180, 270).
+
+**Implementation Details:**
+
+The plugin performs a basic image rotation by swapping pixel coordinates or reversing the order of pixels, depending on the selected angle.
+
+### Bilateral Filter
+
+**ID:** `ibp.imagefilter.bilateralfilter`
+**Version:** 0.1.0
+**Description:** Smooths the image while preserving edges using a bilateral filter.
+**Tags:** Smooth, Noise
+**Parameters:**
+-   **Radius:** The spatial extent of the filter (sigma in the spatial domain).
+-   **Edge Preservation:** Controls the degree to which edges are preserved (sigma in the range domain).
+
+**Implementation Details:**
+
+The plugin utilizes the `cv::bilateralFilter()` function from the OpenCV library to perform bilateral filtering. This filter applies a weighted average to neighboring pixels, where the weights depend on both spatial distance and intensity difference.
+
+### Box Blur
+
+**ID:** `ibp.imagefilter.boxblur`
+**Version:** 0.1.0
+**Description:** Applies a simple box blur to the image.
+**Tags:** Smooth, Noise
+**Parameters:**
+-   **Radius:** The radius of the box blur kernel.
+
+**Implementation Details:**
+
+The plugin uses the `cv::blur()` function from the OpenCV library to apply a normalized box filter to the image. This filter averages the pixel values within a square kernel of the specified size.
+
+### Brightness and Contrast
+
+**ID:** `ibp.imagefilter.brightnesscontrast`
+**Version:** 0.1.0
+**Description:** Adjusts the brightness and contrast of the image.
+**Tags:** Levels
+**Parameters:**
+-   **Working Channel:** Selects which channel to work on (RGB, Red, Green, Blue, Alpha).
+-   **Brightness:** Adjusts the brightness level.
+-   **Contrast:** Adjusts the contrast level.
+-   **Use Soft Mode:** Enables a non-linear adjustment for a softer look.
+
+**Implementation Details:**
+
+The plugin computes lookup tables (LUTs) based on the brightness and contrast parameters. These LUTs are then used to remap the pixel values of the selected channels. The soft mode utilizes a sigmoid function for a more natural adjustment.
+
+### Color Balance
+
+**ID:** `ibp.imagefilter.colorbalance`
+**Version:** 0.1.0
+**Description:** Adjusts the color balance of the image by modifying the levels of the red, green, and blue channels independently for shadows, midtones, and highlights.
+**Tags:** Color
+**Parameters:**
+-   **Shadows Red, Green, Blue:** Adjusts the red, green, and blue components of the shadows.
+-   **Midtones Red, Green, Blue:** Adjusts the red, green, and blue components of the midtones.
+-   **Highlights Red, Green, Blue:** Adjusts the red, green, and blue components of the highlights.
+-   **Preserve Luminosity:** Attempts to preserve the overall image luminosity during adjustments.
+
+**Implementation Details:**
+
+The plugin calculates separate adjustment parameters for shadows, midtones, and highlights based on user input. It then generates lookup tables (LUTs) for each color channel using these parameters and applies them to the image.
+
+### Color Boosting
+
+**ID:** `ibp.imagefilter.colorboosting`
+**Version:** 0.1.0
+**Description:** Enhances the color saturation of the image using an advanced algorithm.
+**Tags:** Color
+**Dependencies:** OpenCV (`opencv_photo`)
+**Parameters:** None
+
+**Implementation Details:**
+The plugin utilizes the `cv::decolor()` function from the OpenCV library, which denoises the image while attempting to retain color information.
+
+### Color Layer
+
+**ID:** `ibp.imagefilter.colorlayer`
+**Version:** 0.1.0
+**Description:** Overlays a solid color on the image, allowing for various blending modes and opacity adjustments.
+**Tags:** Composition
+**Parameters:**
+-   **Color:** The color of the overlay layer.
+-   **Position:** Specifies whether the color layer is placed in front of, behind, or inside the image.
+-   **Color Composition Mode:** The blending mode to use for combining the color layer with the image.
+-   **Opacity:** The opacity of the color layer.
+-   **Geometric Transformations:** Allows applying affine transformations (translation, scaling, rotation, shearing) to the color layer.
+
+**Implementation Details:**
+
+The plugin creates a solid color image and applies the specified blending mode and opacity to combine it with the input image. It also supports geometric transformations of the color layer.
+
+### Contrast Preserving Grayscale
+
+**ID:** `ibp.imagefilter.contrastpreservinggrayscale`
+**Version:** 0.1.0
+**Description:** Converts the image to grayscale while attempting to preserve the original contrast.
+**Tags:** Color
+**Dependencies:** OpenCV (`opencv_photo`)
+**Parameters:** None
+
+**Implementation Details:**
+The plugin uses the `cv::decolor()` function from the OpenCV library, which effectively denoises the image while removing color information.
+
+### Curves
+
+**ID:** `ibp.imagefilter.curves`
+**Version:** 0.1.0
+**Description:** Allows adjusting the image's tone curve using spline interpolation.
+**Tags:** Levels
+**Dependencies:** Eigen3
+**Parameters:**
+-   **Working Channel:** Selects the channel to adjust (Luma, Red, Green, Blue, Alpha).
+-   **Interpolation Mode:** Specifies the type of spline interpolation (Flat, Linear, Smooth).
+-   **Knots:** Allows adding, removing, and repositioning control points on the curve.
+-   **Inverted:** Inverts the curve.
+
+**Implementation Details:**
+
+The plugin utilizes spline interpolation (nearest neighbor, linear, or cubic) to define a mapping curve for each channel. The user can add, remove, and move control points (knots) to manipulate the curve. The curve is then applied to remap pixel intensity values.
+
+### DCT Denoising
+
+**ID:** `ibp.imagefilter.dctdenoising`
+**Version:** 0.1.0
+**Description:** Reduces noise in the image using Discrete Cosine Transform (DCT) thresholding.
+**Tags:** Smooth, Noise
+**Dependencies:** OpenCV (`opencv_xphoto`)
+**Parameters:**
+-   **Strength:** Controls the intensity of the denoising effect.
+
+**Implementation Details:**
+The plugin uses the `cv::xphoto::dctDenoising()` function from the OpenCV library to apply a non-local means denoising algorithm in the DCT domain.
+
+### Desaturate
+
+**ID:** `ibp.imagefilter.desaturate`
+**Version:** 0.1.0
+**Description:** Removes color saturation from the image, effectively converting it to grayscale.
+**Tags:** Color
+**Parameters:** None
+
+**Implementation Details:**
+
+The plugin converts the image to HSL color space, sets the saturation channel to 0, and then converts it back to RGB.
+
+### Domain Transform Filter
+
+**ID:** `ibp.imagefilter.domaintransformfilter`
+**Version:** 0.1.0
+**Description:** Applies the Domain Transform filter for edge-aware smoothing.
+**Tags:** Smooth, Noise
+**Dependencies:** OpenCV (`opencv_ximgproc`)
+**Parameters:**
+-   **Radius:** Controls the spatial extent of the smoothing.
+-   **Edge Preservation:** Controls the degree to which edges are preserved.
+
+**Implementation Details:**
+
+The plugin uses the `cv::ximgproc::dtFilter()` function from the OpenCV library to perform domain transform filtering, which is a fast edge-preserving smoothing technique.
+
+### Equalize
+
+**ID:** `ibp.imagefilter.equalize`
+**Version:** 0.1.0
+**Description:** Applies histogram equalization to enhance the image's contrast.
+**Tags:** Levels
+**Parameters:** None
+
+**Implementation Details:**
+
+The plugin computes the image histogram, calculates the cumulative distribution function, and uses it to map pixel intensities to a more uniform distribution, effectively enhancing contrast.
+
+### Flip
+
+**ID:** `ibp.imagefilter.flip`
+**Version:** 0.1.0
+**Description:** Flips the image horizontally, vertically, or both.
+**Tags:** Geometry
+**Parameters:**
+-   **Direction:** Specifies the flip direction (Horizontal, Vertical, Both).
+
+**Implementation Details:**
+
+The plugin performs a simple pixel swapping operation to flip the image along the specified axis/axes.
+
+### Guided Filter
+
+**ID:** `ibp.imagefilter.guidedfilter`
+**Version:** 0.1.0
+**Description:** Applies the Guided Filter for edge-preserving smoothing.
+**Tags:** Smooth, Noise
+**Dependencies:** OpenCV (`opencv_ximgproc`)
+**Parameters:**
+-   **Radius:** Controls the spatial extent of the smoothing.
+-   **Edge Preservation:** Controls the degree to which edges are preserved.
+
+**Implementation Details:**
+
+The plugin utilizes the `cv::ximgproc::guidedFilter()` function from the OpenCV library, which performs edge-aware smoothing using a guidance image (in this case, the input image itself).
+
+### HSL Color Replacement
+
+**ID:** `ibp.imagefilter.hslcolorreplacement`
+**Version:** 0.1.0
+**Description:** Replaces colors in the image based on their HSL values, allowing for hue, saturation, and lightness adjustments using curves.
+**Tags:** Color
+**Parameters:**
+-   **Hue/Saturation/Lightness Curves:** Allow defining the mapping from input to output values for each HSL channel using spline interpolation.
+-   **Interpolation Mode:** Specifies the type of spline interpolation (Flat, Linear, Smooth).
+-   **Inverted:** Inverts the curves.
+-   **Output Mode:** Selects between outputting the keyed image or the generated matte.
+-   **Preblur Radius:** Applies a gaussian blur to the input image before processing.
+-   **Colorize:** Replaces colors with a single hue and saturation.
+-   **Relative Hue/Saturation/Lightness:** Adjusts the hue, saturation, and lightness relative to the original values.
+-   **Absolute Hue/Saturation:** Sets the hue and saturation to absolute values.
+
+**Implementation Details:**
+
+The plugin converts the image to HSL color space, applies the specified curves to adjust hue, saturation, and lightness, and then converts it back to RGB. It supports various output modes and pre-blurring for smoother results.
+
+### HSL Keyer
+
+**ID:** `ibp.imagefilter.hslkeyer`
+**Version:** 0.1.0
+**Description:** Generates a matte (alpha channel) based on the HSL values of the input image.
+**Tags:** Keying
+**Parameters:**
+-   **Hue/Saturation/Lightness Curves:** Allow defining the opacity (matte) based on the hue, saturation, and lightness values.
+-   **Interpolation Mode:** Specifies the type of spline interpolation (Flat, Linear, Smooth).
+-   **Inverted:** Inverts the curves.
+-   **Output Mode:** Selects between outputting the keyed image or the generated matte.
+-   **Preblur Radius:** Applies a gaussian blur to the input image before processing.
+
+**Implementation Details:**
+
+Similar to the HSL Color Replacement filter, but instead of modifying color channels, it generates an alpha channel (matte) based on the defined curves. The matte can be used for masking or compositing.
+
+### Identity
+
+**ID:** `ibp.imagefilter.identity`
+**Version:** 0.1.0
+**Description:** A placeholder filter that does not modify the image.
+**Tags:**
+**Parameters:** None
+
+**Implementation Details:**
+
+This filter simply returns the input image without any modifications. It can be used as a placeholder or for testing purposes.
+
+### Inpainting IIH Correction
+
+**ID:** `ibp.imagefilter.inpaintingiihc`
+**Version:** 0.1.0
+**Description:** Attempts to correct illumination inhomogeneity using an inpainting-based approach.
+**Tags:** Illumination
+**Dependencies:** OpenCV (`opencv_ximgproc`, `opencv_photo`)
+**Parameters:**
+-   **Noise Reduction:** Controls the amount of noise reduction applied before processing.
+-   **Mask Expansion:** Controls the expansion of the mask used for inpainting.
+-   **Output Mode:** Selects between different output modes (Corrected Image Mode 1, Corrected Image Mode 2, IIH Correction Model).
+
+**Implementation Details:**
+
+This filter uses a combination of techniques to correct illumination inhomogeneity:
+
+1. **Noise Reduction:** Applies a bilateral filter to reduce noise in the input image.
+2. **Adaptive Thresholding:** Creates a mask based on adaptive thresholding of the luma channel.
+3. **Mask Expansion:** Erodes the mask to exclude areas with unwanted noise.
+4. **Inpainting:** Employs the Navier-Stokes inpainting algorithm (`cv::inpaint`) to fill in the masked areas of the luma channel, effectively estimating the background illumination.
+5. **IIH Correction:** Uses the inpainted image as a correction model to adjust the original image.
+
+### ITK N4 IIH Correction
+
+**ID:** `ibp.imagefilter.itkn4iihc`
+**Version:** 0.1.0
+**Description:** Corrects illumination inhomogeneity using the N4 bias field correction algorithm from the ITK library.
+**Tags:** Illumination
+**Dependencies:** ITK
+**Parameters:**
+-   **Grid Size:** Controls the number of control points in the B-spline grid used for bias field estimation.
+-   **Output Mode:** Selects between different output modes (Corrected Image Mode 1, Corrected Image Mode 2, IIH Correction Model).
+
+**Implementation Details:**
+
+This filter uses the ITK library's N4BiasFieldCorrectionImageFilter to estimate and correct the illumination inhomogeneity. It involves the following steps:
+
+1. **Image Preparation:** The input image is converted to grayscale and resampled to a smaller size if necessary.
+2. **N4 Bias Field Correction:** The ITK N4 algorithm is applied to estimate the bias field.
+3. **B-Spline Interpolation:** A B-spline interpolator is used to create a smooth bias field from the estimated control points.
+4. **Least Squares Fitting:** A least squares fitting is performed to find a linear relationship between the original image and the estimated bias field.
+5. **IIH Correction:** The linear relationship is used to correct the illumination inhomogeneity in the original image.
+6. **Output:** The corrected image, the mask, or the IIH correction model can be outputted.
+
+### Levels
+
+**ID:** `ibp.imagefilter.levels`
+**Version:** 0.1.0
+**Description:** Adjusts the black point, white point, and gamma of the image.
+**Tags:** Levels
+**Parameters:**
+-   **Working Channel:** Selects the channel to adjust (Luma, Red, Green, Blue, Alpha).
+-   **Input Black Point:** Sets the black point for the input levels.
+-   **Input Gamma:** Adjusts the gamma correction (midtones).
+-   **Input White Point:** Sets the white point for the input levels.
+-   **Output Black Point:** Sets the black point for the output levels.
+-   **Output White Point:** Sets the white point for the output levels.
+
+**Implementation Details:**
+
+The filter generates lookup tables (LUTs) based on the input and output levels and the gamma correction value. These LUTs are then used to remap the pixel values of the selected channel.
+
+### Low Pass IIH Correction
+
+**ID:** `ibp.imagefilter.lowpassiihc`
+**Version:** 0.1.0
+**Description:** Corrects illumination inhomogeneity using a low-pass filtering approach.
+**Tags:** Illumination
+**Parameters:**
+-   **Feature Size:** Controls the size of the low-pass filter kernel.
+-   **Output Mode:** Selects between different output modes (Corrected Image Mode 1, Corrected Image Mode 2, IIH Correction Model).
+
+**Implementation Details:**
+
+This filter applies a low-pass filter (using a box blur in this implementation) to estimate the background illumination. The estimated background is then used to correct the original image.
+
+### Luma Keyer
+
+**ID:** `ibp.imagefilter.lumakeyer`
+**Version:** 0.1.0
+**Description:** Generates a matte (alpha channel) based on the luma values of the input image.
+**Tags:** Keying
+**Parameters:**
+-   **Luma Curve:** Allows defining the mapping from luma values to opacity values using spline interpolation.
+-   **Interpolation Mode:** Specifies the type of spline interpolation (Flat, Linear, Smooth).
+-   **Inverted:** Inverts the curve.
+-   **Output Mode:** Selects between outputting the keyed image or the generated matte.
+-   **Preblur Radius:** Applies a gaussian blur to the input image before processing.
+
+**Implementation Details:**
+
+Similar to the HSL Keyer, but it operates solely on the luma channel to generate the matte.
+
+### Median
+
+**ID:** `ibp.imagefilter.median`
+**Version:** 0.1.0
+**Description:** Applies a median filter to smooth the image and reduce noise.
+**Tags:** Smooth, Noise
+**Parameters:**
+-   **Radius:** Controls the radius of the median filter kernel.
+
+**Implementation Details:**
+
+The plugin uses the `cv::medianBlur()` function from the OpenCV library to apply a median filter, which replaces each pixel with the median value of its neighboring pixels within the specified radius.
+
+### Morphological IIH Correction
+
+**ID:** `ibp.imagefilter.morphologicaliihc`
+**Version:** 0.1.0
+**Description:** Corrects illumination inhomogeneity using morphological operations.
+**Tags:** Illumination
+**Parameters:**
+-   **Feature Size:** Controls the size of the structuring element used in morphological operations.
+-   **Output Mode:** Selects between different output modes (Corrected Image Mode 1, Corrected Image Mode 2, IIH Correction Model).
+
+**Implementation Details:**
+
+This filter uses morphological closing (dilation followed by erosion) to estimate the background illumination. The size of the structuring element determines the scale of the features that are considered part of the background.
+
+### Morphology
+
+**ID:** `ibp.imagefilter.morphology`
+**Version:** 0.1.0
+**Description:** Applies basic morphological operations to the image.
+**Tags:** Morphology
+**Parameters:**
+-   **Modify RGB:** Toggles whether to apply the operation to the RGB channels.
+-   **Modify Alpha:** Toggles whether to apply the operation to the alpha channel.
+-   **Morphology Operation:** Selects the type of morphological operation (Dilation, Erosion, Closing, Opening).
+-   **Kernel Shape:** Selects the shape of the structuring element (Ellipse, Rectangle, Diamond, Octagon, Plus, Cross, Ring).
+-   **Horizontal Radius:** Controls the horizontal radius of the structuring element.
+-   **Vertical Radius:** Controls the vertical radius of the structuring element.
+-   **Lock Radius:** Locks the horizontal and vertical radii together.
+
+**Implementation Details:**
+
+The plugin uses OpenCV's `cv::morphologyEx()` function along with custom functions to generate structuring elements of various shapes. It allows applying basic morphological operations like dilation, erosion, closing, and opening to either the RGB channels or the alpha channel independently.
+
+### NLM Denoising
+
+**ID:** `ibp.imagefilter.nlmdenoising`
+**Version:** 0.1.0
+**Description:** Reduces noise in the image using the Non-Local Means denoising algorithm.
+**Tags:** Smooth, Noise
+**Dependencies:** OpenCV (`opencv_photo`)
+**Parameters:**
+-   **Strength:** Controls the intensity of the denoising effect.
+
+**Implementation Details:**
+The plugin uses the `cv::fastNlMeansDenoisingColored()` function from the OpenCV library to apply a non-local means denoising algorithm, which effectively reduces noise while preserving image details.
+
+### Perspective IIH Correction
+
+**ID:** `ibp.imagefilter.prospectiveiihc`
+**Version:** 0.1.0
+**Description:** Corrects illumination inhomogeneity by applying a perspective transformation to a blurred version of the image.
+**Tags:** Illumination
+**Parameters:**
+-   **Image:** The image to be used for creating a perspective transformation.
+-   **Output Mode:** Selects between different output modes (Corrected Image Mode 1, Corrected Image Mode 2, IIH Correction Model).
+
+**Implementation Details:**
+
+This filter uses a user-provided image to estimate a perspective transformation that models the illumination inhomogeneity. The estimated transformation is then applied to a blurred version of the input image to correct for the non-uniform illumination.
+
+### Resample
+
+**ID:** `ibp.imagefilter.resample`
+**Version:** 0.1.0
+**Description:** Resizes the image to a new size without resampling.
+**Tags:** Geometry
+**Parameters:**
+-   **Width:** The new width of the image.
+-   **Height:** The new height of the image.
+-   **Width Mode:** Specifies how the width is interpreted (Percent, Pixels, Keep Aspect Ratio).
+-   **Height Mode:** Specifies how the height is interpreted (Percent, Pixels, Keep Aspect Ratio).
+-   **Resize Mode:** Selects between absolute resizing and relative resizing.
+-   **Anchor Position:** Specifies the anchor point for resizing.
+-   **Background Color:** The color to use for the background when resizing.
+
+**Implementation Details:**
+This filter simply changes the dimensions of the image without resampling the pixel data. The new image can be filled with a background color, and the anchor position determines how the original image is placed within the new dimensions.
+
+### Texture Layer
+
+**ID:** `ibp.imagefilter.texturelayer`
+**Version:** 0.1.0
+**Description:** Adds a texture layer to the image.
+**Tags:** Composition
+**Parameters:**
+-   **Image:** The image to be used as the texture.
+-   **Position:** Specifies whether the texture layer is placed in front of, behind, or inside the image.
+-   **Color Composition Mode:** The blending mode to use for combining the texture layer with the image.
+-   **Opacity:** The opacity of the texture layer.
+-   **Geometric Transformations:** Allows applying affine transformations (translation, scaling, rotation, shearing) to the texture layer.
+
+**Implementation Details:**
+
+The plugin creates an image from the texture and applies the specified blending mode and opacity to combine it with the input image. It also supports geometric transformations of the texture layer.
+
+### Threshold
+
+**ID:** `ibp.imagefilter.threshold`
+**Version:** 0.1.0
+**Description:** Applies a threshold to the image channels.
+**Tags:** Levels
+**Parameters:**
+-   **Color Mode:** Toggles between working on the luma channel or each color channel separately.
+-   **Affected Channels:** Allows selecting which channels (Luma/Red/Green/Blue/Alpha) are affected by the thresholding.
+-   **Threshold:** The threshold value for each channel.
+
+**Implementation Details:**
+
+The plugin applies a simple thresholding operation to each selected channel. Pixel values above the threshold are set to 255, and values below or equal to the threshold are set to 0.
+
+
+
 
 ## Building on macOS
 
