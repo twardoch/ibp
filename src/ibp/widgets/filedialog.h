@@ -36,13 +36,13 @@ QString getOpenFileName(QWidget * parent = 0,
                         const QString & fileType = QString(),
                         const QString & filter = QString(),
                         QString * selectedFilter = 0,
-                        QFileDialog::Options options = 0);
+                        QFileDialog::Options options = QFileDialog::Options());
 
 QString getSaveFileName(QWidget * parent = 0,
                         const QString & fileType = QString(),
                         const QString & filter = QString(),
                         QString * selectedFilter = 0,
-                        QFileDialog::Options options = 0);
+                        QFileDialog::Options options = QFileDialog::Options());
 
 }}
 

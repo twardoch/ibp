@@ -101,7 +101,7 @@ QString freeimageGetOpenFilterString()
             continue;
 
         filter = FreeImage_GetFIFDescription((FREE_IMAGE_FORMAT)i);
-        extList = QString(FreeImage_GetFIFExtensionList((FREE_IMAGE_FORMAT)i)).split(',', QString::SkipEmptyParts);
+        extList = QString(FreeImage_GetFIFExtensionList((FREE_IMAGE_FORMAT)i)).split(',', Qt::SkipEmptyParts);
         if (extList.isEmpty())
             ext = "*";
         else
@@ -144,7 +144,7 @@ QString freeimageGetSaveFilterString()
             continue;
 
         filter = FreeImage_GetFIFDescription(format);
-        extList = QString(FreeImage_GetFIFExtensionList(format)).split(',', QString::SkipEmptyParts);
+        extList = QString(FreeImage_GetFIFExtensionList(format)).split(',', Qt::SkipEmptyParts);
         if (extList.isEmpty())
             ext = "*";
         else
@@ -180,8 +180,8 @@ QStringList freeimageGetOpenFilterExtensions(bool preppendWilcards)
         if (e.isEmpty())
             continue;
         e2 = "*." + QString(e).replace(",", ",*.");
-        extensions.append(e.split(',', QString::SkipEmptyParts));
-        extensions2.append(e2.split(',', QString::SkipEmptyParts));
+        extensions.append(e.split(',', Qt::SkipEmptyParts));
+        extensions2.append(e2.split(',', Qt::SkipEmptyParts));
     }
 
     extensions.sort(Qt::CaseInsensitive);
@@ -271,7 +271,7 @@ FREE_IMAGE_FORMAT freeimageGetFormatFromFilterString(const QString &filter)
     for (int i = 0; i < nFormats; i++)
     {
         filter2 = FreeImage_GetFIFDescription((FREE_IMAGE_FORMAT)i);
-        extList = QString(FreeImage_GetFIFExtensionList((FREE_IMAGE_FORMAT)i)).split(',', QString::SkipEmptyParts);
+        extList = QString(FreeImage_GetFIFExtensionList((FREE_IMAGE_FORMAT)i)).split(',', Qt::SkipEmptyParts);
         if (extList.isEmpty())
             ext = "*";
         else

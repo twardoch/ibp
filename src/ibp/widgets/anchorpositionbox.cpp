@@ -24,6 +24,7 @@
 
 #include <QPainter>
 #include <QMouseEvent>
+#include <QPainterPath>
 
 #include "anchorpositionbox.h"
 

@@ -26,6 +26,7 @@
 #include <QMouseEvent>
 #include <QKeyEvent>
 #include <QVBoxLayout>
+#include <QPainterPath>
 #include <math.h>
 
 #include "curves.h"

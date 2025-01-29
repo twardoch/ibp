@@ -85,7 +85,7 @@ void ToolButtonEx::paintEvent(QPaintEvent *e)
     QRect extraDataRect = button.adjusted(2, 2, -2, -2);
 
     QColor outline = (!palette().window().texture().isNull()) ? QColor(0, 0, 0, 160) :
-                      palette().background().color().darker(140);
+                    palette().window().color().darker(140);
     QColor innerContrastLine = QColor(255, 255, 255, 30);
     QColor highlight = palette().color(QPalette::Highlight);
 
@@ -366,7 +366,7 @@ QSize ToolButtonEx::sizeHint() const
     if (opt.toolButtonStyle != Qt::ToolButtonIconOnly)
     {
         QSize textSize = fm.size(Qt::TextShowMnemonic, QToolButton::text());
-        textSize.setWidth(textSize.width() + fm.width(QLatin1Char(' '))*2);
+        textSize.setWidth(textSize.width() + fm.horizontalAdvance(QLatin1Char(' '))*2);
         if (opt.toolButtonStyle == Qt::ToolButtonTextUnderIcon)
         {
             h += 4 + textSize.height();
@@ -391,7 +391,7 @@ QSize ToolButtonEx::sizeHint() const
         w += style()->pixelMetric(QStyle::PM_MenuButtonIndicator, &opt, this);
 
     QSize tSizeHint = style()->sizeFromContents(QStyle::CT_ToolButton, &opt, QSize(w, h), this).
-                  expandedTo(QApplication::globalStrut());
+                expandedTo(QSize(0, 0));
 
     return tSizeHint;
 }

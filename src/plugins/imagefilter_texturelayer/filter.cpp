@@ -190,10 +190,10 @@ bool Filter::loadParameters(QSettings &s)
         return false;
 
     tfmStr = s.value("geometrictransformations").toString();
-    tfmList1 = tfmStr.split(QRegularExpression("\\s*,\\s*"), QString::SkipEmptyParts);
+    tfmList1 = tfmStr.split(QRegularExpression("\\s*,\\s*"), Qt::SkipEmptyParts);
     for (int i = 0; i < tfmList1.size(); i++)
     {
-        tfmList2 = tfmList1.at(i).split(QRegularExpression("\\s+"), QString::SkipEmptyParts);
+        tfmList2 = tfmList1.at(i).split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
 
         if (tfmList2.size() != 3 && tfmList2.size() != 4)
             return false;

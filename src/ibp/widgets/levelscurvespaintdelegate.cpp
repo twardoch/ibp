@@ -24,6 +24,7 @@
 
 #include <QPainter>
 #include <QStyle>
+#include <QPainterPath>
 #include <math.h>
 
 #include "levelscurvespaintdelegate.h"

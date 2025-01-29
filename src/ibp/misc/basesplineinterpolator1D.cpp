@@ -24,6 +24,7 @@
 
 #include "basesplineinterpolator1D.h"
 #include "math.h"
+#include <algorithm>
 
 namespace ibp {
 namespace misc {
@@ -58,7 +59,7 @@ bool BaseSplineInterpolator1D::setKnots(const Interpolator1DKnots &k)
 {
     // look for duplicated X
     Interpolator1DKnots k2 = k;
-    qSort(k2.begin(), k2.end(), Interpolator1DKnotsLessThan);
+    std::sort(k2.begin(), k2.end(), Interpolator1DKnotsLessThan);
     for (int i = 0; i < k2.size() - 1; i++)
         if (k2[i].x() == k2[i + 1].x()) return false;
     mKnots = k2;

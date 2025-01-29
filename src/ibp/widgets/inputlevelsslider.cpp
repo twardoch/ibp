@@ -23,6 +23,7 @@
 //
 
 #include <QPainter>
+#include <QPainterPath>
 #include <QMouseEvent>
 #include <QGraphicsEffect>
 #include <math.h>

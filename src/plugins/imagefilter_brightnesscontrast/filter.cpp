@@ -122,7 +122,7 @@ bool Filter::loadParameters(QSettings &s)
     brightnessContrastStr[Alpha] = s.value("alphabrightnesscontrast", 0).toString();
     for (int i = 0; i < 5; i++)
     {
-        brightnessContrastList = brightnessContrastStr[i].split(QRegularExpression("\\s+"), QString::SkipEmptyParts);
+        brightnessContrastList = brightnessContrastStr[i].split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
 
         brightnessContrast[i][Brightness] = brightnessContrastList.at(0).toInt(&ok);
         if (!ok)

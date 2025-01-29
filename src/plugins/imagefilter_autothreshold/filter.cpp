@@ -233,7 +233,7 @@ bool Filter::loadParameters(QSettings &s)
         return false;
 
     affectedChannelStr = s.value("affectedchannels", "").toString();
-    affectedChannelList = affectedChannelStr.split(" ", QString::SkipEmptyParts);
+    affectedChannelList = affectedChannelStr.split(" ", Qt::SkipEmptyParts);
     for (int i = 0; i < affectedChannelList.size(); i++)
     {
         affectedChannelStr = affectedChannelList.at(i);

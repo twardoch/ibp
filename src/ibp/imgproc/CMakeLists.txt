@@ -1,6 +1,6 @@
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(OpenCV REQUIRED)
-
+find_package(FreeImage REQUIRED)
 add_library(
     ibp.imgproc
     SHARED
@@ -26,6 +26,11 @@ add_library(
     intensitymapping.h
     thresholding.h
     imagehistogram.h
+)
+
+target_include_directories(ibp.imgproc
+    PUBLIC
+    ${FreeImage_INCLUDE_DIRS}
 )
 
 target_link_libraries(

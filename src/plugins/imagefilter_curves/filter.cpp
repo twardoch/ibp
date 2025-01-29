@@ -153,12 +153,12 @@ bool Filter::loadParameters(QSettings &s)
     knotsStr[Alpha] = s.value("alphaknots", "0.0 0.0, 1.0 1.0").toString();
     for (int i = 0; i < 5; i++)
     {
-        knotsList = knotsStr[i].split(QRegularExpression("\\s*,\\s*"), QString::SkipEmptyParts);
+        knotsList = knotsStr[i].split(QRegularExpression("\\s*,\\s*"), Qt::SkipEmptyParts);
         if (knotsList.size() < 2)
             return false;
         for (int j = 0; j < knotsList.size(); j++)
         {
-            knotList = knotsList.at(j).split(QRegularExpression("\\s+"), QString::SkipEmptyParts);
+            knotList = knotsList.at(j).split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
             if (knotList.size() != 2)
                 return false;
             x = knotList.at(0).toDouble(&ok);

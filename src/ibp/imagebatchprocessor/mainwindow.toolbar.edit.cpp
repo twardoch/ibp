@@ -28,6 +28,7 @@
 #include <QMenu>
 #include <QInputDialog>
 #include <QDebug>
+#include <algorithm>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -93,7 +94,7 @@ void MainWindow::toolbarEditPopulateAddFilterMenu()
                            "<p>" + info.value("description") + "</p>");
         connect(action, SIGNAL(triggered()), this, SLOT(On_mToolbarEditButtonAddFilterAction_triggered()));
         actions.append(action);
-        filterTags = info.value("tags").split(QRegExp("\\s*,\\s*"), QString::SkipEmptyParts);
+        filterTags = info.value("tags").split(QRegExp("\\s*,\\s*"), Qt::SkipEmptyParts);
         for (j = 0; j < filterTags.size(); j++)
             if (!tags.contains(filterTags.at(j), Qt::CaseInsensitive))
                 tags.append(filterTags.at(j));
@@ -101,7 +102,7 @@ void MainWindow::toolbarEditPopulateAddFilterMenu()
     if (actions.isEmpty())
         return;
 
-    qSort(actions.begin(), actions.end(), toolbarEditAddFilterActionSorter);
+    std::sort(actions.begin(), actions.end(), toolbarEditAddFilterActionSorter);
     tags.sort(Qt::CaseInsensitive);
 
     QMenu * mainMenu = new QMenu(this);
@@ -114,7 +115,7 @@ void MainWindow::toolbarEditPopulateAddFilterMenu()
 
     for (i = 0; i < actions.size(); i++)
     {
-        filterTags = actions.at(i)->property("tags").toString().split(QRegExp("\\s*,\\s*"), QString::SkipEmptyParts);
+        filterTags = actions.at(i)->property("tags").toString().split(QRegExp("\\s*,\\s*"), Qt::SkipEmptyParts);
         for (j = 0; j < filterTags.size(); j++)
         {
             for (k = 0; k < tags.size(); k++)

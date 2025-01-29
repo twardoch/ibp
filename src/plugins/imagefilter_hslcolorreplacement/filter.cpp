@@ -340,12 +340,12 @@ bool Filter::loadParameters(QSettings &s)
         return false;
 
     knotsStr = s.value("hueknots", "0.0 0.0, 1.0 1.0").toString();
-    knotsList = knotsStr.split(QRegularExpression("\\s*,\\s*"), QString::SkipEmptyParts);
+    knotsList = knotsStr.split(QRegularExpression("\\s*,\\s*"), Qt::SkipEmptyParts);
     if (knotsList.size() < 2)
         return false;
     for (int i = 0; i < knotsList.size(); i++)
     {
-        knotList = knotsList.at(i).split(QRegularExpression("\\s+"), QString::SkipEmptyParts);
+        knotList = knotsList.at(i).split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
         if (knotList.size() != 2)
             return false;
         x = knotList.at(0).toDouble(&ok);
@@ -359,12 +359,12 @@ bool Filter::loadParameters(QSettings &s)
     // append last knot to make it periodic
     knotsHue.append(Interpolator1DKnot(IBP_maximum(1.001, knotsHue.first().x() + 1.), knotsHue.first().y()));
     knotsStr = s.value("saturationknots", "0.0 0.0, 1.0 1.0").toString();
-    knotsList = knotsStr.split(QRegularExpression("\\s*,\\s*"), QString::SkipEmptyParts);
+    knotsList = knotsStr.split(QRegularExpression("\\s*,\\s*"), Qt::SkipEmptyParts);
     if (knotsList.size() < 2)
         return false;
     for (int i = 0; i < knotsList.size(); i++)
     {
-        knotList = knotsList.at(i).split(QRegularExpression("\\s+"), QString::SkipEmptyParts);
+        knotList = knotsList.at(i).split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
         if (knotList.size() != 2)
             return false;
         x = knotList.at(0).toDouble(&ok);
@@ -376,12 +376,12 @@ bool Filter::loadParameters(QSettings &s)
         knotsSaturation.append(Interpolator1DKnot(x, y));
     }
     knotsStr = s.value("lightnessknots", "0.0 0.0, 1.0 1.0").toString();
-    knotsList = knotsStr.split(QRegularExpression("\\s*,\\s*"), QString::SkipEmptyParts);
+    knotsList = knotsStr.split(QRegularExpression("\\s*,\\s*"), Qt::SkipEmptyParts);
     if (knotsList.size() < 2)
         return false;
     for (int i = 0; i < knotsList.size(); i++)
     {
-        knotList = knotsList.at(i).split(QRegularExpression("\\s+"), QString::SkipEmptyParts);
+        knotList = knotsList.at(i).split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
         if (knotList.size() != 2)
             return false;
         x = knotList.at(0).toDouble(&ok);

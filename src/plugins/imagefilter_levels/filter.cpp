@@ -127,7 +127,7 @@ bool Filter::loadParameters(QSettings &s)
     levelsStr[Alpha] = s.value("alphalevels", 0).toString();
     for (int i = 0; i < 5; i++)
     {
-        levelsList = levelsStr[i].split(QRegularExpression("\\s+"), QString::SkipEmptyParts);
+        levelsList = levelsStr[i].split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
         if (levelsList.size() != 5)
             return false;
         inputLevels[i][InputBlackPoint] = levelsList.at(0).toDouble(&ok);
