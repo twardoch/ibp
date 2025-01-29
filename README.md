@@ -4,7 +4,7 @@ The Image Batch Processor (or IBP for short) is a crossplatform, open source, si
 
 ## [∞](#download) Download
 
-- [Download unsinged macOS Intel build](https://github.com/twardoch/ibp/releases/download/v0.1.0/ImageBatchProcessor-0.1.0-macOS.dmg) (2025-01-29)
+☛ [Download unsinged macOS Intel build](https://github.com/twardoch/ibp/raw/refs/heads/master/dist/ImageBatchProcessor-1.0.0.dmg) (2025-01-29)
 
 ## [∞](#who) Who?
 
@@ -19,9 +19,6 @@ IBP began being focused in traditional animation and the processing of several f
 IBP applies a list of effects to a list of images (useful if you want to transform/filter/modify a folder with hundreds of images/frames). The goal here is to provide the application with a set of filters that will help to achieve animation specific effects (non-uniform illumination correction, keying and so on).
 This tool is under development. Here are some snapshots:
 
-  [![](./doc/images/readme01-thumb.jpg)](./doc/images/readme01.jpg)
- 
-  The previous image shows the use of a generic color correction filter list.
 
   [![](./doc/images/readme02-thumb.jpg)](./doc/images/readme02.jpg) [![](./doc/images/readme03-thumb.jpg)](./doc/images/readme03.jpg)
  
