@@ -1,0 +1,3456 @@
+.
+├── BUILDING.md
+├── CMakeCache.txt
+├── CMakeFiles
+│   ├── 3.31.4
+│   │   ├── CMakeCCompiler.cmake
+│   │   ├── CMakeCXXCompiler.cmake
+│   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   ├── CMakeSystem.cmake
+│   │   ├── CompilerIdC
+│   │   │   ├── CMakeCCompilerId.c
+│   │   │   ├── CMakeCCompilerId.o
+│   │   │   └── tmp
+│   │   └── CompilerIdCXX
+│   │   ├── CMakeCXXCompilerId.cpp
+│   │   ├── CMakeCXXCompilerId.o
+│   │   └── tmp
+│   ├── CMakeConfigureLog.yaml
+│   ├── CMakeDirectoryInformation.cmake
+│   ├── CMakeRuleHashes.txt
+│   ├── Makefile.cmake
+│   ├── Makefile2
+│   ├── TargetDirectories.txt
+│   ├── cmake.check_cache
+│   ├── pkgRedirects
+│   └── progress.marks
+├── CMakeLists.txt
+├── LICENSE
+├── Makefile
+├── README.md
+├── build
+│   ├── ibp -> ibp-0.1.0
+│   ├── ibp-0.1.0
+│   ├── libibp.imgproc.0.1.0.dylib
+│   ├── libibp.imgproc.dylib -> libibp.imgproc.0.1.0.dylib
+│   ├── libibp.misc.0.1.0.dylib
+│   ├── libibp.misc.dylib -> libibp.misc.0.1.0.dylib
+│   ├── libibp.plugins.0.1.0.dylib
+│   ├── libibp.plugins.dylib -> libibp.plugins.0.1.0.dylib
+│   ├── libibp.widgets.0.1.0.dylib
+│   ├── libibp.widgets.dylib -> libibp.widgets.0.1.0.dylib
+│   ├── plugins
+│   │   ├── libibp.imagefilter.adaptivemanifoldfilter.0.1.0.dylib
+│   │   ├── libibp.imagefilter.adaptivemanifoldfilter.dylib -> libibp.imagefilter.adaptivemanifoldfilter.0.1.0.dylib
+│   │   ├── libibp.imagefilter.addnoise.0.1.0.dylib
+│   │   ├── libibp.imagefilter.addnoise.dylib -> libibp.imagefilter.addnoise.0.1.0.dylib
+│   │   ├── libibp.imagefilter.autolevels.0.1.0.dylib
+│   │   ├── libibp.imagefilter.autolevels.dylib -> libibp.imagefilter.autolevels.0.1.0.dylib
+│   │   ├── libibp.imagefilter.autothreshold.0.1.0.dylib
+│   │   ├── libibp.imagefilter.autothreshold.dylib -> libibp.imagefilter.autothreshold.0.1.0.dylib
+│   │   ├── libibp.imagefilter.autotrim.0.1.0.dylib
+│   │   ├── libibp.imagefilter.autotrim.dylib -> libibp.imagefilter.autotrim.0.1.0.dylib
+│   │   ├── libibp.imagefilter.basicrotation.0.1.0.dylib
+│   │   ├── libibp.imagefilter.basicrotation.dylib -> libibp.imagefilter.basicrotation.0.1.0.dylib
+│   │   ├── libibp.imagefilter.bilateralfilter.0.1.0.dylib
+│   │   ├── libibp.imagefilter.bilateralfilter.dylib -> libibp.imagefilter.bilateralfilter.0.1.0.dylib
+│   │   ├── libibp.imagefilter.boxblur.0.1.0.dylib
+│   │   ├── libibp.imagefilter.boxblur.dylib -> libibp.imagefilter.boxblur.0.1.0.dylib
+│   │   ├── libibp.imagefilter.brightnesscontrast.0.1.0.dylib
+│   │   ├── libibp.imagefilter.brightnesscontrast.dylib -> libibp.imagefilter.brightnesscontrast.0.1.0.dylib
+│   │   ├── libibp.imagefilter.colorbalance.0.1.0.dylib
+│   │   ├── libibp.imagefilter.colorbalance.dylib -> libibp.imagefilter.colorbalance.0.1.0.dylib
+│   │   ├── libibp.imagefilter.colorboosting.0.1.0.dylib
+│   │   ├── libibp.imagefilter.colorboosting.dylib -> libibp.imagefilter.colorboosting.0.1.0.dylib
+│   │   ├── libibp.imagefilter.colorlayer.0.1.0.dylib
+│   │   ├── libibp.imagefilter.colorlayer.dylib -> libibp.imagefilter.colorlayer.0.1.0.dylib
+│   │   ├── libibp.imagefilter.contrastpreservinggrayscale.0.1.0.dylib
+│   │   ├── libibp.imagefilter.contrastpreservinggrayscale.dylib -> libibp.imagefilter.contrastpreservinggrayscale.0.1.0.dylib
+│   │   ├── libibp.imagefilter.curves.0.1.0.dylib
+│   │   ├── libibp.imagefilter.curves.dylib -> libibp.imagefilter.curves.0.1.0.dylib
+│   │   ├── libibp.imagefilter.dctdenoising.0.1.0.dylib
+│   │   ├── libibp.imagefilter.dctdenoising.dylib -> libibp.imagefilter.dctdenoising.0.1.0.dylib
+│   │   ├── libibp.imagefilter.desaturate.0.1.0.dylib
+│   │   ├── libibp.imagefilter.desaturate.dylib -> libibp.imagefilter.desaturate.0.1.0.dylib
+│   │   ├── libibp.imagefilter.domaintransformfilter.0.1.0.dylib
+│   │   ├── libibp.imagefilter.domaintransformfilter.dylib -> libibp.imagefilter.domaintransformfilter.0.1.0.dylib
+│   │   ├── libibp.imagefilter.equalize.0.1.0.dylib
+│   │   ├── libibp.imagefilter.equalize.dylib -> libibp.imagefilter.equalize.0.1.0.dylib
+│   │   ├── libibp.imagefilter.flip.0.1.0.dylib
+│   │   ├── libibp.imagefilter.flip.dylib -> libibp.imagefilter.flip.0.1.0.dylib
+│   │   ├── libibp.imagefilter.gaussianblur.0.1.0.dylib
+│   │   ├── libibp.imagefilter.gaussianblur.dylib -> libibp.imagefilter.gaussianblur.0.1.0.dylib
+│   │   ├── libibp.imagefilter.grayscale.0.1.0.dylib
+│   │   ├── libibp.imagefilter.grayscale.dylib -> libibp.imagefilter.grayscale.0.1.0.dylib
+│   │   ├── libibp.imagefilter.guidedfilter.0.1.0.dylib
+│   │   ├── libibp.imagefilter.guidedfilter.dylib -> libibp.imagefilter.guidedfilter.0.1.0.dylib
+│   │   ├── libibp.imagefilter.hslcolorreplacement.0.1.0.dylib
+│   │   ├── libibp.imagefilter.hslcolorreplacement.dylib -> libibp.imagefilter.hslcolorreplacement.0.1.0.dylib
+│   │   ├── libibp.imagefilter.hslkeyer.0.1.0.dylib
+│   │   ├── libibp.imagefilter.hslkeyer.dylib -> libibp.imagefilter.hslkeyer.0.1.0.dylib
+│   │   ├── libibp.imagefilter.huesaturation.0.1.0.dylib
+│   │   ├── libibp.imagefilter.huesaturation.dylib -> libibp.imagefilter.huesaturation.0.1.0.dylib
+│   │   ├── libibp.imagefilter.identity.0.1.0.dylib
+│   │   ├── libibp.imagefilter.identity.dylib -> libibp.imagefilter.identity.0.1.0.dylib
+│   │   ├── libibp.imagefilter.inpaintingiihc.0.1.0.dylib
+│   │   ├── libibp.imagefilter.inpaintingiihc.dylib -> libibp.imagefilter.inpaintingiihc.0.1.0.dylib
+│   │   ├── libibp.imagefilter.invert.0.1.0.dylib
+│   │   ├── libibp.imagefilter.invert.dylib -> libibp.imagefilter.invert.0.1.0.dylib
+│   │   ├── libibp.imagefilter.levels.0.1.0.dylib
+│   │   ├── libibp.imagefilter.levels.dylib -> libibp.imagefilter.levels.0.1.0.dylib
+│   │   ├── libibp.imagefilter.lowpassiihc.0.1.0.dylib
+│   │   ├── libibp.imagefilter.lowpassiihc.dylib -> libibp.imagefilter.lowpassiihc.0.1.0.dylib
+│   │   ├── libibp.imagefilter.lumakeyer.0.1.0.dylib
+│   │   ├── libibp.imagefilter.lumakeyer.dylib -> libibp.imagefilter.lumakeyer.0.1.0.dylib
+│   │   ├── libibp.imagefilter.median.0.1.0.dylib
+│   │   ├── libibp.imagefilter.median.dylib -> libibp.imagefilter.median.0.1.0.dylib
+│   │   ├── libibp.imagefilter.morphologicaliihc.0.1.0.dylib
+│   │   ├── libibp.imagefilter.morphologicaliihc.dylib -> libibp.imagefilter.morphologicaliihc.0.1.0.dylib
+│   │   ├── libibp.imagefilter.morphology.0.1.0.dylib
+│   │   ├── libibp.imagefilter.morphology.dylib -> libibp.imagefilter.morphology.0.1.0.dylib
+│   │   ├── libibp.imagefilter.nlmdenoising.0.1.0.dylib
+│   │   ├── libibp.imagefilter.nlmdenoising.dylib -> libibp.imagefilter.nlmdenoising.0.1.0.dylib
+│   │   ├── libibp.imagefilter.prospectiveiihc.0.1.0.dylib
+│   │   ├── libibp.imagefilter.prospectiveiihc.dylib -> libibp.imagefilter.prospectiveiihc.0.1.0.dylib
+│   │   ├── libibp.imagefilter.resample.0.1.0.dylib
+│   │   ├── libibp.imagefilter.resample.dylib -> libibp.imagefilter.resample.0.1.0.dylib
+│   │   ├── libibp.imagefilter.resize.0.1.0.dylib
+│   │   ├── libibp.imagefilter.resize.dylib -> libibp.imagefilter.resize.0.1.0.dylib
+│   │   ├── libibp.imagefilter.surfacefittingiihc.0.1.0.dylib
+│   │   ├── libibp.imagefilter.surfacefittingiihc.dylib -> libibp.imagefilter.surfacefittingiihc.0.1.0.dylib
+│   │   ├── libibp.imagefilter.texturelayer.0.1.0.dylib
+│   │   ├── libibp.imagefilter.texturelayer.dylib -> libibp.imagefilter.texturelayer.0.1.0.dylib
+│   │   ├── libibp.imagefilter.threshold.0.1.0.dylib
+│   │   ├── libibp.imagefilter.threshold.dylib -> libibp.imagefilter.threshold.0.1.0.dylib
+│   │   ├── libibp.imagefilter.tvdenoising.0.1.0.dylib
+│   │   ├── libibp.imagefilter.tvdenoising.dylib -> libibp.imagefilter.tvdenoising.0.1.0.dylib
+│   │   ├── libibp.imagefilter.unsharpmask.0.1.0.dylib
+│   │   └── libibp.imagefilter.unsharpmask.dylib -> libibp.imagefilter.unsharpmask.0.1.0.dylib
+│   └── settings
+│   ├── imagebatchprocessor.cfg
+│   └── imagebatchprocessor.ifl
+├── cmake
+│   └── modules
+│   └── FindFreeImage.cmake
+├── cmake_install.cmake
+├── doc
+│   └── images
+│   ├── readme01-thumb.jpg
+│   ├── readme01.jpg
+│   ├── readme02-thumb.jpg
+│   ├── readme02.jpg
+│   ├── readme03-thumb.jpg
+│   ├── readme03.jpg
+│   ├── readme04-thumb.jpg
+│   └── readme04.jpg
+├── macos_install.sh
+├── macos_prep.sh
+├── src
+│   ├── CMakeFiles
+│   │   ├── CMakeDirectoryInformation.cmake
+│   │   └── progress.marks
+│   ├── CMakeLists.txt
+│   ├── Makefile
+│   ├── cmake_install.cmake
+│   ├── ibp
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── imagebatchprocessor
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   ├── ibp.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── ibp_autogen
+│   │   │   │   │   │   ├── EWIEGA46WW
+│   │   │   │   │   │   │   ├── qrc_imagebatchprocessor.cpp.o
+│   │   │   │   │   │   │   └── qrc_imagebatchprocessor.cpp.o.d
+│   │   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── main.cpp.o
+│   │   │   │   │   ├── main.cpp.o.d
+│   │   │   │   │   ├── mainwindow.main.cpp.o
+│   │   │   │   │   ├── mainwindow.main.cpp.o.d
+│   │   │   │   │   ├── mainwindow.toolbar.batch.cpp.o
+│   │   │   │   │   ├── mainwindow.toolbar.batch.cpp.o.d
+│   │   │   │   │   ├── mainwindow.toolbar.edit.cpp.o
+│   │   │   │   │   ├── mainwindow.toolbar.edit.cpp.o.d
+│   │   │   │   │   ├── mainwindow.view.batch.cpp.o
+│   │   │   │   │   ├── mainwindow.view.batch.cpp.o.d
+│   │   │   │   │   ├── mainwindow.view.edit.cpp.o
+│   │   │   │   │   ├── mainwindow.view.edit.cpp.o.d
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ibp_autogen.dir
+│   │   │   │   │   ├── AutoRcc_imagebatchprocessor_EWIEGA46WW_Info.json
+│   │   │   │   │   ├── AutoRcc_imagebatchprocessor_EWIEGA46WW_Lock.lock
+│   │   │   │   │   ├── AutoRcc_imagebatchprocessor_EWIEGA46WW_Used.txt
+│   │   │   │   │   ├── AutogenInfo.json
+│   │   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── ParseCache.txt
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ibp_autogen_timestamp_deps.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   └── progress.marks
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Makefile
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── ibp_autogen
+│   │   │   │   ├── EWIEGA46WW
+│   │   │   │   │   ├── moc_mainwindow.cpp
+│   │   │   │   │   ├── moc_mainwindow.cpp.d
+│   │   │   │   │   └── qrc_imagebatchprocessor.cpp
+│   │   │   │   ├── deps
+│   │   │   │   ├── include
+│   │   │   │   │   └── ui_mainwindow.h
+│   │   │   │   ├── moc_predefs.h
+│   │   │   │   ├── mocs_compilation.cpp
+│   │   │   │   └── timestamp
+│   │   │   ├── imagebatchprocessor.qrc
+│   │   │   ├── main.cpp
+│   │   │   ├── mainwindow.h
+│   │   │   ├── mainwindow.main.cpp
+│   │   │   ├── mainwindow.toolbar.batch.cpp
+│   │   │   ├── mainwindow.toolbar.edit.cpp
+│   │   │   ├── mainwindow.ui
+│   │   │   ├── mainwindow.view.batch.cpp
+│   │   │   ├── mainwindow.view.edit.cpp
+│   │   │   └── resources
+│   │   │   └── icons
+│   │   │   ├── addImageFilter.png
+│   │   │   ├── addImageFilterDisabled.png
+│   │   │   ├── batchProcessing.png
+│   │   │   ├── edit.png
+│   │   │   ├── hSplitter.png
+│   │   │   ├── loadImage.png
+│   │   │   ├── loadImageFilters.png
+│   │   │   ├── loadImageFiltersDisabled.png
+│   │   │   ├── resetImageFilters.png
+│   │   │   ├── saveImage.png
+│   │   │   ├── saveImageDisabled.png
+│   │   │   ├── saveImageFilters.png
+│   │   │   ├── saveImageFiltersDisabled.png
+│   │   │   └── vSplitter.png
+│   │   ├── imgproc
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   ├── ibp.imgproc.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── colorconversion.cpp.o
+│   │   │   │   │   ├── colorconversion.cpp.o.d
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── freeimage.cpp.o
+│   │   │   │   │   ├── freeimage.cpp.o.d
+│   │   │   │   │   ├── ibp.imgproc_autogen
+│   │   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   │   ├── imagefilterlist.cpp.o
+│   │   │   │   │   ├── imagefilterlist.cpp.o.d
+│   │   │   │   │   ├── imagehistogram.cpp.o
+│   │   │   │   │   ├── imagehistogram.cpp.o.d
+│   │   │   │   │   ├── intensitymapping.cpp.o
+│   │   │   │   │   ├── intensitymapping.cpp.o.d
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── lut01.cpp.o
+│   │   │   │   │   ├── lut01.cpp.o.d
+│   │   │   │   │   ├── lut02.cpp.o
+│   │   │   │   │   ├── lut02.cpp.o.d
+│   │   │   │   │   ├── lut03.cpp.o
+│   │   │   │   │   ├── lut03.cpp.o.d
+│   │   │   │   │   ├── pixelblending.cpp.o
+│   │   │   │   │   ├── pixelblending.cpp.o.d
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   ├── thresholding.cpp.o
+│   │   │   │   │   ├── thresholding.cpp.o.d
+│   │   │   │   │   ├── util.cpp.o
+│   │   │   │   │   └── util.cpp.o.d
+│   │   │   │   ├── ibp.imgproc_autogen.dir
+│   │   │   │   │   ├── AutogenInfo.json
+│   │   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── ParseCache.txt
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ibp.imgproc_autogen_timestamp_deps.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   └── progress.marks
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Makefile
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── colorconversion.cpp
+│   │   │   ├── colorconversion.h
+│   │   │   ├── freeimage.cpp
+│   │   │   ├── freeimage.h
+│   │   │   ├── ibp.imgproc_autogen
+│   │   │   │   ├── EWIEGA46WW
+│   │   │   │   │   ├── moc_imagefilter.cpp
+│   │   │   │   │   ├── moc_imagefilter.cpp.d
+│   │   │   │   │   ├── moc_imagefilterlist.cpp
+│   │   │   │   │   └── moc_imagefilterlist.cpp.d
+│   │   │   │   ├── deps
+│   │   │   │   ├── include
+│   │   │   │   ├── moc_predefs.h
+│   │   │   │   ├── mocs_compilation.cpp
+│   │   │   │   └── timestamp
+│   │   │   ├── imagefilter.h
+│   │   │   ├── imagefilterlist.cpp
+│   │   │   ├── imagefilterlist.h
+│   │   │   ├── imagehistogram.cpp
+│   │   │   ├── imagehistogram.h
+│   │   │   ├── intensitymapping.cpp
+│   │   │   ├── intensitymapping.h
+│   │   │   ├── lut.h
+│   │   │   ├── lut01.cpp
+│   │   │   ├── lut02.cpp
+│   │   │   ├── lut03.cpp
+│   │   │   ├── pixelblending.cpp
+│   │   │   ├── pixelblending.h
+│   │   │   ├── thresholding.cpp
+│   │   │   ├── thresholding.h
+│   │   │   ├── types.h
+│   │   │   ├── util.cpp
+│   │   │   └── util.h
+│   │   ├── misc
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   ├── ibp.misc.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── basesplineinterpolator1D.cpp.o
+│   │   │   │   │   ├── basesplineinterpolator1D.cpp.o.d
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── configurationmanager.cpp.o
+│   │   │   │   │   ├── configurationmanager.cpp.o.d
+│   │   │   │   │   ├── cubicsplineinterpolator1D.cpp.o
+│   │   │   │   │   ├── cubicsplineinterpolator1D.cpp.o.d
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── ibp.misc_autogen
+│   │   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   │   ├── interpolator1D.cpp.o
+│   │   │   │   │   ├── interpolator1D.cpp.o.d
+│   │   │   │   │   ├── linearsplineinterpolator1D.cpp.o
+│   │   │   │   │   ├── linearsplineinterpolator1D.cpp.o.d
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── nativeeventfilter.cpp.o
+│   │   │   │   │   ├── nativeeventfilter.cpp.o.d
+│   │   │   │   │   ├── nearestneighborsplineinterpolator1D.cpp.o
+│   │   │   │   │   ├── nearestneighborsplineinterpolator1D.cpp.o.d
+│   │   │   │   │   ├── probabilitymassfunction.cpp.o
+│   │   │   │   │   ├── probabilitymassfunction.cpp.o.d
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ibp.misc_autogen.dir
+│   │   │   │   │   ├── AutogenInfo.json
+│   │   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── ParseCache.txt
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ibp.misc_autogen_timestamp_deps.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   └── progress.marks
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Makefile
+│   │   │   ├── basesplineinterpolator1D.cpp
+│   │   │   ├── basesplineinterpolator1D.h
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── configurationmanager.cpp
+│   │   │   ├── configurationmanager.h
+│   │   │   ├── cubicsplineinterpolator1D.cpp
+│   │   │   ├── cubicsplineinterpolator1D.h
+│   │   │   ├── ibp.misc_autogen
+│   │   │   │   ├── EWIEGA46WW
+│   │   │   │   │   ├── moc_nativeeventfilter.cpp
+│   │   │   │   │   └── moc_nativeeventfilter.cpp.d
+│   │   │   │   ├── deps
+│   │   │   │   ├── include
+│   │   │   │   ├── moc_predefs.h
+│   │   │   │   ├── mocs_compilation.cpp
+│   │   │   │   └── timestamp
+│   │   │   ├── interpolator1D.cpp
+│   │   │   ├── interpolator1D.h
+│   │   │   ├── linearsplineinterpolator1D.cpp
+│   │   │   ├── linearsplineinterpolator1D.h
+│   │   │   ├── nativeeventfilter.cpp
+│   │   │   ├── nativeeventfilter.h
+│   │   │   ├── nearestneighborsplineinterpolator1D.cpp
+│   │   │   ├── nearestneighborsplineinterpolator1D.h
+│   │   │   ├── probabilitymassfunction.cpp
+│   │   │   ├── probabilitymassfunction.h
+│   │   │   └── util.h
+│   │   ├── plugins
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   ├── ibp.plugins.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── ibp.plugins_autogen
+│   │   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   │   ├── imagefilterpluginloader.cpp.o
+│   │   │   │   │   ├── imagefilterpluginloader.cpp.o.d
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ibp.plugins_autogen.dir
+│   │   │   │   │   ├── AutogenInfo.json
+│   │   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── ParseCache.txt
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ibp.plugins_autogen_timestamp_deps.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   └── progress.marks
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Makefile
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── ibp.plugins_autogen
+│   │   │   │   ├── deps
+│   │   │   │   ├── include
+│   │   │   │   ├── moc_predefs.h
+│   │   │   │   ├── mocs_compilation.cpp
+│   │   │   │   └── timestamp
+│   │   │   ├── imagefilterpluginloader.cpp
+│   │   │   └── imagefilterpluginloader.h
+│   │   └── widgets
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.widgets.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── affinetransformationlist.cpp.o
+│   │   │   │   ├── affinetransformationlist.cpp.o.d
+│   │   │   │   ├── anchorpositionbox.cpp.o
+│   │   │   │   ├── anchorpositionbox.cpp.o.d
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── colorbox.cpp.o
+│   │   │   │   ├── colorbox.cpp.o.d
+│   │   │   │   ├── colorbutton.cpp.o
+│   │   │   │   ├── colorbutton.cpp.o.d
+│   │   │   │   ├── colorcompositionmodecombobox.cpp.o
+│   │   │   │   ├── colorcompositionmodecombobox.cpp.o.d
+│   │   │   │   ├── colorpicker.cpp.o
+│   │   │   │   ├── colorpicker.cpp.o.d
+│   │   │   │   ├── colorslider.cpp.o
+│   │   │   │   ├── colorslider.cpp.o.d
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── curves.cpp.o
+│   │   │   │   ├── curves.cpp.o.d
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filedialog.cpp.o
+│   │   │   │   ├── filedialog.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── genericdialog.cpp.o
+│   │   │   │   ├── genericdialog.cpp.o.d
+│   │   │   │   ├── histogramviewer.cpp.o
+│   │   │   │   ├── histogramviewer.cpp.o.d
+│   │   │   │   ├── hslcolorreplacementcurvespaintdelegate.cpp.o
+│   │   │   │   ├── hslcolorreplacementcurvespaintdelegate.cpp.o.d
+│   │   │   │   ├── hslkeyingcurvespaintdelegate.cpp.o
+│   │   │   │   ├── hslkeyingcurvespaintdelegate.cpp.o.d
+│   │   │   │   ├── ibp.widgets_autogen
+│   │   │   │   │   ├── EWIEGA46WW
+│   │   │   │   │   │   ├── qrc_widgets.cpp.o
+│   │   │   │   │   │   └── qrc_widgets.cpp.o.d
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── imagebutton.cpp.o
+│   │   │   │   ├── imagebutton.cpp.o.d
+│   │   │   │   ├── imageviewer.cpp.o
+│   │   │   │   ├── imageviewer.cpp.o.d
+│   │   │   │   ├── inputlevelsslider.cpp.o
+│   │   │   │   ├── inputlevelsslider.cpp.o.d
+│   │   │   │   ├── inputlevelswidget.cpp.o
+│   │   │   │   ├── inputlevelswidget.cpp.o.d
+│   │   │   │   ├── levelscurvespaintdelegate.cpp.o
+│   │   │   │   ├── levelscurvespaintdelegate.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── lumakeyingcurvespaintdelegate.cpp.o
+│   │   │   │   ├── lumakeyingcurvespaintdelegate.cpp.o.d
+│   │   │   │   ├── outputlevelsslider.cpp.o
+│   │   │   │   ├── outputlevelsslider.cpp.o.d
+│   │   │   │   ├── outputlevelswidget.cpp.o
+│   │   │   │   ├── outputlevelswidget.cpp.o.d
+│   │   │   │   ├── progress.make
+│   │   │   │   ├── resinit.cpp.o
+│   │   │   │   ├── resinit.cpp.o.d
+│   │   │   │   ├── rotationgauge.cpp.o
+│   │   │   │   ├── rotationgauge.cpp.o.d
+│   │   │   │   ├── style.cpp.o
+│   │   │   │   ├── style.cpp.o.d
+│   │   │   │   ├── toolbuttonex.cpp.o
+│   │   │   │   ├── toolbuttonex.cpp.o.d
+│   │   │   │   ├── widgetlist.cpp.o
+│   │   │   │   └── widgetlist.cpp.o.d
+│   │   │   ├── ibp.widgets_autogen.dir
+│   │   │   │   ├── AutoRcc_widgets_EWIEGA46WW_Info.json
+│   │   │   │   ├── AutoRcc_widgets_EWIEGA46WW_Lock.lock
+│   │   │   │   ├── AutoRcc_widgets_EWIEGA46WW_Used.txt
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.widgets_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── affinetransformationlist.cpp
+│   │   ├── affinetransformationlist.h
+│   │   ├── affinetransformationlist.ui
+│   │   ├── anchorpositionbox.cpp
+│   │   ├── anchorpositionbox.h
+│   │   ├── cmake_install.cmake
+│   │   ├── colorbox.cpp
+│   │   ├── colorbox.h
+│   │   ├── colorbutton.cpp
+│   │   ├── colorbutton.h
+│   │   ├── colorcompositionmodecombobox.cpp
+│   │   ├── colorcompositionmodecombobox.h
+│   │   ├── colorpicker.cpp
+│   │   ├── colorpicker.h
+│   │   ├── colorpicker.ui
+│   │   ├── colorslider.cpp
+│   │   ├── colorslider.h
+│   │   ├── curves.cpp
+│   │   ├── curves.h
+│   │   ├── filedialog.cpp
+│   │   ├── filedialog.h
+│   │   ├── genericdialog.cpp
+│   │   ├── genericdialog.h
+│   │   ├── genericdialog.ui
+│   │   ├── histogramviewer.cpp
+│   │   ├── histogramviewer.h
+│   │   ├── hslcolorreplacementcurvespaintdelegate.cpp
+│   │   ├── hslcolorreplacementcurvespaintdelegate.h
+│   │   ├── hslkeyingcurvespaintdelegate.cpp
+│   │   ├── hslkeyingcurvespaintdelegate.h
+│   │   ├── ibp.widgets_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_affinetransformationlist.cpp
+│   │   │   │   ├── moc_affinetransformationlist.cpp.d
+│   │   │   │   ├── moc_anchorpositionbox.cpp
+│   │   │   │   ├── moc_anchorpositionbox.cpp.d
+│   │   │   │   ├── moc_colorbox.cpp
+│   │   │   │   ├── moc_colorbox.cpp.d
+│   │   │   │   ├── moc_colorbutton.cpp
+│   │   │   │   ├── moc_colorbutton.cpp.d
+│   │   │   │   ├── moc_colorcompositionmodecombobox.cpp
+│   │   │   │   ├── moc_colorcompositionmodecombobox.cpp.d
+│   │   │   │   ├── moc_colorpicker.cpp
+│   │   │   │   ├── moc_colorpicker.cpp.d
+│   │   │   │   ├── moc_colorslider.cpp
+│   │   │   │   ├── moc_colorslider.cpp.d
+│   │   │   │   ├── moc_curves.cpp
+│   │   │   │   ├── moc_curves.cpp.d
+│   │   │   │   ├── moc_genericdialog.cpp
+│   │   │   │   ├── moc_genericdialog.cpp.d
+│   │   │   │   ├── moc_histogramviewer.cpp
+│   │   │   │   ├── moc_histogramviewer.cpp.d
+│   │   │   │   ├── moc_hslcolorreplacementcurvespaintdelegate.cpp
+│   │   │   │   ├── moc_hslcolorreplacementcurvespaintdelegate.cpp.d
+│   │   │   │   ├── moc_hslkeyingcurvespaintdelegate.cpp
+│   │   │   │   ├── moc_hslkeyingcurvespaintdelegate.cpp.d
+│   │   │   │   ├── moc_imagebutton.cpp
+│   │   │   │   ├── moc_imagebutton.cpp.d
+│   │   │   │   ├── moc_imageviewer.cpp
+│   │   │   │   ├── moc_imageviewer.cpp.d
+│   │   │   │   ├── moc_inputlevelsslider.cpp
+│   │   │   │   ├── moc_inputlevelsslider.cpp.d
+│   │   │   │   ├── moc_inputlevelswidget.cpp
+│   │   │   │   ├── moc_inputlevelswidget.cpp.d
+│   │   │   │   ├── moc_levelscurvespaintdelegate.cpp
+│   │   │   │   ├── moc_levelscurvespaintdelegate.cpp.d
+│   │   │   │   ├── moc_lumakeyingcurvespaintdelegate.cpp
+│   │   │   │   ├── moc_lumakeyingcurvespaintdelegate.cpp.d
+│   │   │   │   ├── moc_outputlevelsslider.cpp
+│   │   │   │   ├── moc_outputlevelsslider.cpp.d
+│   │   │   │   ├── moc_outputlevelswidget.cpp
+│   │   │   │   ├── moc_outputlevelswidget.cpp.d
+│   │   │   │   ├── moc_rotationgauge.cpp
+│   │   │   │   ├── moc_rotationgauge.cpp.d
+│   │   │   │   ├── moc_toolbuttonex.cpp
+│   │   │   │   ├── moc_toolbuttonex.cpp.d
+│   │   │   │   ├── moc_widgetlist.cpp
+│   │   │   │   ├── moc_widgetlist.cpp.d
+│   │   │   │   └── qrc_widgets.cpp
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   ├── ui_affinetransformationlist.h
+│   │   │   │   ├── ui_colorpicker.h
+│   │   │   │   ├── ui_genericdialog.h
+│   │   │   │   ├── ui_inputlevelswidget.h
+│   │   │   │   └── ui_outputlevelswidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   ├── imagebutton.cpp
+│   │   ├── imagebutton.h
+│   │   ├── imageviewer.cpp
+│   │   ├── imageviewer.h
+│   │   ├── inputlevelsslider.cpp
+│   │   ├── inputlevelsslider.h
+│   │   ├── inputlevelswidget.cpp
+│   │   ├── inputlevelswidget.h
+│   │   ├── inputlevelswidget.ui
+│   │   ├── levelscurvespaintdelegate.cpp
+│   │   ├── levelscurvespaintdelegate.h
+│   │   ├── lumakeyingcurvespaintdelegate.cpp
+│   │   ├── lumakeyingcurvespaintdelegate.h
+│   │   ├── outputlevelsslider.cpp
+│   │   ├── outputlevelsslider.h
+│   │   ├── outputlevelswidget.cpp
+│   │   ├── outputlevelswidget.h
+│   │   ├── outputlevelswidget.ui
+│   │   ├── resinit.cpp
+│   │   ├── resources
+│   │   │   ├── icons
+│   │   │   │   ├── close.png
+│   │   │   │   ├── closedEye.png
+│   │   │   │   ├── expandCollapseArrowDown.png
+│   │   │   │   ├── expandCollapseArrowRight.png
+│   │   │   │   ├── interpolationFlat.png
+│   │   │   │   ├── interpolationLinear.png
+│   │   │   │   ├── interpolationSmooth.png
+│   │   │   │   ├── invert.png
+│   │   │   │   ├── lock.png
+│   │   │   │   ├── magnifyingGlass.png
+│   │   │   │   ├── magnifyingGlassMinus.png
+│   │   │   │   ├── magnifyingGlassOne.png
+│   │   │   │   ├── magnifyingGlassPlus.png
+│   │   │   │   └── openEye.png
+│   │   │   ├── other
+│   │   │   │   └── ISOcoated_v2_eci.icc
+│   │   │   └── style
+│   │   │   └── style.css
+│   │   ├── rotationgauge.cpp
+│   │   ├── rotationgauge.h
+│   │   ├── style.cpp
+│   │   ├── style.h
+│   │   ├── toolbuttonex.cpp
+│   │   ├── toolbuttonex.h
+│   │   ├── widgetlist.cpp
+│   │   ├── widgetlist.h
+│   │   └── widgets.qrc
+│   └── plugins
+│   ├── CMakeFiles
+│   │   ├── CMakeDirectoryInformation.cmake
+│   │   └── progress.marks
+│   ├── CMakeLists.txt
+│   ├── Makefile
+│   ├── cmake_install.cmake
+│   ├── imagefilter_adaptivemanifoldfilter
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.adaptivemanifoldfilter.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.adaptivemanifoldfilter_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.adaptivemanifoldfilter_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.adaptivemanifoldfilter_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.adaptivemanifoldfilter_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_addnoise
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.addnoise.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.addnoise_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.addnoise_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.addnoise_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.addnoise_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_autolevels
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.autolevels.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.autolevels_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.autolevels_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.autolevels_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.autolevels_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_autothreshold
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.autothreshold.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.autothreshold_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.autothreshold_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.autothreshold_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.autothreshold_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_autotrim
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.autotrim.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.autotrim_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.autotrim_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.autotrim_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.autotrim_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_basicrotation
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.basicrotation.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.basicrotation_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.basicrotation_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.basicrotation_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.basicrotation_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_bilateralfilter
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.bilateralfilter.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.bilateralfilter_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.bilateralfilter_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.bilateralfilter_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.bilateralfilter_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_boxblur
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.boxblur.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.boxblur_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.boxblur_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.boxblur_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.boxblur_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_brightnesscontrast
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.brightnesscontrast.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.brightnesscontrast_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.brightnesscontrast_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.brightnesscontrast_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.brightnesscontrast_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_colorbalance
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.colorbalance.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.colorbalance_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.colorbalance_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.colorbalance_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.colorbalance_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_colorboosting
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.colorboosting.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.colorboosting_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.colorboosting_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.colorboosting_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── ibp.imagefilter.colorboosting_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   └── moc_filter.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_colorlayer
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.colorlayer.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.colorlayer_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.colorlayer_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.colorlayer_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.colorlayer_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_contrastpreservinggrayscale
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.contrastpreservinggrayscale.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.contrastpreservinggrayscale_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.contrastpreservinggrayscale_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.contrastpreservinggrayscale_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── ibp.imagefilter.contrastpreservinggrayscale_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   └── moc_filter.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_curves
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.curves.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.curves_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.curves_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.curves_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.curves_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_dctdenoising
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.dctdenoising.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.dctdenoising_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.dctdenoising_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.dctdenoising_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.dctdenoising_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_desaturate
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.desaturate.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.desaturate_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.desaturate_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.desaturate_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── ibp.imagefilter.desaturate_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   └── moc_filter.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_domaintransformfilter
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.domaintransformfilter.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.domaintransformfilter_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.domaintransformfilter_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.domaintransformfilter_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.domaintransformfilter_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_equalize
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.equalize.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.equalize_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.equalize_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.equalize_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── ibp.imagefilter.equalize_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   └── moc_filter.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_flip
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.flip.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.flip_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.flip_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.flip_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.flip_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_gaussianblur
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.gaussianblur.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.gaussianblur_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.gaussianblur_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.gaussianblur_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.gaussianblur_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_grayscale
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.grayscale.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.grayscale_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.grayscale_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.grayscale_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── ibp.imagefilter.grayscale_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   └── moc_filter.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_guidedfilter
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.guidedfilter.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.guidedfilter_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.guidedfilter_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.guidedfilter_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.guidedfilter_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_hslcolorreplacement
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.hslcolorreplacement.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.hslcolorreplacement_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.hslcolorreplacement_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.hslcolorreplacement_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.hslcolorreplacement_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_hslkeyer
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.hslkeyer.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.hslkeyer_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.hslkeyer_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.hslkeyer_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.hslkeyer_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_huesaturation
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.huesaturation.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.huesaturation_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.huesaturation_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.huesaturation_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.huesaturation_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_identity
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.identity.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.identity_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.identity_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.identity_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── ibp.imagefilter.identity_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   └── moc_filter.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_inpaintingiihc
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.inpaintingiihc.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.inpaintingiihc_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.inpaintingiihc_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.inpaintingiihc_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.inpaintingiihc_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_invert
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.invert.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.invert_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.invert_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.invert_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.invert_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_itkn4iihc
+│   │   ├── CMakeFiles
+│   │   ├── CMakeLists.txt
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── main.cpp
+│   │   └── readme.md
+│   ├── imagefilter_levels
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.levels.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.levels_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.levels_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.levels_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.levels_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_lowpassiihc
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.lowpassiihc.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.lowpassiihc_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.lowpassiihc_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.lowpassiihc_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.lowpassiihc_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_lumakeyer
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.lumakeyer.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.lumakeyer_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.lumakeyer_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.lumakeyer_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.lumakeyer_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_median
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.median.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.median_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.median_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.median_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.median_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_morphologicaliihc
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.morphologicaliihc.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.morphologicaliihc_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.morphologicaliihc_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.morphologicaliihc_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.morphologicaliihc_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_morphology
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.morphology.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.morphology_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.morphology_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.morphology_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.morphology_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_nlmdenoising
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.nlmdenoising.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.nlmdenoising_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.nlmdenoising_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.nlmdenoising_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.nlmdenoising_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_prospectiveiihc
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.prospectiveiihc.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.prospectiveiihc_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.prospectiveiihc_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.prospectiveiihc_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.prospectiveiihc_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_resample
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.resample.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.resample_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.resample_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.resample_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.resample_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_resize
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.resize.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.resize_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.resize_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.resize_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.resize_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_surfacefittingiihc
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.surfacefittingiihc.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.surfacefittingiihc_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.surfacefittingiihc_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.surfacefittingiihc_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.surfacefittingiihc_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_texturelayer
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.texturelayer.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.texturelayer_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.texturelayer_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.texturelayer_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.texturelayer_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_threshold
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.threshold.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.threshold_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.threshold_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.threshold_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.threshold_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_tvdenoising
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.tvdenoising.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filter.cpp.o
+│   │   │   │   ├── filter.cpp.o.d
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.tvdenoising_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.tvdenoising_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.tvdenoising_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.tvdenoising_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   └── main.cpp
+│   ├── imagefilter_tviihc
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── ibp.imagefilter.tviihc.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── filterwidget.cpp.o
+│   │   │   │   ├── filterwidget.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── ibp.imagefilter.tviihc_autogen
+│   │   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── main.cpp.o
+│   │   │   │   ├── main.cpp.o.d
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.tviihc_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── ParseCache.txt
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   ├── ibp.imagefilter.tviihc_autogen_timestamp_deps.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── filter.cpp
+│   │   ├── filter.h
+│   │   ├── filterwidget.cpp
+│   │   ├── filterwidget.h
+│   │   ├── filterwidget.ui
+│   │   ├── ibp.imagefilter.tviihc_autogen
+│   │   │   ├── EWIEGA46WW
+│   │   │   │   ├── moc_filter.cpp
+│   │   │   │   ├── moc_filter.cpp.d
+│   │   │   │   ├── moc_filterwidget.cpp
+│   │   │   │   └── moc_filterwidget.cpp.d
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   │   └── ui_filterwidget.h
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   └── timestamp
+│   │   ├── main.cpp
+│   │   └── readme.md
+│   └── imagefilter_unsharpmask
+│   ├── CMakeFiles
+│   │   ├── CMakeDirectoryInformation.cmake
+│   │   ├── ibp.imagefilter.unsharpmask.dir
+│   │   │   ├── DependInfo.cmake
+│   │   │   ├── build.make
+│   │   │   ├── cmake_clean.cmake
+│   │   │   ├── compiler_depend.internal
+│   │   │   ├── compiler_depend.make
+│   │   │   ├── compiler_depend.ts
+│   │   │   ├── depend.make
+│   │   │   ├── filter.cpp.o
+│   │   │   ├── filter.cpp.o.d
+│   │   │   ├── filterwidget.cpp.o
+│   │   │   ├── filterwidget.cpp.o.d
+│   │   │   ├── flags.make
+│   │   │   ├── ibp.imagefilter.unsharpmask_autogen
+│   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   ├── link.txt
+│   │   │   ├── main.cpp.o
+│   │   │   ├── main.cpp.o.d
+│   │   │   └── progress.make
+│   │   ├── ibp.imagefilter.unsharpmask_autogen.dir
+│   │   │   ├── AutogenInfo.json
+│   │   │   ├── AutogenUsed.txt
+│   │   │   ├── DependInfo.cmake
+│   │   │   ├── ParseCache.txt
+│   │   │   ├── build.make
+│   │   │   ├── cmake_clean.cmake
+│   │   │   ├── compiler_depend.internal
+│   │   │   ├── compiler_depend.make
+│   │   │   ├── compiler_depend.ts
+│   │   │   └── progress.make
+│   │   ├── ibp.imagefilter.unsharpmask_autogen_timestamp_deps.dir
+│   │   │   ├── DependInfo.cmake
+│   │   │   ├── build.make
+│   │   │   ├── cmake_clean.cmake
+│   │   │   ├── compiler_depend.make
+│   │   │   ├── compiler_depend.ts
+│   │   │   └── progress.make
+│   │   └── progress.marks
+│   ├── CMakeLists.txt
+│   ├── Makefile
+│   ├── cmake_install.cmake
+│   ├── filter.cpp
+│   ├── filter.h
+│   ├── filterwidget.cpp
+│   ├── filterwidget.h
+│   ├── filterwidget.ui
+│   ├── ibp.imagefilter.unsharpmask_autogen
+│   │   ├── EWIEGA46WW
+│   │   │   ├── moc_filter.cpp
+│   │   │   ├── moc_filter.cpp.d
+│   │   │   ├── moc_filterwidget.cpp
+│   │   │   └── moc_filterwidget.cpp.d
+│   │   ├── deps
+│   │   ├── include
+│   │   │   └── ui_filterwidget.h
+│   │   ├── moc_predefs.h
+│   │   ├── mocs_compilation.cpp
+│   │   └── timestamp
+│   └── main.cpp
+├── tree.txt
+└── vtk.rb
+
+471 directories, 2983 files

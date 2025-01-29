@@ -1,11 +1,9 @@
 
-# Image Batch Processor (IBP) Technical Overview
-
-## Overview
+### Overview
 
 The Image Batch Processor (IBP) is a cross-platform, open-source tool written in C++/Qt designed for automatically transforming one or more images based on a list of effects. The primary goal of IBP is to provide a set of filters that aid in achieving animation-specific effects, such as cleaning cels, correcting non-uniform illumination, and keying.
 
-## Project Structure
+### Project Structure
 
 The project is organized into several key directories and files, each serving a specific purpose:
 
@@ -16,31 +14,31 @@ The project is organized into several key directories and files, each serving a 
 - **`resources/`:** Contains application resources such as icons.
 - **`plugins/`:** Contains source code for various image filter plugins.
 
-## Root Directory Files
+### Root Directory Files
 
-### `.gitignore`
+#### `.gitignore`
 
 This file specifies intentionally untracked files that Git should ignore. It includes common build artifacts, temporary files, and editor-specific files to keep the repository clean.
 
-### `BUILDING.md`
+#### `BUILDING.md`
 
 This file provides instructions for building the project using CMake. It includes specific flags and environment variables for compiling with Qt5, lcms2, and FreeImage libraries on macOS.
 
-### `CMakeLists.txt`
+#### `CMakeLists.txt`
 
 This is the top-level CMake configuration file. It sets the minimum required CMake version, includes the GNUInstallDirs module, defines the project name and version, and includes the `src` subdirectory for further processing.
 
-### `LICENSE`
+#### `LICENSE`
 
 This file contains the MIT License under which the project is released. It details the permissions, conditions, and limitations of using, modifying, and distributing the software.
 
-### `README.md`
+#### `README.md`
 
 This file provides a general overview of the project, its purpose, development status, and snapshots of its user interface. It also includes a brief introduction to the main developer, Deif Lou.
 
-## CMake Modules (`cmake/modules/`)
+### CMake Modules (`cmake/modules/`)
 
-### `FindFreeImage.cmake`
+#### `FindFreeImage.cmake`
 
 This CMake module is used to locate the FreeImage library. It defines:
 
@@ -50,21 +48,21 @@ This CMake module is used to locate the FreeImage library. It defines:
 
 It searches for `FreeImage.h` in common installation directories and sets the appropriate variables.
 
-## Documentation Images (`doc/images/`)
+### Documentation Images (`doc/images/`)
 
 This folder contains images used in the `README.md` to demonstrate the functionality of various filters, such as color correction, illumination correction, and HSL keying. The images are provided in both thumbnail and full-size formats.
 
-## Source Code (`src/`)
+### Source Code (`src/`)
 
-### `src/CMakeLists.txt`
+#### `src/CMakeLists.txt`
 
 This file configures the build for the `src` directory. It sets the C++ standard to C++11, defines the output directory for the build, and includes subdirectories for `ibp` and `plugins`.
 
-### `src/ibp/`
+#### `src/ibp/`
 
 This directory contains the source code for the main application components, organized into subdirectories for different parts of the application.
 
-#### `src/ibp/imagebatchprocessor/`
+##### `src/ibp/imagebatchprocessor/`
 
 - **`CMakeLists.txt`**: Configures the build for the `ibp` executable, including linking against necessary libraries and setting target properties such as `AUTOMOC`, `AUTORCC`, and `AUTOUIC`.
 - **`imagebatchprocessor.qrc`**:  A Qt resource file that lists icons used by the application's user interface.
@@ -77,7 +75,7 @@ This directory contains the source code for the main application components, org
 - **`mainwindow.view.batch.cpp`**: Implements the batch processing view.
 - **`mainwindow.view.edit.cpp`**: Implements the edit view, including image preview, zoom controls, and the image filter list.
 
-#### `src/ibp/imgproc/`
+##### `src/ibp/imgproc/`
 
 - **`CMakeLists.txt`**: Configures the build for the `ibp.imgproc` shared library, including finding necessary packages like OpenCV and FreeImage.
 - **`colorconversion.cpp/h`**: Implements color conversion functions using the Little CMS color management system (lcms2).
@@ -92,7 +90,7 @@ This directory contains the source code for the main application components, org
 - **`thresholding.cpp/h`**: Implements thresholding algorithms, including adaptive thresholding using integral images.
 - **`imagehistogram.cpp/h`**: Implements the `ImageHistogram` class for computing and managing image histograms.
 
-#### `src/ibp/misc/`
+##### `src/ibp/misc/`
 
 - **`CMakeLists.txt`**: Configures the build for the `ibp.misc` shared library.
 - **`configurationmanager.cpp/h`**: Implements the `ConfigurationManager` class for managing application settings.
@@ -105,12 +103,12 @@ This directory contains the source code for the main application components, org
 - **`probabilitymassfunction.cpp/h`**: Implements the `ProbabilityMassFunction` class for managing probability mass functions.
 - **`util.h`**: Provides utility functions for the `misc` module.
 
-#### `src/ibp/plugins/`
+##### `src/ibp/plugins/`
 
 - **`CMakeLists.txt`**: Configures the build for plugins, including an option to build plugins.
 - **`imagefilterpluginloader.cpp/h`**: Implements the `ImageFilterPluginLoader` class, which is responsible for loading image filter plugins, managing their information, and instantiating filter objects.
 
-#### `src/ibp/widgets/`
+##### `src/ibp/widgets/`
 
 - **`CMakeLists.txt`**: Configures the build for the `ibp.widgets` shared library.
 - **`resinit.cpp`**: Initializes the Qt resource system for the widgets.
@@ -141,11 +139,11 @@ This directory contains the source code for the main application components, org
 - **`hslkeyingcurvespaintdelegate.cpp/h`**: Implements a custom paint delegate for HSL keying curves.
 - **`hslcolorreplacementcurvespaintdelegate.cpp/h`**: Implements a custom paint delegate for HSL color replacement curves.
 
-## Plugins (`src/plugins/`)
+### Plugins (`src/plugins/`)
 
 The `plugins` directory contains subdirectories for each image filter plugin. Each plugin is built as a separate shared library.
 
-### Plugin Structure
+#### Plugin Structure
 
 Each plugin follows a similar structure:
 
@@ -160,11 +158,11 @@ Each plugin follows a similar structure:
 
 Okay, I can help you with that. Here's a detailed description of each plugin found in the `src/plugins/` directory of the Image Batch Processor (IBP) project, formatted in Markdown:
 
-## IBP Image Filter Plugins
+### IBP Image Filter Plugins
 
 This document describes the individual image filter plugins available in the Image Batch Processor. Each plugin is a dynamically loaded library that extends IBP's functionality by providing a specific image transformation.
 
-### Adaptive Manifold Filter
+#### Adaptive Manifold Filter
 
 **ID:** `ibp.imagefilter.adaptivemanifoldfilter`
 **Version:** 0.1.0
@@ -179,7 +177,7 @@ This document describes the individual image filter plugins available in the Ima
 
 The plugin uses the `cv::ximgproc::amFilter()` function from the OpenCV library to perform adaptive manifold filtering. This filter computes a weighted average of neighboring pixels, where the weights are determined by the similarity of pixel intensities and their spatial proximity. The `sigmaS` parameter controls spatial weighting, and `sigmaR` controls range weighting (intensity similarity).
 
-### Add Noise
+#### Add Noise
 
 **ID:** `ibp.imagefilter.addnoise`
 **Version:** 0.1.0
@@ -194,7 +192,7 @@ The plugin uses the `cv::ximgproc::amFilter()` function from the OpenCV library 
 
 The plugin generates random noise values using `qrand()` and scales them according to the selected distribution (uniform or Gaussian) and the specified amount. In color mode, it adds different random values to each color channel. In monochromatic mode, it adds the same random value to all color channels.
 
-### Auto Levels
+#### Auto Levels
 
 **ID:** `ibp.imagefilter.autolevels`
 **Version:** 0.1.0
@@ -213,7 +211,7 @@ The plugin generates random noise values using `qrand()` and scales them accordi
 
 The filter calculates histograms for the selected channels (RGB or Luma) and determines the black and white points based on the specified clipping percentages. It then computes linear interpolation parameters for each channel to map input pixel values to output pixel values, adjusting the overall brightness and contrast.
 
-### Auto Threshold
+#### Auto Threshold
 
 **ID:** `ibp.imagefilter.autothreshold`
 **Version:** 0.1.0
@@ -228,7 +226,7 @@ The filter calculates histograms for the selected channels (RGB or Luma) and det
 
 The plugin uses either Otsu's global thresholding algorithm (`cv::threshold`) or a local adaptive thresholding method (`adaptiveThresholdIntegral`) to determine the threshold value for each channel. It then applies the threshold to convert the image into a binary representation.
 
-### Auto Trim
+#### Auto Trim
 
 **ID:** `ibp.imagefilter.autotrim`
 **Version:** 0.1.0
@@ -243,7 +241,7 @@ The plugin uses either Otsu's global thresholding algorithm (`cv::threshold`) or
 
 The plugin analyzes each pixel in the image based on the selected reference channel (alpha or luma) and the given threshold. It determines the bounding rectangle of the non-transparent region and crops the image accordingly, adding optional margins.
 
-### Basic Rotation
+#### Basic Rotation
 
 **ID:** `ibp.imagefilter.basicrotation`
 **Version:** 0.1.0
@@ -256,7 +254,7 @@ The plugin analyzes each pixel in the image based on the selected reference chan
 
 The plugin performs a basic image rotation by swapping pixel coordinates or reversing the order of pixels, depending on the selected angle.
 
-### Bilateral Filter
+#### Bilateral Filter
 
 **ID:** `ibp.imagefilter.bilateralfilter`
 **Version:** 0.1.0
@@ -270,7 +268,7 @@ The plugin performs a basic image rotation by swapping pixel coordinates or reve
 
 The plugin utilizes the `cv::bilateralFilter()` function from the OpenCV library to perform bilateral filtering. This filter applies a weighted average to neighboring pixels, where the weights depend on both spatial distance and intensity difference.
 
-### Box Blur
+#### Box Blur
 
 **ID:** `ibp.imagefilter.boxblur`
 **Version:** 0.1.0
@@ -283,7 +281,7 @@ The plugin utilizes the `cv::bilateralFilter()` function from the OpenCV library
 
 The plugin uses the `cv::blur()` function from the OpenCV library to apply a normalized box filter to the image. This filter averages the pixel values within a square kernel of the specified size.
 
-### Brightness and Contrast
+#### Brightness and Contrast
 
 **ID:** `ibp.imagefilter.brightnesscontrast`
 **Version:** 0.1.0
@@ -299,7 +297,7 @@ The plugin uses the `cv::blur()` function from the OpenCV library to apply a nor
 
 The plugin computes lookup tables (LUTs) based on the brightness and contrast parameters. These LUTs are then used to remap the pixel values of the selected channels. The soft mode utilizes a sigmoid function for a more natural adjustment.
 
-### Color Balance
+#### Color Balance
 
 **ID:** `ibp.imagefilter.colorbalance`
 **Version:** 0.1.0
@@ -315,7 +313,7 @@ The plugin computes lookup tables (LUTs) based on the brightness and contrast pa
 
 The plugin calculates separate adjustment parameters for shadows, midtones, and highlights based on user input. It then generates lookup tables (LUTs) for each color channel using these parameters and applies them to the image.
 
-### Color Boosting
+#### Color Boosting
 
 **ID:** `ibp.imagefilter.colorboosting`
 **Version:** 0.1.0
@@ -327,7 +325,7 @@ The plugin calculates separate adjustment parameters for shadows, midtones, and 
 **Implementation Details:**
 The plugin utilizes the `cv::decolor()` function from the OpenCV library, which denoises the image while attempting to retain color information.
 
-### Color Layer
+#### Color Layer
 
 **ID:** `ibp.imagefilter.colorlayer`
 **Version:** 0.1.0
@@ -344,7 +342,7 @@ The plugin utilizes the `cv::decolor()` function from the OpenCV library, which 
 
 The plugin creates a solid color image and applies the specified blending mode and opacity to combine it with the input image. It also supports geometric transformations of the color layer.
 
-### Contrast Preserving Grayscale
+#### Contrast Preserving Grayscale
 
 **ID:** `ibp.imagefilter.contrastpreservinggrayscale`
 **Version:** 0.1.0
@@ -356,7 +354,7 @@ The plugin creates a solid color image and applies the specified blending mode a
 **Implementation Details:**
 The plugin uses the `cv::decolor()` function from the OpenCV library, which effectively denoises the image while removing color information.
 
-### Curves
+#### Curves
 
 **ID:** `ibp.imagefilter.curves`
 **Version:** 0.1.0
@@ -373,7 +371,7 @@ The plugin uses the `cv::decolor()` function from the OpenCV library, which effe
 
 The plugin utilizes spline interpolation (nearest neighbor, linear, or cubic) to define a mapping curve for each channel. The user can add, remove, and move control points (knots) to manipulate the curve. The curve is then applied to remap pixel intensity values.
 
-### DCT Denoising
+#### DCT Denoising
 
 **ID:** `ibp.imagefilter.dctdenoising`
 **Version:** 0.1.0
@@ -386,7 +384,7 @@ The plugin utilizes spline interpolation (nearest neighbor, linear, or cubic) to
 **Implementation Details:**
 The plugin uses the `cv::xphoto::dctDenoising()` function from the OpenCV library to apply a non-local means denoising algorithm in the DCT domain.
 
-### Desaturate
+#### Desaturate
 
 **ID:** `ibp.imagefilter.desaturate`
 **Version:** 0.1.0
@@ -398,7 +396,7 @@ The plugin uses the `cv::xphoto::dctDenoising()` function from the OpenCV librar
 
 The plugin converts the image to HSL color space, sets the saturation channel to 0, and then converts it back to RGB.
 
-### Domain Transform Filter
+#### Domain Transform Filter
 
 **ID:** `ibp.imagefilter.domaintransformfilter`
 **Version:** 0.1.0
@@ -413,7 +411,7 @@ The plugin converts the image to HSL color space, sets the saturation channel to
 
 The plugin uses the `cv::ximgproc::dtFilter()` function from the OpenCV library to perform domain transform filtering, which is a fast edge-preserving smoothing technique.
 
-### Equalize
+#### Equalize
 
 **ID:** `ibp.imagefilter.equalize`
 **Version:** 0.1.0
@@ -425,7 +423,7 @@ The plugin uses the `cv::ximgproc::dtFilter()` function from the OpenCV library 
 
 The plugin computes the image histogram, calculates the cumulative distribution function, and uses it to map pixel intensities to a more uniform distribution, effectively enhancing contrast.
 
-### Flip
+#### Flip
 
 **ID:** `ibp.imagefilter.flip`
 **Version:** 0.1.0
@@ -438,7 +436,7 @@ The plugin computes the image histogram, calculates the cumulative distribution 
 
 The plugin performs a simple pixel swapping operation to flip the image along the specified axis/axes.
 
-### Guided Filter
+#### Guided Filter
 
 **ID:** `ibp.imagefilter.guidedfilter`
 **Version:** 0.1.0
@@ -453,7 +451,7 @@ The plugin performs a simple pixel swapping operation to flip the image along th
 
 The plugin utilizes the `cv::ximgproc::guidedFilter()` function from the OpenCV library, which performs edge-aware smoothing using a guidance image (in this case, the input image itself).
 
-### HSL Color Replacement
+#### HSL Color Replacement
 
 **ID:** `ibp.imagefilter.hslcolorreplacement`
 **Version:** 0.1.0
@@ -473,7 +471,7 @@ The plugin utilizes the `cv::ximgproc::guidedFilter()` function from the OpenCV 
 
 The plugin converts the image to HSL color space, applies the specified curves to adjust hue, saturation, and lightness, and then converts it back to RGB. It supports various output modes and pre-blurring for smoother results.
 
-### HSL Keyer
+#### HSL Keyer
 
 **ID:** `ibp.imagefilter.hslkeyer`
 **Version:** 0.1.0
@@ -490,7 +488,7 @@ The plugin converts the image to HSL color space, applies the specified curves t
 
 Similar to the HSL Color Replacement filter, but instead of modifying color channels, it generates an alpha channel (matte) based on the defined curves. The matte can be used for masking or compositing.
 
-### Identity
+#### Identity
 
 **ID:** `ibp.imagefilter.identity`
 **Version:** 0.1.0
@@ -502,7 +500,7 @@ Similar to the HSL Color Replacement filter, but instead of modifying color chan
 
 This filter simply returns the input image without any modifications. It can be used as a placeholder or for testing purposes.
 
-### Inpainting IIH Correction
+#### Inpainting IIH Correction
 
 **ID:** `ibp.imagefilter.inpaintingiihc`
 **Version:** 0.1.0
@@ -524,7 +522,7 @@ This filter uses a combination of techniques to correct illumination inhomogenei
 4. **Inpainting:** Employs the Navier-Stokes inpainting algorithm (`cv::inpaint`) to fill in the masked areas of the luma channel, effectively estimating the background illumination.
 5. **IIH Correction:** Uses the inpainted image as a correction model to adjust the original image.
 
-### ITK N4 IIH Correction
+#### ITK N4 IIH Correction
 
 **ID:** `ibp.imagefilter.itkn4iihc`
 **Version:** 0.1.0
@@ -546,7 +544,7 @@ This filter uses the ITK library's N4BiasFieldCorrectionImageFilter to estimate 
 5. **IIH Correction:** The linear relationship is used to correct the illumination inhomogeneity in the original image.
 6. **Output:** The corrected image, the mask, or the IIH correction model can be outputted.
 
-### Levels
+#### Levels
 
 **ID:** `ibp.imagefilter.levels`
 **Version:** 0.1.0
@@ -564,7 +562,7 @@ This filter uses the ITK library's N4BiasFieldCorrectionImageFilter to estimate 
 
 The filter generates lookup tables (LUTs) based on the input and output levels and the gamma correction value. These LUTs are then used to remap the pixel values of the selected channel.
 
-### Low Pass IIH Correction
+#### Low Pass IIH Correction
 
 **ID:** `ibp.imagefilter.lowpassiihc`
 **Version:** 0.1.0
@@ -578,7 +576,7 @@ The filter generates lookup tables (LUTs) based on the input and output levels a
 
 This filter applies a low-pass filter (using a box blur in this implementation) to estimate the background illumination. The estimated background is then used to correct the original image.
 
-### Luma Keyer
+#### Luma Keyer
 
 **ID:** `ibp.imagefilter.lumakeyer`
 **Version:** 0.1.0
@@ -595,7 +593,7 @@ This filter applies a low-pass filter (using a box blur in this implementation) 
 
 Similar to the HSL Keyer, but it operates solely on the luma channel to generate the matte.
 
-### Median
+#### Median
 
 **ID:** `ibp.imagefilter.median`
 **Version:** 0.1.0
@@ -608,7 +606,7 @@ Similar to the HSL Keyer, but it operates solely on the luma channel to generate
 
 The plugin uses the `cv::medianBlur()` function from the OpenCV library to apply a median filter, which replaces each pixel with the median value of its neighboring pixels within the specified radius.
 
-### Morphological IIH Correction
+#### Morphological IIH Correction
 
 **ID:** `ibp.imagefilter.morphologicaliihc`
 **Version:** 0.1.0
@@ -622,7 +620,7 @@ The plugin uses the `cv::medianBlur()` function from the OpenCV library to apply
 
 This filter uses morphological closing (dilation followed by erosion) to estimate the background illumination. The size of the structuring element determines the scale of the features that are considered part of the background.
 
-### Morphology
+#### Morphology
 
 **ID:** `ibp.imagefilter.morphology`
 **Version:** 0.1.0
@@ -641,7 +639,7 @@ This filter uses morphological closing (dilation followed by erosion) to estimat
 
 The plugin uses OpenCV's `cv::morphologyEx()` function along with custom functions to generate structuring elements of various shapes. It allows applying basic morphological operations like dilation, erosion, closing, and opening to either the RGB channels or the alpha channel independently.
 
-### NLM Denoising
+#### NLM Denoising
 
 **ID:** `ibp.imagefilter.nlmdenoising`
 **Version:** 0.1.0
@@ -654,7 +652,7 @@ The plugin uses OpenCV's `cv::morphologyEx()` function along with custom functio
 **Implementation Details:**
 The plugin uses the `cv::fastNlMeansDenoisingColored()` function from the OpenCV library to apply a non-local means denoising algorithm, which effectively reduces noise while preserving image details.
 
-### Perspective IIH Correction
+#### Perspective IIH Correction
 
 **ID:** `ibp.imagefilter.prospectiveiihc`
 **Version:** 0.1.0
@@ -668,7 +666,7 @@ The plugin uses the `cv::fastNlMeansDenoisingColored()` function from the OpenCV
 
 This filter uses a user-provided image to estimate a perspective transformation that models the illumination inhomogeneity. The estimated transformation is then applied to a blurred version of the input image to correct for the non-uniform illumination.
 
-### Resample
+#### Resample
 
 **ID:** `ibp.imagefilter.resample`
 **Version:** 0.1.0
@@ -686,7 +684,7 @@ This filter uses a user-provided image to estimate a perspective transformation 
 **Implementation Details:**
 This filter simply changes the dimensions of the image without resampling the pixel data. The new image can be filled with a background color, and the anchor position determines how the original image is placed within the new dimensions.
 
-### Texture Layer
+#### Texture Layer
 
 **ID:** `ibp.imagefilter.texturelayer`
 **Version:** 0.1.0
@@ -703,7 +701,7 @@ This filter simply changes the dimensions of the image without resampling the pi
 
 The plugin creates an image from the texture and applies the specified blending mode and opacity to combine it with the input image. It also supports geometric transformations of the texture layer.
 
-### Threshold
+#### Threshold
 
 **ID:** `ibp.imagefilter.threshold`
 **Version:** 0.1.0
@@ -721,19 +719,19 @@ The plugin applies a simple thresholding operation to each selected channel. Pix
 
 
 
-## Building on macOS
+### Building on macOS
 
-### Prerequisites
+#### Prerequisites
 
 ```bash
-#!/bin/bash
+##!/bin/bash
 
-# Script to install prerequisites and build the Image Batch Processor (IBP) project on macOS.
+## Script to install prerequisites and build the Image Batch Processor (IBP) project on macOS.
 
-# Exit immediately if a command exits with a non-zero status.
+## Exit immediately if a command exits with a non-zero status.
 set -e
 
-# --- Install Homebrew (if not already installed) ---
+## --- Install Homebrew (if not already installed) ---
 if ! command -v brew &> /dev/null
 then
     echo "Homebrew not found. Installing..."
@@ -742,23 +740,23 @@ else
     echo "Homebrew already installed."
 fi
 
-# --- Install Required Packages ---
+## --- Install Required Packages ---
 echo "Installing required packages using Homebrew..."
 brew update
 brew install cmake qt@5 lcms2 freeimage opencv eigen
 
-# Link qt@5 if necessary (it's keg-only)
+## Link qt@5 if necessary (it's keg-only)
 if ! ls /usr/local/opt/qt@5 > /dev/null; then
   echo "Linking qt@5..."
   brew link --force qt@5
 fi
 
-# --- Set Environment Variables for CMake ---
+## --- Set Environment Variables for CMake ---
 export LDFLAGS="-L/usr/local/opt/qt@5/lib"
 export CPPFLAGS="-I/usr/local/opt/qt@5/include"
 export PKG_CONFIG_PATH="/usr/local/opt/qt@5/lib/pkgconfig"
 
-# --- Set CMake Options ---
+## --- Set CMake Options ---
 CMAKE_OPTIONS=(
     -DCMAKE_CXX_STANDARD=17
     -DCMAKE_CXX_STANDARD_REQUIRED=ON
@@ -772,7 +770,7 @@ CMAKE_OPTIONS=(
     -DIBP_BUILD_PLUGINS=ON
 )
 
-# --- Build the Project ---
+## --- Build the Project ---
 echo "Configuring project with CMake..."
 cmake . "${CMAKE_OPTIONS[@]}"
 
@@ -781,13 +779,13 @@ make -j$(sysctl -n hw.ncpu)
 
 echo "Build completed successfully!"
 
-# --- Cleanup (Optional) ---
-# brew cleanup
+## --- Cleanup (Optional) ---
+## brew cleanup
 
 echo "Installation and build process finished."
 ```
 
-### Pre-building
+#### Pre-building
 
 ```bash
 LDFLAGS="-L/usr/local/opt/qt@5/lib" CPPFLAGS="-I/usr/local/opt/qt@5/include" PKG_CONFIG_PATH="/usr/local/opt/qt@5/lib/pkgconfig" cmake . \
@@ -802,13 +800,13 @@ LDFLAGS="-L/usr/local/opt/qt@5/lib" CPPFLAGS="-I/usr/local/opt/qt@5/include" PKG
     -DCMAKE_SHARED_LINKER_FLAGS="-L/usr/local/Cellar/freeimage/3.18.0/lib -L/usr/local/opt/lcms2/lib -llcms2"
 ```
 
-### Building
+#### Building
 
 ```bash
 make -j$(sysctl -n hw.ncpu)
 ```
 
-### Building details
+#### Building details
 
 **Prerequisites for Building on macOS**
 
