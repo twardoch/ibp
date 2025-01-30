@@ -1,9 +1,9 @@
 [imageFilter1]
 id=ibp.imagefilter.addnoise
 bypass=false
-distribution=3
+distribution=15
 colormode=rgb
-amount=0.3
+amount=20
 
 [info]
 description=Add uniform or gaussian distributed noise to the image

@@ -1,13 +1,12 @@
 [imageFilter1]
-id=ibp.imagefilter.autothreshold
+affectedchannels=luma blue
 bypass=false
-colormode=3
-affectedchannel=3
-thresholdmode=3
+colormode=luma
+id=ibp.imagefilter.autothreshold
+thresholdmode=global
 
 [info]
 description=Transforms the channels of the image into binary using an automatic threshold value
 fileType=ibp.imagefilterlist
 nFilters=1
 name=Auto Threshold
-

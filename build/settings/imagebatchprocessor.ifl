@@ -1,11 +1,7 @@
 [imageFilter1]
+angle=90clockwise
 bypass=false
-colorcompositionmode=normal
-geometrictransformations=
-id=ibp.imagefilter.texturelayer
-image=@Variant(\0\0\0\x46\0\0\0\0)
-opacity=100
-position=front
+id=ibp.imagefilter.basicrotation
 
 [info]
 description=This file contains the filter list that image batch processor was using the last time it was closed.

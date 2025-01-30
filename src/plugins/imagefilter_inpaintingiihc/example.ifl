@@ -3,7 +3,7 @@ id=ibp.imagefilter.inpaintingiihc
 bypass=false
 maskexpansion=3
 outputmode=3
-noisereduction=0.3
+noisereduction=20
 
 [info]
 description=This is a single filter configuration for imagefilter_inpaintingiihc.

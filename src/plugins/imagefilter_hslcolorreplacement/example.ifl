@@ -10,14 +10,14 @@ lightnessknots=0
 lightnessinterpolationmode=3
 lightnessinverted=true
 outputmode=normal
-preblurradius=0.3
+preblurradius=9.3
 colorize=true
 relhue=45
 relsaturation=25
 rellightness=25
 abshue=30
 abssaturation=25
-hueknots=0
+hueknots=2
 
 [info]
 description=Replace colors of the image based on its HSL components

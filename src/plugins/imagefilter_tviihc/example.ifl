@@ -1,7 +1,7 @@
 [imageFilter1]
 id=ibp.imagefilter.tviihc
 bypass=false
-smoothness=10
+smoothness=20
 outputmode=3
 refinement=10
 

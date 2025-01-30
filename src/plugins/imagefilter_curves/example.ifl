@@ -1,7 +1,7 @@
 [imageFilter1]
 id=ibp.imagefilter.curves
 bypass=false
-knots=0
+knots=2
 interpolationmode=linear
 workingchannel=3
 

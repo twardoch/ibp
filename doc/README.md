@@ -16,8 +16,8 @@ Smooth the image preserving hard edges
 [imageFilter1]
 id=ibp.imagefilter.adaptivemanifoldfilter
 bypass=false
-edgepreservation=50
-radius=0.3
+edgepreservation=60
+radius=40
 
 [info]
 description=Smooth the image preserving hard edges
@@ -42,9 +42,9 @@ Add uniform or gaussian distributed noise to the image
 [imageFilter1]
 id=ibp.imagefilter.addnoise
 bypass=false
-distribution=3
+distribution=15
 colormode=rgb
-amount=0.3
+amount=20
 
 [info]
 description=Add uniform or gaussian distributed noise to the image
@@ -74,8 +74,8 @@ adjustmidtones=false
 targetcolorhighlights=#ffffff
 targetcolormidtones=#808080
 targetcolorshadows=#000000
-clippinghighlights=0.1
-clippingshadows=0.1
+clippinghighlights=15
+clippingshadows=20
 
 [info]
 description=Adjust the levels automatically
@@ -98,18 +98,17 @@ Transforms the channels of the image into binary using an automatic threshold va
 
 ```ini
 [imageFilter1]
-id=ibp.imagefilter.autothreshold
+affectedchannels=luma blue
 bypass=false
-colormode=3
-affectedchannel=3
-thresholdmode=3
+colormode=luma
+id=ibp.imagefilter.autothreshold
+thresholdmode=global
 
 [info]
 description=Transforms the channels of the image into binary using an automatic threshold value
 fileType=ibp.imagefilterlist
 nFilters=1
 name=Auto Threshold
-
 ```
 
 ## Auto Trim
@@ -125,18 +124,20 @@ Trims the image based on some luma or alpha threshold value
 
 ```ini
 [imageFilter1]
-id=ibp.imagefilter.autotrim
 bypass=false
-threshold=3
-margins=0
-reference=3
+id=ibp.imagefilter.autotrim
+marginbottom=2
+marginleft=2
+marginright=2
+margintop=2
+reference=luma
+threshold=213
 
 [info]
 description=Trims the image based on some luma or alpha threshold value
 fileType=ibp.imagefilterlist
 nFilters=1
 name=Auto Trim
-
 ```
 
 ## Basic Rotation
@@ -166,7 +167,7 @@ name=Basic Rotation
 
 ## Bilateral Filter
 
-This is a single filter configuration for imagefilter_bilateralfilter.
+Blurs the image using a smooth gaussian distribution but preserving hard edges.
 
 | Input | Output |
 |--------|--------|
@@ -179,11 +180,11 @@ This is a single filter configuration for imagefilter_bilateralfilter.
 [imageFilter1]
 id=ibp.imagefilter.bilateralfilter
 bypass=false
-edgepreservation=50
-radius=0.3
+edgepreservation=70
+radius=40
 
 [info]
-description=This is a single filter configuration for imagefilter_bilateralfilter.
+description=Blurs the image using a smooth gaussian distribution but preserving hard edges.
 fileType=ibp.imagefilterlist
 nFilters=1
 name=Bilateral Filter
@@ -205,7 +206,7 @@ Smooths the image using a normalized box filter
 [imageFilter1]
 id=ibp.imagefilter.boxblur
 bypass=false
-radius=3
+radius=30
 
 [info]
 description=Smooths the image using a normalized box filter
@@ -228,29 +229,26 @@ Adjust levels of the image in an easy way
 
 ```ini
 [imageFilter1]
-id=ibp.imagefilter.brightnesscontrast
-bypass=false
 alphabrightnesscontrast=0 0
 bluebrightnesscontrast=0 0
-greenbrightnesscontrast=0 0
+bypass=false
+greenbrightnesscontrast=-21 -20
+id=ibp.imagefilter.brightnesscontrast
 redbrightnesscontrast=0 0
-rgbbrightnesscontrast=17 17
-usesoftmode=false
-workingchannel=rgb
-brightness=25
-contrast=25
+rgbbrightnesscontrast=51 -23
+usesoftmode=true
+workingchannel=green
 
 [info]
 description=Adjust levels of the image in an easy way
 fileType=ibp.imagefilterlist
 nFilters=1
 name=Brightness and Contrast
-
 ```
 
 ## Color Balance
 
-This is a single filter configuration for imagefilter_colorbalance.
+Correct the image tones by adding or subtracting a certain amount of the main color components
 
 | Input | Output |
 |--------|--------|
@@ -261,25 +259,24 @@ This is a single filter configuration for imagefilter_colorbalance.
 
 ```ini
 [imageFilter1]
-id=ibp.imagefilter.colorbalance
 bypass=false
-preserveluminosity=false
-shadowsred=0
-shadowsgreen=0
-shadowsblue=0
-midtonesred=0
-midtonesgreen=17
-midtonesblue=0
-highlightsred=17
-highlightsgreen=0
 highlightsblue=0
+highlightsgreen=0
+highlightsred=0
+id=ibp.imagefilter.colorbalance
+midtonesblue=0
+midtonesgreen=-64
+midtonesred=34
+preserveluminosity=true
+shadowsblue=0
+shadowsgreen=2
+shadowsred=0
 
 [info]
-description=This is a single filter configuration for imagefilter_colorbalance.
+description=Correct the image tones by adding or subtracting a certain amount of the main color components
 fileType=ibp.imagefilterlist
 nFilters=1
 name=Color Balance
-
 ```
 
 ## Color Boosting
@@ -373,7 +370,7 @@ Adjust the tonal curves of the image
 [imageFilter1]
 id=ibp.imagefilter.curves
 bypass=false
-knots=0
+knots=2
 interpolationmode=linear
 workingchannel=3
 
@@ -400,7 +397,7 @@ This is a single filter configuration for imagefilter_dctdenoising.
 [imageFilter1]
 id=ibp.imagefilter.dctdenoising
 bypass=false
-strength=0.3
+strength=30
 
 [info]
 description=This is a single filter configuration for imagefilter_dctdenoising.
@@ -450,7 +447,7 @@ Smooth the image preserving hard edges
 id=ibp.imagefilter.domaintransformfilter
 bypass=false
 edgepreservation=50
-radius=0.3
+radius=20
 
 [info]
 description=Smooth the image preserving hard edges
@@ -526,7 +523,7 @@ id=ibp.imagefilter.gaussianblur
 bypass=false
 blurrgb=true
 bluralpha=true
-radius=0.3
+radius=20
 
 [info]
 description=Blurs the image using a smooth gaussian distribution
@@ -576,7 +573,7 @@ Smooth the image preserving hard edges
 id=ibp.imagefilter.guidedfilter
 bypass=false
 edgepreservation=50
-radius=3
+radius=30
 
 [info]
 description=Smooth the image preserving hard edges
@@ -610,14 +607,14 @@ lightnessknots=0
 lightnessinterpolationmode=3
 lightnessinverted=true
 outputmode=normal
-preblurradius=0.3
+preblurradius=9.3
 colorize=true
 relhue=45
 relsaturation=25
 rellightness=25
 abshue=30
 abssaturation=25
-hueknots=0
+hueknots=2
 
 [info]
 description=Replace colors of the image based on its HSL components
@@ -651,7 +648,7 @@ lightnessknots=0
 lightnessinterpolationmode=3
 lightnessinverted=true
 outputmode=normal
-preblurradius=0.3
+preblurradius=9
 hueknots=0
 
 [info]
@@ -681,7 +678,7 @@ relhue=45
 relsaturation=25
 rellightness=25
 abshue=30
-abssaturation=3
+abssaturation=30
 colorize=true
 
 [info]
@@ -733,7 +730,7 @@ id=ibp.imagefilter.inpaintingiihc
 bypass=false
 maskexpansion=3
 outputmode=3
-noisereduction=0.3
+noisereduction=20
 
 [info]
 description=This is a single filter configuration for imagefilter_inpaintingiihc.
@@ -759,7 +756,7 @@ Invert one or more channels of the image
 id=ibp.imagefilter.invert
 bypass=false
 greenchannel=true
-bluechannel=true
+bluechannel=false
 alphachannel=true
 redchannel=true
 
@@ -787,7 +784,7 @@ This is a single filter configuration for imagefilter_itkn4iihc.
 id=ibp.imagefilter.itkn4iihc
 bypass=false
 outputmode=3
-gridsize=3
+gridsize=20
 
 [info]
 description=This is a single filter configuration for imagefilter_itkn4iihc.
@@ -812,11 +809,11 @@ Adjust the black, mid and white tones of the image
 [imageFilter1]
 id=ibp.imagefilter.levels
 bypass=false
-inputblackpoint=0.3
+inputblackpoint=2
 inputgamma=0.3
 inputwhitepoint=0.3
 outputblackpoint=0.3
-outputwhitepoint=0.3
+outputwhitepoint=2
 workingchannel=3
 
 [info]
@@ -843,7 +840,7 @@ Removes the artifacts due to a bad illumination using a low pass filtering appro
 id=ibp.imagefilter.lowpassiihc
 bypass=false
 outputmode=3
-featuresize=10
+featuresize=30
 
 [info]
 description=Removes the artifacts due to a bad illumination using a low pass filtering approach
@@ -871,8 +868,8 @@ bypass=false
 interpolationmode=3
 inverted=true
 outputmode=normal
-preblurradius=0.3
-knots=0
+preblurradius=20
+knots=2
 
 [info]
 description=Apply a matte to the image based on its luminance
@@ -897,7 +894,7 @@ Smooths the image using a median filter
 [imageFilter1]
 id=ibp.imagefilter.median
 bypass=false
-radius=3
+radius=25
 
 [info]
 description=Smooths the image using a median filter
@@ -923,7 +920,7 @@ Removes the artifacts due to a bad illumination using a morphological approach
 id=ibp.imagefilter.morphologicaliihc
 bypass=false
 outputmode=3
-featuresize=10
+featuresize=20
 
 [info]
 description=Removes the artifacts due to a bad illumination using a morphological approach
@@ -946,22 +943,21 @@ Apply a basic mathematical morphology operation to the image
 
 ```ini
 [imageFilter1]
-id=ibp.imagefilter.morphology
 bypass=false
+hradius=23
+id=ibp.imagefilter.morphology
+kernelshape=cross
+lockRadius=false
 modifyalpha=true
-morphologyop=3
-kernelshape=rectangle
-vradius=3
-hradius=3
-lockradius=true
 modifyrgb=true
+morphologicalop=opening
+vradius=30
 
 [info]
 description=Apply a basic mathematical morphology operation to the image
 fileType=ibp.imagefilterlist
 nFilters=1
 name=Basic Morphology
-
 ```
 
 ## Non-Local Means Denoising
@@ -979,7 +975,7 @@ Removes the noise from the image using semi-local information
 [imageFilter1]
 id=ibp.imagefilter.nlmdenoising
 bypass=false
-strength=0.3
+strength=20
 
 [info]
 description=Removes the noise from the image using semi-local information
@@ -1034,7 +1030,7 @@ height=100
 widthmode=3
 heightmode=3
 resamplingmode=bicubic
-width=100
+width=33
 
 [info]
 description=Resample the image to a new size using the selected resampling interpolation mode
@@ -1175,7 +1171,7 @@ Removes the noise from the image using a variational method
 id=ibp.imagefilter.tvdenoising
 bypass=false
 iterations=30
-strength=0.3
+strength=20
 
 [info]
 description=Removes the noise from the image using a variational method
@@ -1200,7 +1196,7 @@ This is a single filter configuration for imagefilter_tviihc.
 [imageFilter1]
 id=ibp.imagefilter.tviihc
 bypass=false
-smoothness=10
+smoothness=20
 outputmode=3
 refinement=10
 
@@ -1227,9 +1223,9 @@ Enhances the image by contrasting fine details
 [imageFilter1]
 id=ibp.imagefilter.unsharpmask
 bypass=false
-amount=3
-threshold=3
-radius=0.3
+amount=25
+threshold=10
+radius=20
 
 [info]
 description=Enhances the image by contrasting fine details

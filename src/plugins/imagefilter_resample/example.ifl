@@ -5,7 +5,7 @@ height=100
 widthmode=3
 heightmode=3
 resamplingmode=bicubic
-width=100
+width=33
 
 [info]
 description=Resample the image to a new size using the selected resampling interpolation mode

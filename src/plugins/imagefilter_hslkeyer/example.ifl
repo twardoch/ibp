@@ -10,7 +10,7 @@ lightnessknots=0
 lightnessinterpolationmode=3
 lightnessinverted=true
 outputmode=normal
-preblurradius=0.3
+preblurradius=9
 hueknots=0
 
 [info]

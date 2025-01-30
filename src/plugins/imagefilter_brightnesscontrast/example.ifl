@@ -1,19 +1,16 @@
 [imageFilter1]
-id=ibp.imagefilter.brightnesscontrast
-bypass=false
 alphabrightnesscontrast=0 0
 bluebrightnesscontrast=0 0
-greenbrightnesscontrast=0 0
+bypass=false
+greenbrightnesscontrast=-21 -20
+id=ibp.imagefilter.brightnesscontrast
 redbrightnesscontrast=0 0
-rgbbrightnesscontrast=17 17
-usesoftmode=false
-workingchannel=rgb
-brightness=25
-contrast=25
+rgbbrightnesscontrast=51 -23
+usesoftmode=true
+workingchannel=green
 
 [info]
 description=Adjust levels of the image in an easy way
 fileType=ibp.imagefilterlist
 nFilters=1
 name=Brightness and Contrast
-

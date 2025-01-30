@@ -1,20 +1,19 @@
 [imageFilter1]
-id=ibp.imagefilter.colorbalance
 bypass=false
-preserveluminosity=false
-shadowsred=0
-shadowsgreen=0
-shadowsblue=0
-midtonesred=0
-midtonesgreen=17
-midtonesblue=0
-highlightsred=17
-highlightsgreen=0
 highlightsblue=0
+highlightsgreen=0
+highlightsred=0
+id=ibp.imagefilter.colorbalance
+midtonesblue=0
+midtonesgreen=-64
+midtonesred=34
+preserveluminosity=true
+shadowsblue=0
+shadowsgreen=2
+shadowsred=0
 
 [info]
-description=This is a single filter configuration for imagefilter_colorbalance.
+description=Correct the image tones by adding or subtracting a certain amount of the main color components
 fileType=ibp.imagefilterlist
 nFilters=1
 name=Color Balance
-

@@ -5,7 +5,7 @@ relhue=45
 relsaturation=25
 rellightness=25
 abshue=30
-abssaturation=3
+abssaturation=30
 colorize=true
 
 [info]

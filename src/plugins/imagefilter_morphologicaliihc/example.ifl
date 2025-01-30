@@ -2,7 +2,7 @@
 id=ibp.imagefilter.morphologicaliihc
 bypass=false
 outputmode=3
-featuresize=10
+featuresize=20
 
 [info]
 description=Removes the artifacts due to a bad illumination using a morphological approach

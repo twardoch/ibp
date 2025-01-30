@@ -2,7 +2,7 @@
 id=ibp.imagefilter.lowpassiihc
 bypass=false
 outputmode=3
-featuresize=10
+featuresize=30
 
 [info]
 description=Removes the artifacts due to a bad illumination using a low pass filtering approach

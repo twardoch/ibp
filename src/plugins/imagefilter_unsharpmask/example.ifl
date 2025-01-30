@@ -1,9 +1,9 @@
 [imageFilter1]
 id=ibp.imagefilter.unsharpmask
 bypass=false
-amount=3
-threshold=3
-radius=0.3
+amount=25
+threshold=10
+radius=20
 
 [info]
 description=Enhances the image by contrasting fine details

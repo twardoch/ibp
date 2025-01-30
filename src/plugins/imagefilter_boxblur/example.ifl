@@ -1,7 +1,7 @@
 [imageFilter1]
 id=ibp.imagefilter.boxblur
 bypass=false
-radius=3
+radius=30
 
 [info]
 description=Smooths the image using a normalized box filter

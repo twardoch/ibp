@@ -1,11 +1,11 @@
 [imageFilter1]
 id=ibp.imagefilter.bilateralfilter
 bypass=false
-edgepreservation=50
-radius=0.3
+edgepreservation=70
+radius=40
 
 [info]
-description=This is a single filter configuration for imagefilter_bilateralfilter.
+description=Blurs the image using a smooth gaussian distribution but preserving hard edges.
 fileType=ibp.imagefilterlist
 nFilters=1
 name=Bilateral Filter

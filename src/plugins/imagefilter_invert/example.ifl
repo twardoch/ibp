@@ -2,7 +2,7 @@
 id=ibp.imagefilter.invert
 bypass=false
 greenchannel=true
-bluechannel=true
+bluechannel=false
 alphachannel=true
 redchannel=true
 

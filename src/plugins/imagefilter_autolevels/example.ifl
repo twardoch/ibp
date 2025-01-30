@@ -6,8 +6,8 @@ adjustmidtones=false
 targetcolorhighlights=#ffffff
 targetcolormidtones=#808080
 targetcolorshadows=#000000
-clippinghighlights=0.1
-clippingshadows=0.1
+clippinghighlights=15
+clippingshadows=20
 
 [info]
 description=Adjust the levels automatically

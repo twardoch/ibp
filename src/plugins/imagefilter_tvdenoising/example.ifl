@@ -2,7 +2,7 @@
 id=ibp.imagefilter.tvdenoising
 bypass=false
 iterations=30
-strength=0.3
+strength=20
 
 [info]
 description=Removes the noise from the image using a variational method
