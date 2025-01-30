@@ -1,7 +1,11 @@
 [imageFilter1]
 bypass=false
-id=ibp.imagefilter.dctdenoising
-strength=0.3
+colorcompositionmode=normal
+geometrictransformations=
+id=ibp.imagefilter.texturelayer
+image=@Variant(\0\0\0\x46\0\0\0\0)
+opacity=100
+position=front
 
 [info]
 description=This file contains the filter list that image batch processor was using the last time it was closed.

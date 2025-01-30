@@ -107,7 +107,7 @@ def create_processing_tasks(
 def process_single_image(task: ProcessingTask) -> Tuple[bool, str]:
     """Process a single image with the given IFL file."""
     try:
-        ibp_path = Path(__file__).parent / "build/ibp"
+        ibp_path = Path.cwd() / "build/ibp"
         result = subprocess.run(
             [
                 str(ibp_path),
@@ -250,7 +250,7 @@ def create_index_md(
 
 def process_images(verbose: bool = False, fast: bool = False) -> None:
     """Process all combinations of input images and IFL files."""
-    script_dir = Path(__file__).parent.resolve()
+    script_dir = Path.cwd()
     setup_logging(script_dir)
 
     # Find input files
