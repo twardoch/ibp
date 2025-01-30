@@ -1,0 +1,5 @@
+[info]
+description=This file contains the filter list that image batch processor was using the last time it was closed.
+fileType=ibp.imagefilterlist
+nFilters=0
+name=Current Filter List
