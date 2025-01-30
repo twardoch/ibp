@@ -185,7 +185,9 @@ Okay, I can help you with that. Here's a detailed description of each plugin fou
 
 ### [∞](#ibp-image-filter-plugins) IBP Image Filter Plugins
 
-This document describes the individual image filter plugins available in the Image Batch Processor. Each plugin is a dynamically loaded library that extends IBP's functionality by providing a specific image transformation.
+This section describes the individual image filter plugins available in the Image Batch Processor. Each plugin is a dynamically loaded library that extends IBP's functionality by providing a specific image transformation.
+
+#### [∞](#-see-visual-previews-of-the-effectshttpsgithubcomtwardochibptreemasterdoc) ☛ [See visual previews of the effects](https://github.com/twardoch/ibp/tree/master/doc)
 
 #### [∞](#adaptive-manifold-filter) Adaptive Manifold Filter
 
