@@ -1,0 +1,13 @@
+[imageFilter1]
+id=ibp.imagefilter.inpaintingiihc
+bypass=false
+maskexpansion=3
+outputmode=3
+noisereduction=0.3
+
+[info]
+description=This is a single filter configuration for imagefilter_inpaintingiihc.
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Inpainting IIH Correction
+

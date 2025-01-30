@@ -1,0 +1,15 @@
+[imageFilter1]
+id=ibp.imagefilter.texturelayer
+bypass=false
+position=3
+colorcompositionmode=3
+opacity=100
+transformations=0
+image=0
+
+[info]
+description=Adds a texture layer to the image
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Texture Layer
+

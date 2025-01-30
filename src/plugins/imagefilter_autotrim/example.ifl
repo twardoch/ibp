@@ -1,0 +1,13 @@
+[imageFilter1]
+id=ibp.imagefilter.autotrim
+bypass=false
+threshold=3
+margins=0
+reference=3
+
+[info]
+description=Trims the image based on some luma or alpha threshold value
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Auto Trim
+

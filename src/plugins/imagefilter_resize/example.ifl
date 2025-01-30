@@ -1,0 +1,17 @@
+[imageFilter1]
+id=ibp.imagefilter.resize
+bypass=false
+height=100
+widthmode=3
+heightmode=3
+resizemode=absolute
+anchorposition=3
+backgroundcolor=0
+width=100
+
+[info]
+description=Resize the image without resampling its data
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Resize
+

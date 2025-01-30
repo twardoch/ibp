@@ -1,0 +1,16 @@
+[imageFilter1]
+id=ibp.imagefilter.huesaturation
+bypass=false
+relhue=45
+relsaturation=25
+rellightness=25
+abshue=30
+abssaturation=3
+colorize=true
+
+[info]
+description=Change the color information of the image in the HSL space
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Hue/Saturation/Lightness
+

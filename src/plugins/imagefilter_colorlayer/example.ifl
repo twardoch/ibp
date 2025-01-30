@@ -1,0 +1,14 @@
+[imageFilter1]
+id=ibp.imagefilter.colorlayer
+bypass=false
+position=3
+colorcompositionmode=3
+opacity=100
+color=0
+
+[info]
+description=Adds a color layer to the image
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Color Layer
+

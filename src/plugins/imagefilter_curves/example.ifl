@@ -1,0 +1,13 @@
+[imageFilter1]
+id=ibp.imagefilter.curves
+bypass=false
+knots=0
+interpolationmode=linear
+workingchannel=3
+
+[info]
+description=Adjust the tonal curves of the image
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Curves
+

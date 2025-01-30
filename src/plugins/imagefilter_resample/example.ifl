@@ -1,0 +1,15 @@
+[imageFilter1]
+id=ibp.imagefilter.resample
+bypass=false
+height=100
+widthmode=3
+heightmode=3
+resamplingmode=bicubic
+width=100
+
+[info]
+description=Resample the image to a new size using the selected resampling interpolation mode
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Resample
+

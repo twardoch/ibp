@@ -1,0 +1,15 @@
+[imageFilter1]
+id=ibp.imagefilter.lumakeyer
+bypass=false
+interpolationmode=3
+inverted=true
+outputmode=normal
+preblurradius=0.3
+knots=0
+
+[info]
+description=Apply a matte to the image based on its luminance
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Luma Keyer
+

@@ -1,36 +1,10 @@
 [imageFilter1]
-adjustmidtones=false
+angle=90clockwise
 bypass=false
-clippinghighlights=0.1
-clippingshadows=0.1
-enhancechannelsseparately=false
-id=ibp.imagefilter.autolevels
-targetcolorhighlights=#ffffff
-targetcolormidtones=#808080
-targetcolorshadows=#000000
-
-[imageFilter2]
-bypass=false
-id=ibp.imagefilter.lumakeyer
-interpolationmode=smooth
-isinverted=false
-knots="0.00 0.00, 1.00 1.00"
-outputmode=keyedimage
-preblurradius=0
-
-[imageFilter3]
-alphabrightnesscontrast=0 0
-bluebrightnesscontrast=0 0
-bypass=false
-greenbrightnesscontrast=0 0
-id=ibp.imagefilter.brightnesscontrast
-redbrightnesscontrast=0 0
-rgbbrightnesscontrast=47 0
-usesoftmode=true
-workingchannel=rgb
+id=ibp.imagefilter.basicrotation
 
 [info]
 description=This file contains the filter list that image batch processor was using the last time it was closed.
 fileType=ibp.imagefilterlist
-nFilters=3
+nFilters=1
 name=Current Filter List

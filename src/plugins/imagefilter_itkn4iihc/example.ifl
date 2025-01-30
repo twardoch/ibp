@@ -1,0 +1,12 @@
+[imageFilter1]
+id=ibp.imagefilter.itkn4iihc
+bypass=false
+outputmode=3
+gridsize=3
+
+[info]
+description=This is a single filter configuration for imagefilter_itkn4iihc.
+fileType=ibp.imagefilterlist
+nFilters=1
+name=ITK N4 IIH Correction
+

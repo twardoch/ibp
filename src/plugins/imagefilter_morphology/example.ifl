@@ -1,0 +1,17 @@
+[imageFilter1]
+id=ibp.imagefilter.morphology
+bypass=false
+modifyalpha=true
+morphologyop=3
+kernelshape=rectangle
+vradius=3
+hradius=3
+lockradius=true
+modifyrgb=true
+
+[info]
+description=Apply a basic mathematical morphology operation to the image
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Basic Morphology
+

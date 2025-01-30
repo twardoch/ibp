@@ -1,0 +1,13 @@
+[imageFilter1]
+id=ibp.imagefilter.threshold
+bypass=false
+affectedchannel=3
+threshold=3
+colormode=3
+
+[info]
+description=Transforms the channels of the image into binary using a threshold value
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Threshold
+

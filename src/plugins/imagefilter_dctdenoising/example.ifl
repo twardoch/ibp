@@ -1,0 +1,11 @@
+[imageFilter1]
+id=ibp.imagefilter.dctdenoising
+bypass=false
+strength=0.3
+
+[info]
+description=This is a single filter configuration for imagefilter_dctdenoising.
+fileType=ibp.imagefilterlist
+nFilters=1
+name=DCT Denoising
+

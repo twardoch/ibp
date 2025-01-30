@@ -1,0 +1,12 @@
+[imageFilter1]
+id=ibp.imagefilter.lowpassiihc
+bypass=false
+outputmode=3
+featuresize=10
+
+[info]
+description=Removes the artifacts due to a bad illumination using a low pass filtering approach
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Low Pass IIH Correction
+

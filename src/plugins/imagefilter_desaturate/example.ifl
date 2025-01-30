@@ -1,0 +1,10 @@
+[imageFilter1]
+id=ibp.imagefilter.desaturate
+bypass=false
+
+[info]
+description=Removes the chroma information of the image
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Desaturate
+

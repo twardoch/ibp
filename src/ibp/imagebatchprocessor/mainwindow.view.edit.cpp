@@ -27,6 +27,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <math.h>
+#include <QDebug>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -259,20 +260,41 @@ bool MainWindow::viewEditSaveOutputImage(const QString &fileName, const QString 
     QMutex m;
     m.lock();
 
+    qDebug() << "Attempting to save image to:" << fileName;
+    qDebug() << "Using filter:" << (filter.isEmpty() ? "default" : filter);
+    qDebug() << "Image dimensions:" << mViewEditOutputImage.size();
+    qDebug() << "Image format:" << mViewEditOutputImage.format();
+
     if (mViewEditOutputImage.isNull())
     {
+        qDebug() << "Output image is null!";
         m.unlock();
         return false;
     }
 
+    // Try simple save first for common formats
+    if (filter.isEmpty() || filter.contains("JPEG", Qt::CaseInsensitive) ||
+        filter.contains("PNG", Qt::CaseInsensitive))
+    {
+        if (mViewEditOutputImage.save(fileName))
+        {
+            qDebug() << "Default save succeeded";
+            m.unlock();
+            return true;
+        }
+        qDebug() << "Default save failed, trying FreeImage...";
+    }
+
+    // Fall back to FreeImage for other formats or if default save failed
     if (!freeimageSave32Bits(mViewEditOutputImage, fileName, filter))
     {
+        qDebug() << "freeimageSave32Bits failed";
         m.unlock();
         return false;
     }
 
+    qDebug() << "freeimageSave32Bits succeeded";
     m.unlock();
-
     return true;
 }
 

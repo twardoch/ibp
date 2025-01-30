@@ -1,0 +1,12 @@
+[imageFilter1]
+id=ibp.imagefilter.bilateralfilter
+bypass=false
+edgepreservation=50
+radius=0.3
+
+[info]
+description=This is a single filter configuration for imagefilter_bilateralfilter.
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Bilateral Filter
+

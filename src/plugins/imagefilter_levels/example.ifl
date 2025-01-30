@@ -1,0 +1,16 @@
+[imageFilter1]
+id=ibp.imagefilter.levels
+bypass=false
+inputblackpoint=0.3
+inputgamma=0.3
+inputwhitepoint=0.3
+outputblackpoint=0.3
+outputwhitepoint=0.3
+workingchannel=3
+
+[info]
+description=Adjust the black, mid and white tones of the image
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Levels
+

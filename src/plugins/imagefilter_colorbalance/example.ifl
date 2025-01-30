@@ -1,0 +1,20 @@
+[imageFilter1]
+id=ibp.imagefilter.colorbalance
+bypass=false
+preserveluminosity=false
+shadowsred=0
+shadowsgreen=0
+shadowsblue=0
+midtonesred=0
+midtonesgreen=17
+midtonesblue=0
+highlightsred=17
+highlightsgreen=0
+highlightsblue=0
+
+[info]
+description=This is a single filter configuration for imagefilter_colorbalance.
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Color Balance
+

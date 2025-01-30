@@ -1,0 +1,13 @@
+[imageFilter1]
+id=ibp.imagefilter.tviihc
+bypass=false
+smoothness=10
+outputmode=3
+refinement=10
+
+[info]
+description=This is a single filter configuration for imagefilter_tviihc.
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Tina Vision IIH Correction
+

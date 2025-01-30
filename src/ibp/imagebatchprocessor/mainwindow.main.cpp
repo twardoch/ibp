@@ -29,6 +29,8 @@
 #include <QWindowStateChangeEvent>
 #include <QGraphicsDropShadowEffect>
 #include <QDir>
+#include <QDebug>
+#include <QEventLoop>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -238,4 +240,61 @@ void MainWindow::On_mMainWatcherImageFilterListPresets_directoryChanged(const QS
 
     mainReloadImageFilterListPresets();
     toolbarEditReloadImageFilterListPresets();
+}
+
+bool MainWindow::applyFiltersAndSave(const QString &filterListFile,
+                                     const QString &inputImageFile,
+                                     const QString &outputImageFile)
+{
+    qDebug() << "Starting applyFiltersAndSave...";
+
+    // Load input image
+    if (!viewEditLoadInputImage(inputImageFile))
+    {
+        qDebug() << "Failed to load input image";
+        return false;
+    }
+    logImageInfo("Input", mViewEditInputImage);
+
+    // Load filter list
+    if (!viewEditLoadImageFilterList(filterListFile))
+    {
+        qDebug() << "Failed to load filter list";
+        return false;
+    }
+    qDebug() << "Loaded" << mViewEditImageFilterList.count() << "filters";
+
+    // Process image
+    qDebug() << "Processing image...";
+    QEventLoop loop;
+    connect(&mViewEditImageFilterList, &ImageFilterList::processingCompleted,
+            [&](const QImage &result)
+            {
+                mViewEditOutputImage = result; // Store in member variable
+                loop.quit();
+            });
+
+    mViewEditImageFilterList.setInputImage(mViewEditInputImage);
+    mViewEditImageFilterList.startProcessing();
+    loop.exec(); // Wait for processing to complete
+
+    // Save output
+    qDebug() << "Saving output image...";
+    logImageInfo("Output", mViewEditOutputImage);
+    qDebug() << "Saving to path:" << outputImageFile;
+
+    if (!viewEditSaveOutputImage(outputImageFile, QString()))
+    {
+        qDebug() << "Failed to save output image";
+        // Try direct save as a fallback
+        if (!mViewEditOutputImage.save(outputImageFile))
+        {
+            qDebug() << "Direct save also failed";
+            qDebug() << "Output path:" << outputImageFile;
+            return false;
+        }
+        qDebug() << "Direct save succeeded";
+    }
+
+    return true;
 }

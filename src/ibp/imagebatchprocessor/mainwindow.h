@@ -29,6 +29,7 @@
 #include <QFileSystemWatcher>
 #include <QMenu>
 #include <QGraphicsOpacityEffect>
+#include <QDebug>
 
 #include "../imgproc/freeimage.h"
 #include "../imgproc/imagefilterlist.h"
@@ -52,6 +53,10 @@ public:
     // Main
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+    bool applyFiltersAndSave(const QString &filterListFile,
+                             const QString &inputImageFile,
+                             const QString &outputImageFile);
 
 protected:
     // Main
@@ -118,6 +123,14 @@ private:
     // View Batch
     void viewBatchLoad();
     void viewBatchUnload();
+
+    void logImageInfo(const QString &prefix, const QImage &image)
+    {
+        qDebug() << prefix << "Image info:";
+        qDebug() << "  Size:" << image.size();
+        qDebug() << "  Format:" << image.format();
+        qDebug() << "  Is null:" << image.isNull();
+    }
 
 private slots:
     // Main

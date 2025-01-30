@@ -1,0 +1,12 @@
+[imageFilter1]
+id=ibp.imagefilter.tvdenoising
+bypass=false
+iterations=30
+strength=0.3
+
+[info]
+description=Removes the noise from the image using a variational method
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Total Variation Denoising
+

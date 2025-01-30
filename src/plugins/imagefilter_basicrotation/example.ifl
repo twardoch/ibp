@@ -1,0 +1,11 @@
+[imageFilter1]
+id=ibp.imagefilter.basicrotation
+bypass=false
+angle=3
+
+[info]
+description=Rotate the image by 90° increments
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Basic Rotation
+

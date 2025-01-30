@@ -1,0 +1,14 @@
+[imageFilter1]
+id=ibp.imagefilter.invert
+bypass=false
+greenchannel=true
+bluechannel=true
+alphachannel=true
+redchannel=true
+
+[info]
+description=Invert one or more channels of the image
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Invert
+
