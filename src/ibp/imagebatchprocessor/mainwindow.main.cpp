@@ -157,8 +157,17 @@ bool MainWindow::eventFilter(QObject *o, QEvent *e)
 
 void MainWindow::mainLoad()
 {
-    // Image Filter Plugin Loader
-    mMainImageFilterPluginLoader.load(QApplication::applicationDirPath() + "/plugins");
+    // Image Filter Plugin Loader - try standard macOS location first
+    QString appPath = QApplication::applicationDirPath();
+    QString standardPluginPath = appPath + "/../PlugIns/imagefilters";
+    QString fallbackPluginPath = appPath + "/plugins";
+
+    // Try standard location first
+    if (!mMainImageFilterPluginLoader.load(standardPluginPath))
+    {
+        // If standard location fails, try fallback
+        mMainImageFilterPluginLoader.load(fallbackPluginPath);
+    }
 
     // General
     qApp->installEventFilter(this);

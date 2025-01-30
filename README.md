@@ -1,12 +1,14 @@
-# Image Batch Processor
-
-![Screenshot](doc/screenshot.png)
+ 
+# ![](doc/icon/ibp.png){width=64px}
+ Image Batch Processor
 
 The Image Batch Processor (or IBP for short) is a cross-platform, open source, simple tool writen in C++/Qt whose purpose is to transform one or more images in an automatic way based in a [list of effects](https://github.com/twardoch/ibp/tree/master/doc).
 
+![Screenshot](doc/screenshot.png)
+
 ## [∞](#download) Download
 
-☛ [Download unsinged macOS Intel build](https://github.com/twardoch/ibp/raw/refs/heads/master/dist/ImageBatchProcessor-1.0.0.dmg) (2025-01-29)
+☛ [Download unsinged macOS Intel build](https://github.com/twardoch/ibp/raw/refs/heads/master/dist/ImageBatchProcessor.dmg) (2025-01-29)
 
 ## [∞](#who) Who?
 
@@ -187,7 +189,7 @@ Okay, I can help you with that. Here's a detailed description of each plugin fou
 
 This section describes the individual image filter plugins available in the Image Batch Processor. Each plugin is a dynamically loaded library that extends IBP's functionality by providing a specific image transformation.
 
-#### [∞](#-see-visual-previews-of-the-effectshttpsgithubcomtwardochibptreemasterdoc) ☛ [See visual previews of the effects](https://github.com/twardoch/ibp/tree/master/doc)
+#### [∞](#) 
 
 #### [∞](#adaptive-manifold-filter) Adaptive Manifold Filter
 

@@ -107,6 +107,16 @@ for lib in "${opencv_libs[@]}"; do
     fi
 done
 
+# Function to set correct permissions
+set_permissions() {
+    local target="$1"
+    if [ -d "$target" ]; then
+        chmod -R u+w "$target"
+    elif [ -f "$target" ]; then
+        chmod u+w "$target"
+    fi
+}
+
 # Copy additional dependencies
 echo "Copying additional dependencies..."
 additional_libs=(
@@ -130,6 +140,10 @@ for lib_path in "${additional_libs[@]}"; do
     fi
 done
 
+# Set permissions on the entire bundle
+echo "Setting permissions..."
+set_permissions "${DIST_DIR}/${BUNDLE_NAME}"
+
 # Copy custom plugins
 echo "Copying image filter plugins..."
 mkdir -p "${DIST_DIR}/${BUNDLE_NAME}/Contents/PlugIns/imagefilters"
@@ -147,6 +161,10 @@ done
 echo "Copying settings..."
 mkdir -p "${DIST_DIR}/${BUNDLE_NAME}/Contents/Resources/settings"
 cp "${BUILD_DIR}/settings/"* "${DIST_DIR}/${BUNDLE_NAME}/Contents/Resources/settings/"
+
+# Copy application icon
+echo "Copying application icon..."
+cp "doc/icon/ibp.icns" "${DIST_DIR}/${BUNDLE_NAME}/Contents/Resources/icon.icns"
 
 # Create qt.conf
 cat >"${DIST_DIR}/${BUNDLE_NAME}/Contents/Resources/qt.conf" <<EOF
@@ -183,6 +201,11 @@ EOF
 
 # Create DMG
 echo "Creating DMG..."
-"${QT_PATH}/bin/macdeployqt" "${DIST_DIR}/${BUNDLE_NAME}" -dmg
+"${QT_PATH}/bin/macdeployqt" "${DIST_DIR}/${BUNDLE_NAME}" \
+    -verbose=2 \
+    -dmg \
+    -hardened-runtime \
+    -timestamp \
+    -fs=HFS+
 
 echo "Packaging complete!"
