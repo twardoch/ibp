@@ -205,7 +205,7 @@ def create_markdown_table(
 def create_index_md(
     tasks: Sequence[ProcessingTask], input_images: Sequence[Path], doc_dir: Path
 ) -> None:
-    """Create index.md file with filter documentation."""
+    """Create README.md file with filter documentation."""
     index_content = "# Image Batch Processor Filters\n\n"
 
     # Group tasks by plugin
@@ -215,8 +215,9 @@ def create_index_md(
             plugin_tasks[task.plugin_name] = []
         plugin_tasks[task.plugin_name].append(task)
 
-    # Create sections for each filter
-    for plugin_name, tasks in plugin_tasks.items():
+    # Create sections for each filter, sorted alphabetically by plugin name
+    for plugin_name in sorted(plugin_tasks.keys()):
+        tasks = plugin_tasks[plugin_name]
         if not tasks:
             continue
 
@@ -241,10 +242,10 @@ def create_index_md(
             index_content += f.read()
         index_content += "```\n"
 
-    # Write the index.md file
-    index_path = doc_dir / "index.md"
-    index_path.write_text(index_content)
-    console.print(f"\n[green]Created documentation:[/] {index_path}")
+    # Write the README.md file
+    readme_path = doc_dir / "README.md"
+    readme_path.write_text(index_content)
+    console.print(f"\n[green]Created documentation:[/] {readme_path}")
 
 
 def process_images(verbose: bool = False, fast: bool = False) -> None:
