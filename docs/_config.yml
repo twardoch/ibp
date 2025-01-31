@@ -14,10 +14,5 @@ github_repo: "ibp"
 twitter: adamtwar
 
 # Theme configuration
-remote_theme: vsoch/mkdocs-jekyll
-color: "#8c1515"
-logo_width: 34
-accentColor: red
-themeColor: red
-fixedNav: 'true'
+remote_theme: cotes2020/jekyll-theme-chirpy
 
