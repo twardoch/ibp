@@ -27,8 +27,6 @@ twitter: adamtwar
 
 # Theme configuration
 remote_theme: just-the-docs/just-the-docs
-<<<<<<< Updated upstream
-=======
 
 # Enable or disable the site search
 # Supports true (default) or false
@@ -243,4 +241,3 @@ color_scheme: dark
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
->>>>>>> Stashed changes
