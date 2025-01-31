@@ -3,9 +3,7 @@ layout: default
 title: 01 Image Batch Processor
 ---
 
-# Image Batch Processor
-
-![IBP Logo](assets/img/ibp-sm.png)
+# ![IBP Logo](assets/img/ibp-sm.png) Image Batch Processor
 
 The Image Batch Processor (IBP) is a cross-platform, open source tool written in C++/Qt that transforms one or more images automatically using a customizable list of effects.
 
