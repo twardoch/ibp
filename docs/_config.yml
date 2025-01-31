@@ -14,5 +14,5 @@ github_repo: "ibp"
 twitter: adamtwar
 
 # Theme configuration
-remote_theme: cotes2020/jekyll-theme-chirpy
+remote_theme: cotes2020/chirpy-starter
 
