@@ -15,7 +15,7 @@ Image filter plugin for dctdenoising
 [imageFilter1]
 id=ibp.imagefilter.dctdenoising
 bypass=false
-strength=7500.0
+strength=75
 
 [info]
 description=Image filter plugin for dctdenoising

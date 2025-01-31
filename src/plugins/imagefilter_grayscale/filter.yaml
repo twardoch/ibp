@@ -1,4 +1,5 @@
 description: Convert the image to grayscale
+example: {}
 id: ibp.imagefilter.grayscale
 name: Grayscale
 properties: {}

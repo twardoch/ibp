@@ -1,8 +1,13 @@
 description: Transforms the channels of the image into binary using a threshold value
+example:
+  affectedchannel: 1
+  colormode: 2
+  threshold: 75
 id: ibp.imagefilter.threshold
 name: Threshold
 properties:
   affectedchannel:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -11,6 +16,7 @@ properties:
     name: affectedchannel
     type: bool
   colormode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -19,6 +25,7 @@ properties:
     name: colormode
     type: int
   threshold:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

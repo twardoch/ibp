@@ -1,10 +1,10 @@
 [imageFilter1]
 id=ibp.imagefilter.brightnesscontrast
 bypass=false
-brightness=50
-contrast=50
+brightness=30
+contrast=20
 usesoftmode=1
-workingchannel=75
+workingchannel=2
 
 [info]
 description=Adjust levels of the image in an easy way

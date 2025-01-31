@@ -15,17 +15,17 @@ Apply a matte to the image based on its HSL components
 [imageFilter1]
 id=ibp.imagefilter.hslkeyer
 bypass=false
-hueinterpolationmode=75
+hueinterpolationmode=1
 hueinverted=1
-hueknots=75
-lightnessinterpolationmode=75
+hueknots=3
+lightnessinterpolationmode=2
 lightnessinverted=1
 lightnessknots=75
 outputmode=normal
-preblurradius=7500.0
-saturationinterpolationmode=75
+preblurradius=40
+saturationinterpolationmode=1
 saturationinverted=1
-saturationknots=75
+saturationknots=3
 
 [info]
 description=Apply a matte to the image based on its HSL components

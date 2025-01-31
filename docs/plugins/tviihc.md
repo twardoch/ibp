@@ -15,9 +15,9 @@ Image filter plugin for tviihc
 [imageFilter1]
 id=ibp.imagefilter.tviihc
 bypass=false
-outputmode=75
-refinement=75
-smoothness=75
+outputmode=1
+refinement=20
+smoothness=30
 
 [info]
 description=Image filter plugin for tviihc

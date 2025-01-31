@@ -16,8 +16,8 @@ Image filter plugin for inpaintingiihc
 id=ibp.imagefilter.inpaintingiihc
 bypass=false
 maskexpansion=75
-noisereduction=7500.0
-outputmode=75
+noisereduction=30
+outputmode=1
 
 [info]
 description=Image filter plugin for inpaintingiihc

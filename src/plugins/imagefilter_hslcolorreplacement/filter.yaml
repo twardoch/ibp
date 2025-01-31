@@ -1,24 +1,45 @@
 description: Replace colors of the image based on its HSL components
+example:
+  abshue: 270
+  abssaturation: 50
+  colorize: 1
+  hueinterpolationmode: 75
+  hueinverted: 1
+  hueknots: 75
+  lightnessinterpolationmode: 75
+  lightnessinverted: 1
+  lightnessknots: 75
+  outputmode: normal
+  preblurradius: 40
+  relhue: 90
+  rellightness: 50
+  relsaturation: 50
+  saturationinterpolationmode: 75
+  saturationinverted: 1
+  saturationknots: 75
 id: ibp.imagefilter.hslcolorreplacement
 name: HSL Color Replacement
 properties:
   abshue:
-    default_value: 30.0
+    comment: Integer value between 0 and 360
+    default_value: 30
     description: ''
     interesting_value: 270
-    max_value: 360.0
+    max_value: 360
     min_value: 0
     name: abshue
     type: int
   abssaturation:
-    default_value: 25.0
+    comment: Integer value between -100 and 100
+    default_value: 25
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: abssaturation
     type: int
   colorize:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -27,6 +48,7 @@ properties:
     name: colorize
     type: bool
   hueinterpolationmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -35,6 +57,7 @@ properties:
     name: hueinterpolationmode
     type: int
   hueinverted:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -43,6 +66,7 @@ properties:
     name: hueinverted
     type: bool
   hueknots:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -51,6 +75,7 @@ properties:
     name: hueknots
     type: int
   lightnessinterpolationmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -59,6 +84,7 @@ properties:
     name: lightnessinterpolationmode
     type: int
   lightnessinverted:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -67,6 +93,7 @@ properties:
     name: lightnessinverted
     type: bool
   lightnessknots:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -75,12 +102,14 @@ properties:
     name: lightnessknots
     type: int
   outputmode:
+    comment: Text value
     default_value: ''
     description: ''
     interesting_value: normal
     name: outputmode
     type: string
   preblurradius:
+    comment: Floating point value between 0.0 and 10000.0
     default_value: 0.0
     description: ''
     interesting_value: 7500.0
@@ -89,30 +118,34 @@ properties:
     name: preblurradius
     type: double
   relhue:
+    comment: Integer value between -180 and 180
     default_value: 0
     description: ''
     interesting_value: 90
-    max_value: 180.0
-    min_value: -180.0
+    max_value: 180
+    min_value: -180
     name: relhue
     type: int
   rellightness:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: rellightness
     type: int
   relsaturation:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: relsaturation
     type: int
   saturationinterpolationmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -121,6 +154,7 @@ properties:
     name: saturationinterpolationmode
     type: int
   saturationinverted:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -129,6 +163,7 @@ properties:
     name: saturationinverted
     type: bool
   saturationknots:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

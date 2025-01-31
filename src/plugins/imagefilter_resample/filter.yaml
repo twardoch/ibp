@@ -1,17 +1,25 @@
 description: Resample the image to a new size using the selected resampling interpolation
   mode
+example:
+  height: 200
+  heightmode: 1
+  resamplingmode: normal
+  width: 200
+  widthmode: 1
 id: ibp.imagefilter.resample
 name: Resample
 properties:
   height:
-    default_value: 100.0
+    comment: Integer value between 1 and 1000
+    default_value: 100
     description: ''
     interesting_value: 750
-    max_value: 1000.0
-    min_value: 1.0
+    max_value: 1000
+    min_value: 1
     name: height
     type: int
   heightmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -20,20 +28,23 @@ properties:
     name: heightmode
     type: int
   resamplingmode:
+    comment: Text value
     default_value: ''
     description: ''
     interesting_value: normal
     name: resamplingmode
     type: string
   width:
-    default_value: 100.0
+    comment: Integer value between 1 and 1000
+    default_value: 100
     description: ''
     interesting_value: 750
-    max_value: 1000.0
-    min_value: 1.0
+    max_value: 1000
+    min_value: 1
     name: width
     type: int
   widthmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

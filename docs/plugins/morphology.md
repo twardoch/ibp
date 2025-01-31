@@ -15,13 +15,13 @@ Apply a basic mathematical morphology operation to the image
 [imageFilter1]
 id=ibp.imagefilter.morphology
 bypass=false
-hradius=75
+hradius=30
 kernelshape=normal
 lockradius=1
-modifyalpha=1
+modifyalpha=0
 modifyrgb=1
-morphologyop=75
-vradius=75
+morphologyop=20
+vradius=40
 
 [info]
 description=Apply a basic mathematical morphology operation to the image

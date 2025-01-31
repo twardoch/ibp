@@ -27,6 +27,8 @@ logger.add("plugins_iflmake.log", rotation="1 MB")
 
 # Type aliases for better readability
 PropertyDict = Dict[str, "PropertyInfo"]
+PluginInfo = Dict[str, str]
+UIInfo = Dict[str, Dict[str, float]]
 IBP_PATH = Path.cwd() / "build" / "build" / "ibp"
 
 
@@ -58,6 +60,7 @@ class PropertyInfo(BaseModel):
     default_value: Union[int, float, str]
     interesting_value: Union[int, float, str]
     description: str = ""
+    comment: str = ""  # Added field for property-specific comments
     min_value: Optional[Union[int, float]] = None
     max_value: Optional[Union[int, float]] = None
     enum_values: Optional[List[str]] = None
@@ -69,6 +72,7 @@ class FilterInfo(BaseModel):
     id: str
     name: str
     description: str
+    example: Dict[str, Union[int, float, str]]
     properties: PropertyDict
 
 
@@ -196,9 +200,14 @@ def create_ifl_file(filter_config: FilterInfo, output_dir: Path) -> Optional[str
     config.set("imageFilter1", "id", filter_config.id)
     config.set("imageFilter1", "bypass", "false")
 
-    # Add properties using interesting_value
+    # Add properties using example values if present, otherwise interesting_value
     for prop_name, prop_data in filter_config.properties.items():
-        config.set("imageFilter1", prop_name, str(prop_data.interesting_value))
+        value = (
+            str(filter_config.example[prop_name])
+            if filter_config.example and prop_name in filter_config.example
+            else str(prop_data.interesting_value)
+        )
+        config.set("imageFilter1", prop_name, value)
 
     # Add info section
     config.add_section("info")

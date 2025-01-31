@@ -15,13 +15,13 @@ Resize the image without resampling its data
 [imageFilter1]
 id=ibp.imagefilter.resize
 bypass=false
-anchorposition=75
-backgroundcolor=75
-height=22500
-heightmode=75
+anchorposition=2
+backgroundcolor=0
+height=90
+heightmode=1
 resizemode=normal
-width=7500
-widthmode=75
+width=80
+widthmode=1
 
 [info]
 description=Resize the image without resampling its data

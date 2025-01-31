@@ -1,14 +1,20 @@
 description: Adjust the tonal curves of the image
+example:
+  interpolationmode: normal
+  knots: 3
+  workingchannel: 1
 id: ibp.imagefilter.curves
 name: Curves
 properties:
   interpolationmode:
+    comment: Text value
     default_value: ''
     description: ''
     interesting_value: normal
     name: interpolationmode
     type: string
   knots:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -17,6 +23,7 @@ properties:
     name: knots
     type: int
   workingchannel:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

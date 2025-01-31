@@ -16,7 +16,7 @@ Transforms the channels of the image into binary using a threshold value
 id=ibp.imagefilter.threshold
 bypass=false
 affectedchannel=1
-colormode=75
+colormode=2
 threshold=75
 
 [info]

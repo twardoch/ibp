@@ -1,8 +1,21 @@
 description: Apply a matte to the image based on its HSL components
+example:
+  hueinterpolationmode: 1
+  hueinverted: 1
+  hueknots: 3
+  lightnessinterpolationmode: 2
+  lightnessinverted: 1
+  lightnessknots: 75
+  outputmode: normal
+  preblurradius: 40
+  saturationinterpolationmode: 1
+  saturationinverted: 1
+  saturationknots: 3
 id: ibp.imagefilter.hslkeyer
 name: HSL Keyer
 properties:
   hueinterpolationmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -11,6 +24,7 @@ properties:
     name: hueinterpolationmode
     type: int
   hueinverted:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -19,6 +33,7 @@ properties:
     name: hueinverted
     type: bool
   hueknots:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -27,6 +42,7 @@ properties:
     name: hueknots
     type: int
   lightnessinterpolationmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -35,6 +51,7 @@ properties:
     name: lightnessinterpolationmode
     type: int
   lightnessinverted:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -43,6 +60,7 @@ properties:
     name: lightnessinverted
     type: bool
   lightnessknots:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -51,12 +69,14 @@ properties:
     name: lightnessknots
     type: int
   outputmode:
+    comment: Text value
     default_value: ''
     description: ''
     interesting_value: normal
     name: outputmode
     type: string
   preblurradius:
+    comment: Floating point value between 0.0 and 10000.0
     default_value: 0.0
     description: ''
     interesting_value: 7500.0
@@ -65,6 +85,7 @@ properties:
     name: preblurradius
     type: double
   saturationinterpolationmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -73,6 +94,7 @@ properties:
     name: saturationinterpolationmode
     type: int
   saturationinverted:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -81,6 +103,7 @@ properties:
     name: saturationinverted
     type: bool
   saturationknots:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

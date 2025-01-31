@@ -1,8 +1,14 @@
 description: Invert one or more channels of the image
+example:
+  alphachannel: 1
+  bluechannel: 0
+  greenchannel: 1
+  redchannel: 0
 id: ibp.imagefilter.invert
 name: Invert
 properties:
   alphachannel:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -11,6 +17,7 @@ properties:
     name: alphachannel
     type: bool
   bluechannel:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -19,6 +26,7 @@ properties:
     name: bluechannel
     type: bool
   greenchannel:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -27,6 +35,7 @@ properties:
     name: greenchannel
     type: bool
   redchannel:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1

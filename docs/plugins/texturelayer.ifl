@@ -1,11 +1,11 @@
 [imageFilter1]
 id=ibp.imagefilter.texturelayer
 bypass=false
-colorcompositionmode=75
-image=75
-opacity=75
-position=75
-transformations=75
+colorcompositionmode=1
+image=22
+opacity=33
+position=44
+transformations=2
 
 [info]
 description=Adds a texture layer to the image

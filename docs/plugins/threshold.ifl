@@ -2,7 +2,7 @@
 id=ibp.imagefilter.threshold
 bypass=false
 affectedchannel=1
-colormode=75
+colormode=2
 threshold=75
 
 [info]

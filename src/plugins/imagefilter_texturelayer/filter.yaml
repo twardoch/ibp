@@ -1,8 +1,15 @@
 description: Adds a texture layer to the image
+example:
+  colorcompositionmode: 1
+  image: 22
+  opacity: 33
+  position: 44
+  transformations: 2
 id: ibp.imagefilter.texturelayer
 name: Texture Layer
 properties:
   colorcompositionmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -11,6 +18,7 @@ properties:
     name: colorcompositionmode
     type: int
   image:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -19,14 +27,16 @@ properties:
     name: image
     type: int
   opacity:
-    default_value: 100.0
+    comment: Integer value between 0 and 100
+    default_value: 100
     description: ''
     interesting_value: 75
-    max_value: 100.0
+    max_value: 100
     min_value: 0
     name: opacity
     type: int
   position:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -35,6 +45,7 @@ properties:
     name: position
     type: int
   transformations:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

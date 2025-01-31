@@ -1,8 +1,13 @@
 description: Trims the image based on some luma or alpha threshold value
+example:
+  margins: 75
+  reference: 75
+  threshold: 190
 id: ibp.imagefilter.autotrim
 name: Auto Trim
 properties:
   margins:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -11,6 +16,7 @@ properties:
     name: margins
     type: int
   reference:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -19,10 +25,11 @@ properties:
     name: reference
     type: int
   threshold:
+    comment: Integer value between 0 and 254
     default_value: 0
     description: ''
     interesting_value: 190
-    max_value: 254.0
+    max_value: 254
     min_value: 0
     name: threshold
     type: int

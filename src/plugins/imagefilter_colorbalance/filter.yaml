@@ -1,56 +1,74 @@
 description: Image filter plugin for colorbalance
+example:
+  highlightsblue: 20
+  highlightsgreen: 30
+  highlightsred: 40
+  midtonesblue: 50
+  midtonesgreen: 60
+  midtonesred: 70
+  preserveluminosity: 1
+  shadowsblue: 80
+  shadowsgreen: 10
+  shadowsred: 50
 id: ibp.imagefilter.colorbalance
 name: Color Balance
 properties:
   highlightsblue:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: highlightsblue
     type: int
   highlightsgreen:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: highlightsgreen
     type: int
   highlightsred:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: highlightsred
     type: int
   midtonesblue:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: midtonesblue
     type: int
   midtonesgreen:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: midtonesgreen
     type: int
   midtonesred:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: midtonesred
     type: int
   preserveluminosity:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -59,26 +77,29 @@ properties:
     name: preserveluminosity
     type: bool
   shadowsblue:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: shadowsblue
     type: int
   shadowsgreen:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: shadowsgreen
     type: int
   shadowsred:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: shadowsred
     type: int

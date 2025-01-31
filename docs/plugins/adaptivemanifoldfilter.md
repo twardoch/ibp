@@ -15,8 +15,8 @@ Smooth the image preserving hard edges
 [imageFilter1]
 id=ibp.imagefilter.adaptivemanifoldfilter
 bypass=false
-edgepreservation=75
-radius=7500.0
+edgepreservation=80
+radius=40
 
 [info]
 description=Smooth the image preserving hard edges

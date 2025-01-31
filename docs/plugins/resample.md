@@ -15,11 +15,11 @@ Resample the image to a new size using the selected resampling interpolation mod
 [imageFilter1]
 id=ibp.imagefilter.resample
 bypass=false
-height=750
-heightmode=75
+height=200
+heightmode=1
 resamplingmode=normal
-width=750
-widthmode=75
+width=200
+widthmode=1
 
 [info]
 description=Resample the image to a new size using the selected resampling interpolation mode

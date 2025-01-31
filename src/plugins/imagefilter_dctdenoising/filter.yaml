@@ -1,8 +1,11 @@
 description: Image filter plugin for dctdenoising
+example:
+  strength: 75
 id: ibp.imagefilter.dctdenoising
 name: DCT Denoising
 properties:
   strength:
+    comment: Floating point value between 0.0 and 10000.0
     default_value: 0.0
     description: ''
     interesting_value: 7500.0

@@ -1,24 +1,34 @@
 description: Change the color information of the image in the HSL space
+example:
+  abshue: 33
+  abssaturation: 44
+  colorize: 1
+  relhue: 55
+  rellightness: 66
+  relsaturation: 77
 id: ibp.imagefilter.huesaturation
 name: Hue/Saturation/Lightness
 properties:
   abshue:
-    default_value: 30.0
+    comment: Integer value between 0 and 360
+    default_value: 30
     description: ''
     interesting_value: 270
-    max_value: 360.0
+    max_value: 360
     min_value: 0
     name: abshue
     type: int
   abssaturation:
-    default_value: 25.0
+    comment: Integer value between 0 and 100
+    default_value: 25
     description: ''
     interesting_value: 75
-    max_value: 100.0
+    max_value: 100
     min_value: 0
     name: abssaturation
     type: int
   colorize:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -27,26 +37,29 @@ properties:
     name: colorize
     type: bool
   relhue:
+    comment: Integer value between -180 and 180
     default_value: 0
     description: ''
     interesting_value: 90
-    max_value: 180.0
-    min_value: -180.0
+    max_value: 180
+    min_value: -180
     name: relhue
     type: int
   rellightness:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: rellightness
     type: int
   relsaturation:
+    comment: Integer value between -100 and 100
     default_value: 0
     description: ''
     interesting_value: 50
-    max_value: 100.0
-    min_value: -100.0
+    max_value: 100
+    min_value: -100
     name: relsaturation
     type: int

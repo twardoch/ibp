@@ -15,7 +15,7 @@ Removes the noise from the image using semi-local information
 [imageFilter1]
 id=ibp.imagefilter.nlmdenoising
 bypass=false
-strength=7500.0
+strength=75
 
 [info]
 description=Removes the noise from the image using semi-local information

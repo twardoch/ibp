@@ -1,8 +1,17 @@
 description: Adjust the levels automatically
+example:
+  adjustmidtones: 1
+  clippinghighlights: 50
+  clippingshadows: 60
+  enhancechannelsseparately: 1
+  targetcolorhighlights: 20
+  targetcolormidtones: 30
+  targetcolorshadows: 40
 id: ibp.imagefilter.autolevels
 name: Auto Levels
 properties:
   adjustmidtones:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -11,6 +20,7 @@ properties:
     name: adjustmidtones
     type: bool
   clippinghighlights:
+    comment: Floating point value between 0.0 and 100.0
     default_value: 0.0
     description: ''
     interesting_value: 75.0
@@ -19,6 +29,7 @@ properties:
     name: clippinghighlights
     type: double
   clippingshadows:
+    comment: Floating point value between 0.0 and 100.0
     default_value: 0.0
     description: ''
     interesting_value: 75.0
@@ -27,6 +38,7 @@ properties:
     name: clippingshadows
     type: double
   enhancechannelsseparately:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -35,6 +47,7 @@ properties:
     name: enhancechannelsseparately
     type: bool
   targetcolorhighlights:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -43,6 +56,7 @@ properties:
     name: targetcolorhighlights
     type: int
   targetcolormidtones:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -51,6 +65,7 @@ properties:
     name: targetcolormidtones
     type: int
   targetcolorshadows:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

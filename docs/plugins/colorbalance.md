@@ -15,15 +15,15 @@ Image filter plugin for colorbalance
 [imageFilter1]
 id=ibp.imagefilter.colorbalance
 bypass=false
-highlightsblue=50
-highlightsgreen=50
-highlightsred=50
+highlightsblue=20
+highlightsgreen=30
+highlightsred=40
 midtonesblue=50
-midtonesgreen=50
-midtonesred=50
+midtonesgreen=60
+midtonesred=70
 preserveluminosity=1
-shadowsblue=50
-shadowsgreen=50
+shadowsblue=80
+shadowsgreen=10
 shadowsred=50
 
 [info]

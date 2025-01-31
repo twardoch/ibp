@@ -1,8 +1,16 @@
 description: Adjust the black, mid and white tones of the image
+example:
+  inputblackpoint: 15.0
+  inputgamma: 25.0
+  inputwhitepoint: 35.0
+  outputblackpoint: 45.0
+  outputwhitepoint: 55.0
+  workingchannel: 1
 id: ibp.imagefilter.levels
 name: Levels
 properties:
   inputblackpoint:
+    comment: Floating point value between 0.0 and 100.0
     default_value: 0.0
     description: ''
     interesting_value: 75.0
@@ -11,6 +19,7 @@ properties:
     name: inputblackpoint
     type: double
   inputgamma:
+    comment: Floating point value between 0.0 and 100.0
     default_value: 0.0
     description: ''
     interesting_value: 75.0
@@ -19,6 +28,7 @@ properties:
     name: inputgamma
     type: double
   inputwhitepoint:
+    comment: Floating point value between 0.0 and 100.0
     default_value: 0.0
     description: ''
     interesting_value: 75.0
@@ -27,6 +37,7 @@ properties:
     name: inputwhitepoint
     type: double
   outputblackpoint:
+    comment: Floating point value between 0.0 and 100.0
     default_value: 0.0
     description: ''
     interesting_value: 75.0
@@ -35,6 +46,7 @@ properties:
     name: outputblackpoint
     type: double
   outputwhitepoint:
+    comment: Floating point value between 0.0 and 100.0
     default_value: 0.0
     description: ''
     interesting_value: 75.0
@@ -43,6 +55,7 @@ properties:
     name: outputwhitepoint
     type: double
   workingchannel:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

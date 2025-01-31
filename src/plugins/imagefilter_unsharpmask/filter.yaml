@@ -1,16 +1,22 @@
 description: Enhances the image by contrasting fine details
+example:
+  amount: 375
+  radius: 40
+  threshold: 191
 id: ibp.imagefilter.unsharpmask
 name: Unsharp Mask
 properties:
   amount:
+    comment: Integer value between 0 and 500
     default_value: 0
     description: ''
     interesting_value: 375
-    max_value: 500.0
+    max_value: 500
     min_value: 0
     name: amount
     type: int
   radius:
+    comment: Floating point value between 0.0 and 10000.0
     default_value: 0.0
     description: ''
     interesting_value: 7500.0
@@ -19,10 +25,11 @@ properties:
     name: radius
     type: double
   threshold:
+    comment: Integer value between 0 and 255
     default_value: 0
     description: ''
     interesting_value: 191
-    max_value: 255.0
+    max_value: 255
     min_value: 0
     name: threshold
     type: int

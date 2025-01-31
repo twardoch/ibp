@@ -15,12 +15,12 @@ Apply a matte to the image based on its luminance
 [imageFilter1]
 id=ibp.imagefilter.lumakeyer
 bypass=false
-interpolationmode=75
-inverted=1
+interpolationmode=1
+inverted=0
 isinverted=1
-knots=75
+knots=4
 outputmode=normal
-preblurradius=7500.0
+preblurradius=40
 
 [info]
 description=Apply a matte to the image based on its luminance

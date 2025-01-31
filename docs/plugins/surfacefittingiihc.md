@@ -15,7 +15,7 @@ Removes the artifacts due to a bad illumination using a surface fitting approach
 [imageFilter1]
 id=ibp.imagefilter.surfacefittingiihc
 bypass=false
-outputmode=75
+outputmode=25
 
 [info]
 description=Removes the artifacts due to a bad illumination using a surface fitting approach

@@ -1,8 +1,13 @@
 description: Blurs the image using a smooth gaussian distribution
+example:
+  bluralpha: 1
+  blurrgb: 1
+  radius: 50
 id: ibp.imagefilter.gaussianblur
 name: Gaussian Blur
 properties:
   bluralpha:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -11,6 +16,7 @@ properties:
     name: bluralpha
     type: bool
   blurrgb:
+    comment: Toggle between true/false states
     default_value: 0
     description: ''
     interesting_value: 1
@@ -19,9 +25,10 @@ properties:
     name: blurrgb
     type: bool
   radius:
+    comment: Floating point value between 0.0 and 10000.0
     default_value: 0.0
     description: ''
-    interesting_value: 35
+    interesting_value: 7500.0
     max_value: 10000.0
     min_value: 0.0
     name: radius

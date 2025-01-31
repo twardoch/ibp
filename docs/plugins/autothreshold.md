@@ -16,8 +16,8 @@ Transforms the channels of the image into binary using an automatic threshold va
 id=ibp.imagefilter.autothreshold
 bypass=false
 affectedchannel=1
-colormode=75
-thresholdmode=75
+colormode=2
+thresholdmode=1
 
 [info]
 description=Transforms the channels of the image into binary using an automatic threshold value

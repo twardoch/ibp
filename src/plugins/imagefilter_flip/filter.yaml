@@ -1,8 +1,11 @@
 description: Flip the image around the vertical and/or horizontal axis
+example:
+  direction: 1
 id: ibp.imagefilter.flip
 name: Flip
 properties:
   direction:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

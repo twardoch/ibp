@@ -16,7 +16,7 @@ Enhances the image by contrasting fine details
 id=ibp.imagefilter.unsharpmask
 bypass=false
 amount=375
-radius=7500.0
+radius=40
 threshold=191
 
 [info]

@@ -1,16 +1,21 @@
 description: Smooth the image preserving hard edges
+example:
+  edgepreservation: 80
+  radius: 40
 id: ibp.imagefilter.adaptivemanifoldfilter
 name: Adaptive Manifold Filter
 properties:
   edgepreservation:
-    default_value: 50.0
+    comment: Integer value between 0 and 100
+    default_value: 50
     description: ''
     interesting_value: 75
-    max_value: 100.0
+    max_value: 100
     min_value: 0
     name: edgepreservation
     type: int
   radius:
+    comment: Floating point value between 0.0 and 10000.0
     default_value: 0.0
     description: ''
     interesting_value: 7500.0

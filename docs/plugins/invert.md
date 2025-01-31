@@ -16,9 +16,9 @@ Invert one or more channels of the image
 id=ibp.imagefilter.invert
 bypass=false
 alphachannel=1
-bluechannel=1
+bluechannel=0
 greenchannel=1
-redchannel=1
+redchannel=0
 
 [info]
 description=Invert one or more channels of the image

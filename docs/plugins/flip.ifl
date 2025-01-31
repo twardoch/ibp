@@ -1,7 +1,7 @@
 [imageFilter1]
 id=ibp.imagefilter.flip
 bypass=false
-direction=75
+direction=1
 
 [info]
 description=Flip the image around the vertical and/or horizontal axis

@@ -16,8 +16,8 @@ Adjust the tonal curves of the image
 id=ibp.imagefilter.curves
 bypass=false
 interpolationmode=normal
-knots=75
-workingchannel=75
+knots=3
+workingchannel=1
 
 [info]
 description=Adjust the tonal curves of the image

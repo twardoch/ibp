@@ -1,16 +1,21 @@
 description: Image filter plugin for itkn4iihc
+example:
+  gridsize: 7
+  outputmode: 1
 id: ibp.imagefilter.itkn4iihc
 name: ITK N4 IIH Correction
 properties:
   gridsize:
-    default_value: 3.0
+    comment: Integer value between 1 and 10
+    default_value: 3
     description: ''
     interesting_value: 7
-    max_value: 10.0
-    min_value: 1.0
+    max_value: 10
+    min_value: 1
     name: gridsize
     type: int
   outputmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

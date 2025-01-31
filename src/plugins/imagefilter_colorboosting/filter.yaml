@@ -1,4 +1,5 @@
 description: Try to improve the color contrast of the image
+example: {}
 id: ibp.imagefilter.colorboosting
 name: Color Boosting
 properties: {}

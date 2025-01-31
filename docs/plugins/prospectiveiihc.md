@@ -15,8 +15,8 @@ Removes the artifacts due to a bad illumination using a prospective approach
 [imageFilter1]
 id=ibp.imagefilter.prospectiveiihc
 bypass=false
-image=75
-outputmode=75
+image=3
+outputmode=22
 
 [info]
 description=Removes the artifacts due to a bad illumination using a prospective approach

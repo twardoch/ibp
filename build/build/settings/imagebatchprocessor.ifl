@@ -1,7 +1,13 @@
 [imageFilter1]
-angle=90clockwise
+anchorPosition=centercenter
+backgroundcolor=#00000000
 bypass=false
-id=ibp.imagefilter.basicrotation
+height=100
+heightmode=percent
+id=ibp.imagefilter.resize
+resizemode=absolute
+width=100
+widthmode=percent
 
 [info]
 description=This file contains the filter list that image batch processor was using the last time it was closed.

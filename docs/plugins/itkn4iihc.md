@@ -16,7 +16,7 @@ Image filter plugin for itkn4iihc
 id=ibp.imagefilter.itkn4iihc
 bypass=false
 gridsize=7
-outputmode=75
+outputmode=1
 
 [info]
 description=Image filter plugin for itkn4iihc

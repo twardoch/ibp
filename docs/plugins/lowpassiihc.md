@@ -15,8 +15,8 @@ Removes the artifacts due to a bad illumination using a low pass filtering appro
 [imageFilter1]
 id=ibp.imagefilter.lowpassiihc
 bypass=false
-featuresize=150
-outputmode=75
+featuresize=50
+outputmode=2
 
 [info]
 description=Removes the artifacts due to a bad illumination using a low pass filtering approach

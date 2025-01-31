@@ -1,12 +1,12 @@
 [imageFilter1]
 id=ibp.imagefilter.levels
 bypass=false
-inputblackpoint=75.0
-inputgamma=75.0
-inputwhitepoint=75.0
-outputblackpoint=75.0
-outputwhitepoint=75.0
-workingchannel=75
+inputblackpoint=15.0
+inputgamma=25.0
+inputwhitepoint=35.0
+outputblackpoint=45.0
+outputwhitepoint=55.0
+workingchannel=1
 
 [info]
 description=Adjust the black, mid and white tones of the image

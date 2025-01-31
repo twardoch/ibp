@@ -15,8 +15,8 @@ Removes the noise from the image using a variational method
 [imageFilter1]
 id=ibp.imagefilter.tvdenoising
 bypass=false
-iterations=75
-strength=7500.0
+iterations=20
+strength=70
 
 [info]
 description=Removes the noise from the image using a variational method

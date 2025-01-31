@@ -1,8 +1,12 @@
 description: Removes the artifacts due to a bad illumination using a prospective approach
+example:
+  image: 3
+  outputmode: 22
 id: ibp.imagefilter.prospectiveiihc
 name: Prospective IIH Correction
 properties:
   image:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
@@ -11,6 +15,7 @@ properties:
     name: image
     type: int
   outputmode:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75

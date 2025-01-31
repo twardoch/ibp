@@ -1,12 +1,15 @@
 description: Smooths the image using a normalized box filter
+example:
+  radius: 50
 id: ibp.imagefilter.boxblur
 name: Box Blur (Mean Filter)
 properties:
   radius:
+    comment: Integer value between 0 and 100
     default_value: 0
     description: ''
     interesting_value: 75
-    max_value: 100.0
+    max_value: 100
     min_value: 0
     name: radius
     type: int

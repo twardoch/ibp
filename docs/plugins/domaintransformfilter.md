@@ -15,8 +15,8 @@ Smooth the image preserving hard edges
 [imageFilter1]
 id=ibp.imagefilter.domaintransformfilter
 bypass=false
-edgepreservation=75
-radius=7500.0
+edgepreservation=70
+radius=40
 
 [info]
 description=Smooth the image preserving hard edges

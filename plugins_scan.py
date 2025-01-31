@@ -100,6 +100,7 @@ class PropertyInfo(BaseModel):
     default_value: Union[int, float, str]
     interesting_value: Union[int, float, str]
     description: str = ""
+    comment: str = ""  # Added field for property-specific comments
     min_value: Optional[Union[int, float]] = None
     max_value: Optional[Union[int, float]] = None
     enum_values: Optional[List[str]] = None
@@ -111,6 +112,7 @@ class FilterInfo(BaseModel):
     id: str
     name: str
     description: str
+    example: Dict[str, Union[int, float, str]]
     properties: PropertyDict
 
 
@@ -228,30 +230,67 @@ def create_property_info(
 ) -> PropertyInfo:
     """Create PropertyInfo object based on parameter type and UI data."""
     type_mapping = {
-        "bool": (PropertyType.BOOL, False, True, 0, 1),
-        "int": (PropertyType.INT, 0, 75, 0, 100),
-        "double": (PropertyType.DOUBLE, 0.0, 0.75, 0.0, 100.0),
-        "Color": (PropertyType.COLOR, "#000000", "#FF0000", None, None),
-        "enum": (PropertyType.ENUM, "0", "1", None, None),
-        "string": (PropertyType.STRING, "", "normal", None, None),
+        "bool": (
+            PropertyType.BOOL,
+            False,
+            True,
+            0,
+            1,
+            "Toggle between true/false states",
+        ),
+        "int": (PropertyType.INT, 0, 75, 0, 100, "Integer value"),
+        "double": (PropertyType.DOUBLE, 0.0, 0.75, 0.0, 100.0, "Floating point value"),
+        "Color": (
+            PropertyType.COLOR,
+            "#000000",
+            "#FF0000",
+            None,
+            None,
+            "Color in hex format (#RRGGBB)",
+        ),
+        "enum": (PropertyType.ENUM, "0", "1", None, None, "Enumerated value"),
+        "string": (PropertyType.STRING, "", "normal", None, None, "Text value"),
     }
 
     base_type = next((k for k in type_mapping if k in param_type), "string")
-    prop_type, default_val, interesting_val, min_val, max_val = type_mapping[base_type]
+    prop_type, default_val, interesting_val, min_val, max_val, comment = type_mapping[
+        base_type
+    ]
 
     if base_type in ["int", "double"]:
         default_val = ui_data.get("value", default_val)
         min_val = ui_data.get("minimum", min_val)
         max_val = ui_data.get("maximum", max_val)
-        interesting_val = (
-            min_val + (max_val - min_val) * 0.75
-            if min_val is not None and max_val is not None
-            else interesting_val
-        )
+
+        # Ensure values match the type
         if base_type == "int":
-            interesting_val = int(interesting_val)
+            default_val = int(default_val)
+            min_val = int(min_val) if min_val is not None else None
+            max_val = int(max_val) if max_val is not None else None
+            if min_val is not None and max_val is not None:
+                comment = f"Integer value between {min_val} and {max_val}"
         else:
-            interesting_val = round(float(interesting_val), 2)
+            default_val = float(default_val)
+            min_val = float(min_val) if min_val is not None else None
+            max_val = float(max_val) if max_val is not None else None
+            if min_val is not None and max_val is not None:
+                comment = (
+                    f"Floating point value between {min_val:.1f} and {max_val:.1f}"
+                )
+
+        if min_val is not None and max_val is not None:
+            interesting_val = min_val + (max_val - min_val) * 0.75
+            if base_type == "int":
+                interesting_val = int(interesting_val)
+            else:
+                interesting_val = round(float(interesting_val), 2)
+
+    # Add enum-specific comment if it's an enum type
+    if "enum" in param_type.lower():
+        enum_match = re.search(r"enum\s*(?:\w+)?\s*\{([^}]+)\}", param_type)
+        if enum_match:
+            enum_values = [v.strip() for v in enum_match.group(1).split(",")]
+            comment = f"Possible values: {', '.join(enum_values)}"
 
     return PropertyInfo(
         name=param_name,
@@ -259,6 +298,7 @@ def create_property_info(
         default_value=default_val,
         interesting_value=interesting_val,
         description="",
+        comment=comment,
         min_value=min_val,
         max_value=max_val,
     )
@@ -352,12 +392,16 @@ def create_filter_info(
     filter_id = plugin_dir.name.replace("imagefilter_", "")
     sorted_properties = {k: properties[k] for k in sorted(properties)}
 
+    # Create example dictionary with interesting values
+    example = {name: prop.interesting_value for name, prop in sorted_properties.items()}
+
     return FilterInfo(
         id=f"ibp.imagefilter.{filter_id}",
         name=plugin_info.get("name", filter_id),
         description=plugin_info.get(
             "description", f"Image filter plugin for {filter_id}"
         ),
+        example=example,
         properties=sorted_properties,
     )
 
