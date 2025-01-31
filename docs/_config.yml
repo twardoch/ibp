@@ -1,0 +1,23 @@
+# Site settings
+title: Image Batch Processor
+description: A cross-platform, open source tool for batch image processing
+email: adam+github@twardoch.com
+author: Adam Twardoch
+url: https://twardoch.github.io/ibp
+baseurl: "/ibp"
+logo: /assets/img/ibp-sm.png
+
+# Social
+repo: "https://github.com/twardoch/ibp"
+github_user: "twardoch"
+github_repo: "ibp"
+twitter: adamtwar
+
+# Theme configuration
+remote_theme: vsoch/mkdocs-jekyll
+color: "#8c1515"
+logo_width: 34
+accentColor: red
+themeColor: red
+fixedNav: 'true'
+
