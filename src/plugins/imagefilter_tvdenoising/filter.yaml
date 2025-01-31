@@ -1,0 +1,20 @@
+description: Removes the noise from the image using a variational method
+id: ibp.imagefilter.tvdenoising
+name: Total Variation Denoising
+properties:
+  iterations:
+    default_value: 30.0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 1.0
+    name: iterations
+    type: int
+  strength:
+    default_value: 0.0
+    description: ''
+    interesting_value: 7500.0
+    max_value: 10000.0
+    min_value: 0.0
+    name: strength
+    type: double

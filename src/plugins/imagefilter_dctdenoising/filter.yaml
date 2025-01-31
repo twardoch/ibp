@@ -1,0 +1,12 @@
+description: Image filter plugin for dctdenoising
+id: ibp.imagefilter.dctdenoising
+name: DCT Denoising
+properties:
+  strength:
+    default_value: 0.0
+    description: ''
+    interesting_value: 7500.0
+    max_value: 10000.0
+    min_value: 0.0
+    name: strength
+    type: double

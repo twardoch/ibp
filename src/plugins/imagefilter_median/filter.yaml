@@ -1,0 +1,12 @@
+description: Smooths the image using a median filter
+id: ibp.imagefilter.median
+name: Median
+properties:
+  radius:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 0
+    name: radius
+    type: int

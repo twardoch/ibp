@@ -1,0 +1,28 @@
+description: Enhances the image by contrasting fine details
+id: ibp.imagefilter.unsharpmask
+name: Unsharp Mask
+properties:
+  amount:
+    default_value: 0
+    description: ''
+    interesting_value: 375
+    max_value: 500.0
+    min_value: 0
+    name: amount
+    type: int
+  radius:
+    default_value: 0.0
+    description: ''
+    interesting_value: 7500.0
+    max_value: 10000.0
+    min_value: 0.0
+    name: radius
+    type: double
+  threshold:
+    default_value: 0
+    description: ''
+    interesting_value: 191
+    max_value: 255.0
+    min_value: 0
+    name: threshold
+    type: int

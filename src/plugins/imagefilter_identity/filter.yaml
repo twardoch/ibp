@@ -1,0 +1,4 @@
+description: Just doesn't make any modifications to the image
+id: ibp.imagefilter.identity
+name: Identity
+properties: {}

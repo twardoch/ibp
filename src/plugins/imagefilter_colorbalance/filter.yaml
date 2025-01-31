@@ -1,0 +1,84 @@
+description: Image filter plugin for colorbalance
+id: ibp.imagefilter.colorbalance
+name: Color Balance
+properties:
+  highlightsblue:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: highlightsblue
+    type: int
+  highlightsgreen:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: highlightsgreen
+    type: int
+  highlightsred:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: highlightsred
+    type: int
+  midtonesblue:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: midtonesblue
+    type: int
+  midtonesgreen:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: midtonesgreen
+    type: int
+  midtonesred:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: midtonesred
+    type: int
+  preserveluminosity:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: preserveluminosity
+    type: bool
+  shadowsblue:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: shadowsblue
+    type: int
+  shadowsgreen:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: shadowsgreen
+    type: int
+  shadowsred:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: shadowsred
+    type: int

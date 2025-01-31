@@ -1,0 +1,4 @@
+description: Automatically equalize the image
+id: ibp.imagefilter.equalize
+name: Equalize
+properties: {}

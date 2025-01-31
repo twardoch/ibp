@@ -1,0 +1,4 @@
+description: Removes the chroma information of the image
+id: ibp.imagefilter.desaturate
+name: Desaturate
+properties: {}

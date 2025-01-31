@@ -1,0 +1,28 @@
+description: Image filter plugin for inpaintingiihc
+id: ibp.imagefilter.inpaintingiihc
+name: Inpainting IIH Correction
+properties:
+  maskexpansion:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 0
+    name: maskexpansion
+    type: int
+  noisereduction:
+    default_value: 0.0
+    description: ''
+    interesting_value: 7500.0
+    max_value: 10000.0
+    min_value: 0.0
+    name: noisereduction
+    type: double
+  outputmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: outputmode
+    type: int

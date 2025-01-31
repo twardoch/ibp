@@ -1,0 +1,13 @@
+description: Removes the artifacts due to a bad illumination using a surface fitting
+  approach
+id: ibp.imagefilter.surfacefittingiihc
+name: Surface Fitting IIH Correction
+properties:
+  outputmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: outputmode
+    type: int

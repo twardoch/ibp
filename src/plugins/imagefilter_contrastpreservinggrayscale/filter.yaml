@@ -1,0 +1,4 @@
+description: Convert the image to grayscale preserving the contrast
+id: ibp.imagefilter.contrastpreservinggrayscale
+name: Contrast Preserving Grayscale
+properties: {}

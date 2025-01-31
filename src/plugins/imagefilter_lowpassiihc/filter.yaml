@@ -1,0 +1,21 @@
+description: Removes the artifacts due to a bad illumination using a low pass filtering
+  approach
+id: ibp.imagefilter.lowpassiihc
+name: Low Pass IIH Correction
+properties:
+  featuresize:
+    default_value: 10.0
+    description: ''
+    interesting_value: 150
+    max_value: 200.0
+    min_value: 1.0
+    name: featuresize
+    type: int
+  outputmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: outputmode
+    type: int

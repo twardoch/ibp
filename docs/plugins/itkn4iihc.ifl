@@ -1,0 +1,12 @@
+[imageFilter1]
+id=ibp.imagefilter.itkn4iihc
+bypass=false
+gridsize=7
+outputmode=75
+
+[info]
+description=Image filter plugin for itkn4iihc
+fileType=ibp.imagefilterlist
+nFilters=1
+name=ITK N4 IIH Correction
+

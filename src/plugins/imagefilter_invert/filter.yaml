@@ -1,0 +1,36 @@
+description: Invert one or more channels of the image
+id: ibp.imagefilter.invert
+name: Invert
+properties:
+  alphachannel:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: alphachannel
+    type: bool
+  bluechannel:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: bluechannel
+    type: bool
+  greenchannel:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: greenchannel
+    type: bool
+  redchannel:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: redchannel
+    type: bool

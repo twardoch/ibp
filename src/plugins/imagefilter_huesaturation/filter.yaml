@@ -1,0 +1,52 @@
+description: Change the color information of the image in the HSL space
+id: ibp.imagefilter.huesaturation
+name: Hue/Saturation/Lightness
+properties:
+  abshue:
+    default_value: 30.0
+    description: ''
+    interesting_value: 270
+    max_value: 360.0
+    min_value: 0
+    name: abshue
+    type: int
+  abssaturation:
+    default_value: 25.0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 0
+    name: abssaturation
+    type: int
+  colorize:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: colorize
+    type: bool
+  relhue:
+    default_value: 0
+    description: ''
+    interesting_value: 90
+    max_value: 180.0
+    min_value: -180.0
+    name: relhue
+    type: int
+  rellightness:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: rellightness
+    type: int
+  relsaturation:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: relsaturation
+    type: int

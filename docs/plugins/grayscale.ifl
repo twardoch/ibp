@@ -1,0 +1,10 @@
+[imageFilter1]
+id=ibp.imagefilter.grayscale
+bypass=false
+
+[info]
+description=Convert the image to grayscale
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Grayscale
+

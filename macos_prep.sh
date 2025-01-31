@@ -110,3 +110,4 @@ if ! ls /usr/local/opt/qt@5 >/dev/null; then
     echo "Linking qt@5..."
     brew link --force qt@5
 fi
+echo "To compile the project, run: ./macos_build.sh"

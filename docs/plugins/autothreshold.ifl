@@ -1,0 +1,13 @@
+[imageFilter1]
+id=ibp.imagefilter.autothreshold
+bypass=false
+affectedchannel=1
+colormode=75
+thresholdmode=75
+
+[info]
+description=Transforms the channels of the image into binary using an automatic threshold value
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Auto Threshold
+

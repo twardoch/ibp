@@ -1,0 +1,34 @@
+description: Add uniform or gaussian distributed noise to the image
+id: ibp.imagefilter.addnoise
+name: Add Noise
+properties:
+  amount:
+    default_value: 0.0
+    description: ''
+    interesting_value: 30000.0
+    max_value: 40000.0
+    min_value: 0.0
+    name: amount
+    type: double
+  colormode:
+    default_value: '#000000'
+    description: ''
+    interesting_value: '#FF0000'
+    name: colormode
+    type: color
+  distribution:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: distribution
+    type: int
+  seed:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: seed
+    type: int

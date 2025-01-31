@@ -1,0 +1,36 @@
+description: Adds a color layer to the image
+id: ibp.imagefilter.colorlayer
+name: Color Layer
+properties:
+  color:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: color
+    type: int
+  colorcompositionmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: colorcompositionmode
+    type: int
+  opacity:
+    default_value: 100.0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 0
+    name: opacity
+    type: int
+  position:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: position
+    type: int

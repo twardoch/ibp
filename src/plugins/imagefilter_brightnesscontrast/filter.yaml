@@ -1,0 +1,36 @@
+description: Adjust levels of the image in an easy way
+id: ibp.imagefilter.brightnesscontrast
+name: Brightness and Contrast
+properties:
+  brightness:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: brightness
+    type: int
+  contrast:
+    default_value: 0
+    description: ''
+    interesting_value: 50
+    max_value: 100.0
+    min_value: -100.0
+    name: contrast
+    type: int
+  usesoftmode:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: usesoftmode
+    type: bool
+  workingchannel:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: workingchannel
+    type: int

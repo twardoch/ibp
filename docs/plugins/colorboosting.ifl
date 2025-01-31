@@ -1,0 +1,10 @@
+[imageFilter1]
+id=ibp.imagefilter.colorboosting
+bypass=false
+
+[info]
+description=Try to improve the color contrast of the image
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Color Boosting
+

@@ -1,0 +1,58 @@
+description: Apply a basic mathematical morphology operation to the image
+id: ibp.imagefilter.morphology
+name: Basic Morphology
+properties:
+  hradius:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 0
+    name: hradius
+    type: int
+  kernelshape:
+    default_value: ''
+    description: ''
+    interesting_value: normal
+    name: kernelshape
+    type: string
+  lockradius:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: lockradius
+    type: bool
+  modifyalpha:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: modifyalpha
+    type: bool
+  modifyrgb:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: modifyrgb
+    type: bool
+  morphologyop:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: morphologyop
+    type: int
+  vradius:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 0
+    name: vradius
+    type: int

@@ -1,0 +1,17 @@
+[imageFilter1]
+id=ibp.imagefilter.autolevels
+bypass=false
+adjustmidtones=1
+clippinghighlights=75.0
+clippingshadows=75.0
+enhancechannelsseparately=1
+targetcolorhighlights=75
+targetcolormidtones=75
+targetcolorshadows=75
+
+[info]
+description=Adjust the levels automatically
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Auto Levels
+

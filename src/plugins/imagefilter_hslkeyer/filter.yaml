@@ -1,0 +1,90 @@
+description: Apply a matte to the image based on its HSL components
+id: ibp.imagefilter.hslkeyer
+name: HSL Keyer
+properties:
+  hueinterpolationmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: hueinterpolationmode
+    type: int
+  hueinverted:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: hueinverted
+    type: bool
+  hueknots:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: hueknots
+    type: int
+  lightnessinterpolationmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: lightnessinterpolationmode
+    type: int
+  lightnessinverted:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: lightnessinverted
+    type: bool
+  lightnessknots:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: lightnessknots
+    type: int
+  outputmode:
+    default_value: ''
+    description: ''
+    interesting_value: normal
+    name: outputmode
+    type: string
+  preblurradius:
+    default_value: 0.0
+    description: ''
+    interesting_value: 7500.0
+    max_value: 10000.0
+    min_value: 0.0
+    name: preblurradius
+    type: double
+  saturationinterpolationmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: saturationinterpolationmode
+    type: int
+  saturationinverted:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: saturationinverted
+    type: bool
+  saturationknots:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: saturationknots
+    type: int

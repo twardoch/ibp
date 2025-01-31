@@ -1,0 +1,50 @@
+description: Apply a matte to the image based on its luminance
+id: ibp.imagefilter.lumakeyer
+name: Luma Keyer
+properties:
+  interpolationmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: interpolationmode
+    type: int
+  inverted:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: inverted
+    type: bool
+  isinverted:
+    default_value: 0
+    description: ''
+    interesting_value: 1
+    max_value: 1
+    min_value: 0
+    name: isinverted
+    type: bool
+  knots:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: knots
+    type: int
+  outputmode:
+    default_value: ''
+    description: ''
+    interesting_value: normal
+    name: outputmode
+    type: string
+  preblurradius:
+    default_value: 0.0
+    description: ''
+    interesting_value: 7500.0
+    max_value: 10000.0
+    min_value: 0.0
+    name: preblurradius
+    type: double

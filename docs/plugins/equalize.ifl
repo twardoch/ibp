@@ -1,0 +1,10 @@
+[imageFilter1]
+id=ibp.imagefilter.equalize
+bypass=false
+
+[info]
+description=Automatically equalize the image
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Equalize
+

@@ -1,0 +1,11 @@
+[imageFilter1]
+id=ibp.imagefilter.median
+bypass=false
+radius=75
+
+[info]
+description=Smooths the image using a median filter
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Median
+

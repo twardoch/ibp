@@ -1,0 +1,20 @@
+description: Smooth the image preserving hard edges
+id: ibp.imagefilter.guidedfilter
+name: Guided Filter
+properties:
+  edgepreservation:
+    default_value: 50.0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 0
+    name: edgepreservation
+    type: int
+  radius:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 0
+    name: radius
+    type: int

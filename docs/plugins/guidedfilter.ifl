@@ -1,0 +1,12 @@
+[imageFilter1]
+id=ibp.imagefilter.guidedfilter
+bypass=false
+edgepreservation=75
+radius=75
+
+[info]
+description=Smooth the image preserving hard edges
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Guided Filter
+

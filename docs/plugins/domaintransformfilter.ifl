@@ -1,0 +1,12 @@
+[imageFilter1]
+id=ibp.imagefilter.domaintransformfilter
+bypass=false
+edgepreservation=75
+radius=7500.0
+
+[info]
+description=Smooth the image preserving hard edges
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Domain Transform Filter
+

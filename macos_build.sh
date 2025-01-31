@@ -66,3 +66,5 @@ echo "Build completed successfully!"
 # brew cleanup
 
 echo "Installation and build process finished."
+
+echo "To build the .app bundle, run: ./macos_app.sh"

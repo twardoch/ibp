@@ -1,0 +1,28 @@
+description: Image filter plugin for tviihc
+id: ibp.imagefilter.tviihc
+name: Tina Vision IIH Correction
+properties:
+  outputmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: outputmode
+    type: int
+  refinement:
+    default_value: 10.0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 1.0
+    name: refinement
+    type: int
+  smoothness:
+    default_value: 10.0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 0.0
+    name: smoothness
+    type: int

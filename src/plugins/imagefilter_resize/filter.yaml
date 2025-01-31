@@ -1,0 +1,58 @@
+description: Resize the image without resampling its data
+id: ibp.imagefilter.resize
+name: Resize
+properties:
+  anchorposition:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: anchorposition
+    type: int
+  backgroundcolor:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: backgroundcolor
+    type: int
+  height:
+    default_value: 100.0
+    description: ''
+    interesting_value: 22500
+    max_value: 30000.0
+    min_value: 1.0
+    name: height
+    type: int
+  heightmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: heightmode
+    type: int
+  resizemode:
+    default_value: ''
+    description: ''
+    interesting_value: normal
+    name: resizemode
+    type: string
+  width:
+    default_value: 100.0
+    description: ''
+    interesting_value: 7500
+    max_value: 10000.0
+    min_value: 1.0
+    name: width
+    type: int
+  widthmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: widthmode
+    type: int

@@ -1,0 +1,10 @@
+[imageFilter1]
+angle=90clockwise
+bypass=false
+id=ibp.imagefilter.basicrotation
+
+[info]
+description=This file contains the filter list that image batch processor was using the last time it was closed.
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Current Filter List

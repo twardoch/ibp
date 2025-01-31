@@ -1,0 +1,44 @@
+description: Adds a texture layer to the image
+id: ibp.imagefilter.texturelayer
+name: Texture Layer
+properties:
+  colorcompositionmode:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: colorcompositionmode
+    type: int
+  image:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: image
+    type: int
+  opacity:
+    default_value: 100.0
+    description: ''
+    interesting_value: 75
+    max_value: 100.0
+    min_value: 0
+    name: opacity
+    type: int
+  position:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: position
+    type: int
+  transformations:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: transformations
+    type: int

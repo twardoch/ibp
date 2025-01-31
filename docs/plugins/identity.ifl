@@ -1,0 +1,10 @@
+[imageFilter1]
+id=ibp.imagefilter.identity
+bypass=false
+
+[info]
+description=Just doesn't make any modifications to the image
+fileType=ibp.imagefilterlist
+nFilters=1
+name=Identity
+

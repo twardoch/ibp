@@ -1,0 +1,52 @@
+description: Adjust the black, mid and white tones of the image
+id: ibp.imagefilter.levels
+name: Levels
+properties:
+  inputblackpoint:
+    default_value: 0.0
+    description: ''
+    interesting_value: 75.0
+    max_value: 100.0
+    min_value: 0.0
+    name: inputblackpoint
+    type: double
+  inputgamma:
+    default_value: 0.0
+    description: ''
+    interesting_value: 75.0
+    max_value: 100.0
+    min_value: 0.0
+    name: inputgamma
+    type: double
+  inputwhitepoint:
+    default_value: 0.0
+    description: ''
+    interesting_value: 75.0
+    max_value: 100.0
+    min_value: 0.0
+    name: inputwhitepoint
+    type: double
+  outputblackpoint:
+    default_value: 0.0
+    description: ''
+    interesting_value: 75.0
+    max_value: 100.0
+    min_value: 0.0
+    name: outputblackpoint
+    type: double
+  outputwhitepoint:
+    default_value: 0.0
+    description: ''
+    interesting_value: 75.0
+    max_value: 100.0
+    min_value: 0.0
+    name: outputwhitepoint
+    type: double
+  workingchannel:
+    default_value: 0
+    description: ''
+    interesting_value: 75
+    max_value: 100
+    min_value: 0
+    name: workingchannel
+    type: int

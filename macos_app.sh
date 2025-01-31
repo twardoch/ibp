@@ -178,7 +178,7 @@ fi
 
 # Copy application icon
 echo "Copying application icon..."
-cp "doc/icon/ibp.icns" "${DIST_DIR}/${BUNDLE_NAME}/Contents/Resources/icon.icns"
+cp "docs/assets/img/ibp.icns" "${DIST_DIR}/${BUNDLE_NAME}/Contents/Resources/icon.icns"
 
 # Create qt.conf
 cat >"${DIST_DIR}/${BUNDLE_NAME}/Contents/Resources/qt.conf" <<EOF
@@ -213,4 +213,10 @@ cat >"${DIST_DIR}/${BUNDLE_NAME}/Contents/Info.plist" <<EOF
 </plist>
 EOF
 
-echo "Created: ${DIST_DIR}/${BUNDLE_NAME}.app"
+echo "Created: ${DIST_DIR}/${BUNDLE_NAME}"
+
+echo "To build DMG, run: ./macos_dmg.sh"
+echo "To run the app, run:"
+echo "open ${DIST_DIR}/${BUNDLE_NAME}"
+echo "or:"
+echo "${DIST_DIR}/${BUNDLE_NAME}/Contents/MacOS/${APP_NAME}"
