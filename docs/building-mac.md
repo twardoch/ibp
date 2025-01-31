@@ -1,3 +1,8 @@
+---
+layout: default
+title: 03 Building on macOS
+---
+
 # [∞](#building-on-macos) Building on macOS
 
 - Run `./macos_prep.sh` to install prerequisites 

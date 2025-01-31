@@ -1,3 +1,8 @@
+---
+layout: default
+title: 02 Details
+---
+
 # Details
 
 ## [∞](#project-structure) Project Structure

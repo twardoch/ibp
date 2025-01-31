@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Image Batch Processor
+title: 01 Image Batch Processor
 ---
 
 # Image Batch Processor
