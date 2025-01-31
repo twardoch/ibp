@@ -11,6 +11,10 @@ The Image Batch Processor (IBP) is a cross-platform, open source tool written in
 
 ![Screenshot](assets/img/screenshot.png)
 
+## [Download unsigned DMG for macOS](https://github.com/twardoch/ibp/raw/refs/heads/master/dist/ImageBatchProcessor.dmg)
+
+- [View Source on GitHub](https://github.com/twardoch/ibp)
+
 ## Features
 
 - Process multiple images in batch mode
@@ -20,15 +24,10 @@ The Image Batch Processor (IBP) is a cross-platform, open source tool written in
 - Cross-platform support (macOS, Windows, Linux)
 - Optimized for traditional animation workflow
 
-## Quick Links
 
-- [Download Latest Release](https://github.com/twardoch/ibp/raw/refs/heads/master/dist/ImageBatchProcessor.dmg)
-- [View Source on GitHub](https://github.com/twardoch/ibp)
-- [Report Issues](https://github.com/twardoch/ibp/issues)
+## Available Filters/Plugins
 
-## Available Filters
-
-IBP comes with a variety of built-in filters for image processing:
+IBP comes with a variety of built-in filters (plugins) for image processing:
 
 - Adaptive Manifold Filter
 - Add Noise
@@ -39,23 +38,16 @@ IBP comes with a variety of built-in filters for image processing:
 - Box Blur
 - Brightness/Contrast
 - Color Balance
-- And many more...
 
-## Building from Source
+### See [details](details.md) and [plugins](plugins) for more information.
 
-For macOS:
-
-```bash
-./macos_prep.sh    # Install prerequisites
-./macos_install.sh # Build the app
-./macos_package.sh # Create DMG package
-```
 
 ## History
 
-- 2014-2020: Created by [Deif Lou](https://github.com/deiflou/ibp)
 - 2025: Updated by [Adam Twardoch](https://github.com/twardoch)
+- 2014-2020: Created by [Deif Lou](https://github.com/deiflou/ibp)
 
 ## License
 
 This project is released under the MIT License. See the [LICENSE](https://github.com/twardoch/ibp/blob/master/LICENSE) file for details. 
+
