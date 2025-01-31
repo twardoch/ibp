@@ -5,15 +5,13 @@ title: 01 Image Batch Processor
 
 # ![IBP Logo](assets/img/ibp-sm.png) Image Batch Processor
 
-The Image Batch Processor (IBP) is a cross-platform, open source tool written in C++/Qt that transforms one or more images automatically using a customizable list of effects.
+The [Image Batch Processor (IBP)](https://github.com/twardoch/ibp) is a cross-platform, open source tool written in C++/Qt that transforms one or more images automatically using a customizable list of effects.
 
 ## ☛ [Download unsigned DMG for macOS](https://github.com/twardoch/ibp/raw/refs/heads/master/dist/ImageBatchProcessor.dmg)
 
-
+----
 
 ![Screenshot](assets/img/screenshot.png)
-
-[View Source on GitHub](https://github.com/twardoch/ibp)
 
 ## Features
 
@@ -21,26 +19,14 @@ The Image Batch Processor (IBP) is a cross-platform, open source tool written in
 - Apply multiple filters and effects sequentially
 - Real-time preview of effects
 - Plugin-based architecture for extensibility
-- Cross-platform support (macOS, Windows, Linux)
-- Optimized for traditional animation workflow
-
+- Optional CLI
+- Cross-platform support (works on macOS, should be able to build yourself for Windows, Linux)
 
 ## Available Filters/Plugins
 
-IBP comes with a variety of built-in filters (plugins) for image processing:
-
-- Adaptive Manifold Filter
-- Add Noise
-- Auto Levels
-- Auto Threshold
-- Auto Trim
-- Bilateral Filter
-- Box Blur
-- Brightness/Contrast
-- Color Balance
+IBP comes with a variety of built-in filters (plugins) for image processing: Adaptive Manifold Filter, Add Noise, Auto Levels, Auto Threshold, Auto Trim, Bilateral Filter, Box Blur, Brightness/Contrast, ...
 
 ### See [details](details.md) and [plugins](plugins) for more information.
-
 
 ## History
 
