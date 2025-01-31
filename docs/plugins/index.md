@@ -1,5 +1,5 @@
 ---
-title: Plugins
+title: 04 Plugins
 layout: default
 ---
 
