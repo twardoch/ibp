@@ -1,0 +1,6 @@
+#ifndef IBP_VERSION_H
+#define IBP_VERSION_H
+
+#define IBP_VERSION "@PROJECT_VERSION@"
+
+#endif // IBP_VERSION_H 

@@ -5,17 +5,29 @@ set -e
 
 # Configuration
 APP_NAME="ImageBatchProcessor"
-APP_VERSION="2.0.1"
+APP_VERSION="$(cat VERSION.TXT)"
+BUILD_DIR="build/build"
 BUNDLE_NAME="${APP_NAME}.app"
 DIST_DIR="dist"
-BUILD_DIR="build/build"
 
 # External library paths
-QT_PATH="$(brew --prefix qt@5)"
-OPENCV_PATH="$(brew --prefix opencv)"
 FREEIMAGE_PATH="$(brew --prefix freeimage)"
 LCMS2_PATH="$(brew --prefix lcms2)"
 OPENBLAS_PATH="$(brew --prefix openblas)"
+OPENCV_PATH="$(brew --prefix opencv@4)"
+OPENJPEG_PATH="$(brew --prefix openjpeg)"
+QT_PATH="$(brew --prefix qt@5)"
+
+# Find OpenCV libraries dynamically
+mapfile -t opencv_libs < <(find "${OPENCV_PATH}/lib" -type f -iname "libopencv_*.dylib")
+
+# Find additional libraries dynamically
+additional_libs=(
+    $(find "${FREEIMAGE_PATH}/lib" -type f -iname "libfreeimage*.dylib")
+    $(find "${LCMS2_PATH}/lib" -type f -iname "liblcms2*.dylib")
+    $(find "${OPENBLAS_PATH}/lib" -type f -iname "libopenblas*.dylib")
+    $(find "${OPENJPEG_PATH}/lib" -type f -iname "libopenjp2*.dylib")
+)
 
 # Clean up any .DS_Store files
 find . -name ".DS_Store" -delete
@@ -30,14 +42,20 @@ echo "Creating bundle structure..."
 mkdir -p "${DIST_DIR}/${BUNDLE_NAME}/Contents/"{MacOS,Resources,Frameworks,PlugIns}
 
 # Copy the main executable
-if [ -f "${BUILD_DIR}/ibp-0.1.0" ]; then
-    cp "${BUILD_DIR}/ibp-0.1.0" "${DIST_DIR}/${BUNDLE_NAME}/Contents/MacOS/${APP_NAME}"
+# First try to find versioned executable
+versioned_exec=$(find "${BUILD_DIR}" -maxdepth 1 -type f -name "ibp-*" | sort -V | tail -n1)
+
+if [ -n "$versioned_exec" ]; then
+    # Found versioned executable
+    cp "$versioned_exec" "${DIST_DIR}/${BUNDLE_NAME}/Contents/MacOS/${APP_NAME}"
     chmod +x "${DIST_DIR}/${BUNDLE_NAME}/Contents/MacOS/${APP_NAME}"
 elif [ -L "${BUILD_DIR}/ibp" ] && [ -f "${BUILD_DIR}/$(readlink ${BUILD_DIR}/ibp)" ]; then
+    # Found symbolic link to executable
     actual_exec="${BUILD_DIR}/$(readlink ${BUILD_DIR}/ibp)"
     cp "$actual_exec" "${DIST_DIR}/${BUNDLE_NAME}/Contents/MacOS/${APP_NAME}"
     chmod +x "${DIST_DIR}/${BUNDLE_NAME}/Contents/MacOS/${APP_NAME}"
 elif [ -f "${BUILD_DIR}/ibp" ]; then
+    # Found plain executable
     cp "${BUILD_DIR}/ibp" "${DIST_DIR}/${BUNDLE_NAME}/Contents/MacOS/${APP_NAME}"
     chmod +x "${DIST_DIR}/${BUNDLE_NAME}/Contents/MacOS/${APP_NAME}"
 else
@@ -85,22 +103,18 @@ copy_additional_lib() {
 
 # Copy OpenCV libraries
 echo "Copying OpenCV libraries..."
-opencv_libs=(
-    "libopencv_core.4.11.0.dylib"
-    "libopencv_imgproc.4.11.0.dylib"
-    "libopencv_imgcodecs.4.11.0.dylib"
-    "libopencv_photo.4.11.0.dylib"
-    "libopencv_ximgproc.4.11.0.dylib"
-    "libopencv_xphoto.4.11.0.dylib"
-)
 
 for lib in "${opencv_libs[@]}"; do
-    lib_path="${OPENCV_PATH}/lib/${lib}"
-    if [ -f "$lib_path" ]; then
-        copy_additional_lib "$lib_path"
-        # Create symlinks for .411.dylib versions
-        base_name=$(echo "$lib" | sed 's/\.4\.11\.0\.dylib/.411.dylib/')
-        (cd "${DIST_DIR}/${BUNDLE_NAME}/Contents/Frameworks" && ln -sf "$lib" "$base_name")
+    if [ -f "$lib" ]; then
+        copy_additional_lib "$lib"
+        # Create symlinks for version-specific .dylib files
+        # Extract version number and create appropriate symlink
+        lib_basename=$(basename "$lib")
+        if [[ "$lib_basename" =~ libopencv_.*\.([0-9]+\.[0-9]+)\.[0-9]+\.dylib ]]; then
+            version="${BASH_REMATCH[1]}"
+            base_name=$(echo "$lib_basename" | sed "s/\.$version\.[0-9]\+\.dylib/.$version.dylib/")
+            (cd "${DIST_DIR}/${BUNDLE_NAME}/Contents/Frameworks" && ln -sf "$lib_basename" "$base_name")
+        fi
     else
         echo "Error: Could not find OpenCV library ${lib}"
         exit 1
@@ -119,19 +133,14 @@ set_permissions() {
 
 # Copy additional dependencies
 echo "Copying additional dependencies..."
-additional_libs=(
-    "${OPENBLAS_PATH}/lib/libopenblasp-r0.3.29.dylib"
-    "${LCMS2_PATH}/lib/liblcms2.2.dylib"
-    "${FREEIMAGE_PATH}/lib/libfreeimage.3.18.0.dylib"
-    "${FREEIMAGE_PATH}/lib/libfreeimageplus.3.18.0.dylib"
-)
 
 for lib_path in "${additional_libs[@]}"; do
     if [ -f "$lib_path" ]; then
         copy_additional_lib "$lib_path"
         # Create symlinks for OpenBLAS
-        if [[ "$lib_path" == *"libopenblasp-r0.3.29.dylib" ]]; then
-            (cd "${DIST_DIR}/${BUNDLE_NAME}/Contents/Frameworks" && ln -sf "$(basename "$lib_path")" "libopenblas.0.dylib")
+        if [[ "$(basename "$lib_path")" =~ libopenblasp-r([0-9]+\.[0-9]+\.[0-9]+)\.dylib ]]; then
+            openblas_lib="$(basename "$lib_path")"
+            (cd "${DIST_DIR}/${BUNDLE_NAME}/Contents/Frameworks" && ln -sf "$openblas_lib" "libopenblas.0.dylib")
             (cd "${DIST_DIR}/${BUNDLE_NAME}/Contents/Frameworks" && ln -sf "libopenblas.0.dylib" "libopenblas.dylib")
         fi
     else
@@ -160,7 +169,9 @@ done
 # Copy settings
 echo "Copying settings..."
 mkdir -p "${DIST_DIR}/${BUNDLE_NAME}/Contents/Resources/settings"
-cp "${BUILD_DIR}/settings/"* "${DIST_DIR}/${BUNDLE_NAME}/Contents/Resources/settings/"
+if [ -n "$(ls -A "${BUILD_DIR}/settings/" 2>/dev/null)" ]; then
+    cp "${BUILD_DIR}/settings/"* "${DIST_DIR}/${BUNDLE_NAME}/Contents/Resources/settings/"
+fi
 
 # Copy application icon
 echo "Copying application icon..."
@@ -198,6 +209,8 @@ cat >"${DIST_DIR}/${BUNDLE_NAME}/Contents/Info.plist" <<EOF
 </dict>
 </plist>
 EOF
+
+rm -rf "${DIST_DIR}/${BUNDLE_NAME}.dmg"
 
 # Create DMG
 echo "Creating DMG..."
