@@ -114,7 +114,7 @@ gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into t
 #   enabled: false
 
 # Define the color scheme, see docs/customization.md#colors for all possible values.
-color_scheme: dark
+# color_scheme: dark
 
 # Advanced options (rarely need to be set)
 # Exclude specific pages from being searched
