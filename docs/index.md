@@ -9,11 +9,13 @@ title: 01 Image Batch Processor
 
 The Image Batch Processor (IBP) is a cross-platform, open source tool written in C++/Qt that transforms one or more images automatically using a customizable list of effects.
 
+## ☛ [Download unsigned DMG for macOS](https://github.com/twardoch/ibp/raw/refs/heads/master/dist/ImageBatchProcessor.dmg)
+
+
+
 ![Screenshot](assets/img/screenshot.png)
 
-## [Download unsigned DMG for macOS](https://github.com/twardoch/ibp/raw/refs/heads/master/dist/ImageBatchProcessor.dmg)
-
-- [View Source on GitHub](https://github.com/twardoch/ibp)
+[View Source on GitHub](https://github.com/twardoch/ibp)
 
 ## Features
 
