@@ -1,9 +1,7 @@
 [imageFilter1]
-amount=124
 bypass=false
-id=ibp.imagefilter.unsharpmask
-radius=18.91
-threshold=14
+id=ibp.imagefilter.dctdenoising
+strength=84.53
 
 [info]
 description=This file contains the filter list that image batch processor was using the last time it was closed.
