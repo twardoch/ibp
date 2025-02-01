@@ -1,8 +1,8 @@
 [imageFilter1]
 id=ibp.imagefilter.domaintransformfilter
 bypass=false
-edgepreservation=70
-radius=40
+edgepreservation=87
+radius=72.46
 
 [info]
 description=Smooth the image preserving hard edges

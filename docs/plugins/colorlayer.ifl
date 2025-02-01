@@ -1,10 +1,10 @@
 [imageFilter1]
 id=ibp.imagefilter.colorlayer
 bypass=false
-color=20
-colorcompositionmode=1
-opacity=2
-position=33
+color=#ff0000
+colorcompositionmode=multiply
+opacity=49
+position=front
 
 [info]
 description=Adds a color layer to the image

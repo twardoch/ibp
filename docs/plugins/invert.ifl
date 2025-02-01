@@ -1,10 +1,10 @@
 [imageFilter1]
 id=ibp.imagefilter.invert
 bypass=false
-alphachannel=1
-bluechannel=0
-greenchannel=1
-redchannel=0
+alphachannel=false
+bluechannel=true
+greenchannel=false
+redchannel=false
 
 [info]
 description=Invert one or more channels of the image

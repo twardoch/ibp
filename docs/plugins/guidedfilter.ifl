@@ -1,8 +1,8 @@
 [imageFilter1]
 id=ibp.imagefilter.guidedfilter
 bypass=false
-edgepreservation=80
-radius=40
+edgepreservation=87
+radius=39
 
 [info]
 description=Smooth the image preserving hard edges

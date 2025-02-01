@@ -1,12 +1,12 @@
 [imageFilter1]
 id=ibp.imagefilter.lumakeyer
 bypass=false
-interpolationmode=1
+interpolationmode=linear
 inverted=0
-isinverted=1
-knots=4
-outputmode=normal
-preblurradius=40
+isinverted=false
+knots="0.00 0.00, 0.01 1.00, 0.13 1.00, 0.31 0.00, 0.63 0.00, 1.00 0.00"
+outputmode=keyedimage
+preblurradius=40.3
 
 [info]
 description=Apply a matte to the image based on its luminance

@@ -2,12 +2,13 @@
 id=ibp.imagefilter.resize
 bypass=false
 anchorposition=2
-backgroundcolor=0
-height=90
-heightmode=1
-resizemode=normal
-width=80
-widthmode=1
+backgroundcolor=#00000000
+height=-30
+heightmode=percent
+resizemode=relative
+width=-33
+widthmode=percent
+anchorPosition=centerleft
 
 [info]
 description=Resize the image without resampling its data

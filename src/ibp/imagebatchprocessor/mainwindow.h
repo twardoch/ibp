@@ -58,6 +58,10 @@ public:
                              const QString &inputImageFile,
                              const QString &outputImageFile);
 
+    // View Edit
+    bool viewEditLoadInputImage(const QString & fileName);
+    bool viewEditLoadImageFilterList(const QString & fileName);
+
 protected:
     // Main
     void resizeEvent(QResizeEvent *e);
@@ -115,10 +119,7 @@ private:
     void viewEditShow();
     void viewEditEventFilter(QObject *o, QEvent *e);
 
-    bool viewEditLoadInputImage(const QString & fileName);
     bool viewEditSaveOutputImage(const QString & fileName, const QString &filter);
-
-    bool viewEditLoadImageFilterList(const QString & fileName);
 
     // View Batch
     void viewBatchLoad();

@@ -2,8 +2,9 @@
 id=ibp.imagefilter.autothreshold
 bypass=false
 affectedchannel=1
-colormode=2
-thresholdmode=1
+colormode=rgb
+thresholdmode=global
+affectedchannels=luma blue
 
 [info]
 description=Transforms the channels of the image into binary using an automatic threshold value

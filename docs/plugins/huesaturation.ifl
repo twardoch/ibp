@@ -1,12 +1,12 @@
 [imageFilter1]
 id=ibp.imagefilter.huesaturation
 bypass=false
-abshue=33
+abshue=162
 abssaturation=44
-colorize=1
-relhue=55
-rellightness=66
-relsaturation=77
+colorize=false
+relhue=45
+rellightness=0
+relsaturation=51
 
 [info]
 description=Change the color information of the image in the HSL space

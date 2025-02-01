@@ -2,8 +2,12 @@
 id=ibp.imagefilter.autotrim
 bypass=false
 margins=75
-reference=75
-threshold=190
+reference=luma
+threshold=126
+marginbottom=0
+marginleft=0
+marginright=0
+margintop=0
 
 [info]
 description=Trims the image based on some luma or alpha threshold value

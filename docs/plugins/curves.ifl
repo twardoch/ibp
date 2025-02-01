@@ -3,7 +3,17 @@ id=ibp.imagefilter.curves
 bypass=false
 interpolationmode=normal
 knots=3
-workingchannel=1
+workingchannel=luma
+alphainterpolationmode=smooth
+alphaknots="0.00 0.00, 1.00 1.00"
+blueinterpolationmode=smooth
+blueknots="0.00 0.00, 1.00 1.00"
+greeninterpolationmode=smooth
+greenknots="0.00 0.00, 1.00 1.00"
+lumainterpolationmode=smooth
+lumaknots="0.00 0.00, 0.40 0.65, 1.00 1.00"
+redinterpolationmode=smooth
+redknots="0.00 0.00, 1.00 1.00"
 
 [info]
 description=Adjust the tonal curves of the image

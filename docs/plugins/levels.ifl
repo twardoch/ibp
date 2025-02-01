@@ -6,7 +6,12 @@ inputgamma=25.0
 inputwhitepoint=35.0
 outputblackpoint=45.0
 outputwhitepoint=55.0
-workingchannel=1
+workingchannel=luma
+alphalevels=0.00 1.00 1.00 0.00 1.00
+bluelevels=0.00 1.00 1.00 0.00 1.00
+greenlevels=0.00 1.00 1.00 0.00 1.00
+redlevels=0.00 1.00 1.00 0.00 1.00
+rgblevels=0.00 2.61 0.75 0.00 0.76
 
 [info]
 description=Adjust the black, mid and white tones of the image

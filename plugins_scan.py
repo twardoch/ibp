@@ -14,13 +14,22 @@ import re
 import xml.etree.ElementTree as ET
 from enum import Enum
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, Optional
 
 import clang.cindex
 import yaml
 from clang.cindex import Config, Index
 from loguru import logger
-from pydantic import BaseModel
+
+from plugins_utils import (
+    FilterInfo,
+    PluginInfo,
+    PropertyDict,
+    PropertyInfo,
+    PropertyType,
+    UIInfo,
+    sort_dict_recursive,
+)
 
 # Type aliases for better readability
 PropertyDict = Dict[str, "PropertyInfo"]
@@ -41,11 +50,13 @@ def setup_libclang() -> None:
         if brew_path.exists():
             Config.set_library_file(str(brew_path))
             return
-    except (subprocess.SubProcessError, FileNotFoundError):
+    except (subprocess.CalledProcessError, FileNotFoundError):
         pass
 
     # Try using locate as fallback
     try:
+        import subprocess
+
         paths = subprocess.check_output(
             ["locate", "libclang.dylib"], text=True
         ).splitlines()
@@ -53,7 +64,7 @@ def setup_libclang() -> None:
             if os.path.exists(path):
                 Config.set_library_file(path)
                 return
-    except (subprocess.SubProcessError, FileNotFoundError):
+    except (subprocess.CalledProcessError, FileNotFoundError):
         pass
 
     logger.warning("Could not find libclang.dylib")
@@ -72,17 +83,6 @@ class CursorKinds:
     CONSTRUCTOR = 24
 
 
-class PropertyType(str, Enum):
-    """Supported property types in the filter plugins."""
-
-    BOOL = "bool"
-    INT = "int"
-    DOUBLE = "double"
-    COLOR = "color"
-    ENUM = "enum"
-    STRING = "string"
-
-
 class EnumEncoder(json.JSONEncoder):
     """JSON encoder that handles Enum values."""
 
@@ -90,30 +90,6 @@ class EnumEncoder(json.JSONEncoder):
         if isinstance(o, Enum):
             return o.value
         return super().default(o)
-
-
-class PropertyInfo(BaseModel):
-    """Information about a filter property."""
-
-    name: str
-    type: PropertyType
-    default_value: Union[int, float, str]
-    interesting_value: Union[int, float, str]
-    description: str = ""
-    comment: str = ""  # Added field for property-specific comments
-    min_value: Optional[Union[int, float]] = None
-    max_value: Optional[Union[int, float]] = None
-    enum_values: Optional[List[str]] = None
-
-
-class FilterInfo(BaseModel):
-    """Complete information about a filter plugin."""
-
-    id: str
-    name: str
-    description: str
-    example: Dict[str, Union[int, float, str]]
-    properties: PropertyDict
 
 
 def find_string_literal(node: clang.cindex.Cursor) -> Optional[str]:
@@ -404,17 +380,6 @@ def create_filter_info(
         example=example,
         properties=sorted_properties,
     )
-
-
-def sort_dict_recursive(obj: Any) -> Any:
-    """Recursively sort dictionary keys alphabetically."""
-    if isinstance(obj, dict):
-        return {k: sort_dict_recursive(obj[k]) for k in sorted(obj.keys())}
-    if isinstance(obj, list):
-        return [sort_dict_recursive(e) for e in obj]
-    if isinstance(obj, Enum):
-        return obj.value
-    return obj
 
 
 def save_yaml_file(yaml_file: Path, filter_info: FilterInfo) -> None:

@@ -2,12 +2,14 @@
 id=ibp.imagefilter.morphology
 bypass=false
 hradius=30
-kernelshape=normal
+kernelshape=ellipse
 lockradius=1
-modifyalpha=0
-modifyrgb=1
+modifyalpha=false
+modifyrgb=true
 morphologyop=20
-vradius=40
+vradius=38
+lockRadius=false
+morphologicalop=dilation
 
 [info]
 description=Apply a basic mathematical morphology operation to the image

@@ -68,6 +68,9 @@ int main(int argc, char *argv[])
                                          "file");
     parser.addOption(outputImageOption);
 
+    // Add support for positional arguments (additional image files)
+    parser.addPositionalArgument("images", QObject::tr("Additional image files to open."));
+
     parser.process(a);
 
     setIBPStyle();
@@ -79,18 +82,26 @@ int main(int argc, char *argv[])
 #endif
     ConfigurationManager::setFileName("imagebatchprocessor.cfg");
 
-    if (parser.isSet(filterListOption) && parser.isSet(inputImageOption) && parser.isSet(outputImageOption))
+    // CLI mode - process image and exit
+    if (parser.isSet(outputImageOption))
     {
-        QString filterListFile = parser.value(filterListOption);
+        if (!parser.isSet(inputImageOption))
+        {
+            qWarning().noquote() << "Error: Input image (-i) must be specified when using output (-o)";
+            return 1;
+        }
+
+        QString filterListFile = parser.isSet(filterListOption) ? parser.value(filterListOption) : QString();
         QString inputImageFile = parser.value(inputImageOption);
         QString outputImageFile = parser.value(outputImageOption);
 
         qDebug() << "Processing with:";
-        qDebug() << "  Filter list:" << filterListFile;
+        if (!filterListFile.isEmpty())
+            qDebug() << "  Filter list:" << filterListFile;
         qDebug() << "  Input image:" << inputImageFile;
         qDebug() << "  Output image:" << outputImageFile;
 
-        if (!QFileInfo(filterListFile).exists())
+        if (!filterListFile.isEmpty() && !QFileInfo(filterListFile).exists())
         {
             qWarning().noquote() << QString("Error: Filter list file does not exist: %1").arg(filterListFile);
             return 1;
@@ -112,8 +123,51 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    // GUI mode
     MainWindow w;
     w.setWindowTitle(a.applicationDisplayName());
+
+    // Load initial image if specified
+    if (parser.isSet(inputImageOption))
+    {
+        QString inputImageFile = parser.value(inputImageOption);
+        if (!QFileInfo(inputImageFile).exists())
+        {
+            qWarning().noquote() << QString("Warning: Input image file does not exist: %1").arg(inputImageFile);
+        }
+        else
+        {
+            w.viewEditLoadInputImage(inputImageFile);
+        }
+    }
+
+    // Load filter list if specified
+    if (parser.isSet(filterListOption))
+    {
+        QString filterListFile = parser.value(filterListOption);
+        if (!QFileInfo(filterListFile).exists())
+        {
+            qWarning().noquote() << QString("Warning: Filter list file does not exist: %1").arg(filterListFile);
+        }
+        else
+        {
+            w.viewEditLoadImageFilterList(filterListFile);
+        }
+    }
+
+    // Load additional images from positional arguments
+    const QStringList additionalImages = parser.positionalArguments();
+    for (const QString& imagePath : additionalImages)
+    {
+        if (!QFileInfo(imagePath).exists())
+        {
+            qWarning().noquote() << QString("Warning: Additional image file does not exist: %1").arg(imagePath);
+            continue;
+        }
+        // TODO: Implement a method to open additional images in new tabs/windows
+        qDebug() << "Opening additional image:" << imagePath;
+    }
+
     w.show();
     return a.exec();
 }

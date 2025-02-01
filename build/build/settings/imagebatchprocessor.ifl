@@ -1,13 +1,9 @@
 [imageFilter1]
-anchorPosition=centercenter
-backgroundcolor=#00000000
+amount=124
 bypass=false
-height=100
-heightmode=percent
-id=ibp.imagefilter.resize
-resizemode=absolute
-width=100
-widthmode=percent
+id=ibp.imagefilter.unsharpmask
+radius=18.91
+threshold=14
 
 [info]
 description=This file contains the filter list that image batch processor was using the last time it was closed.

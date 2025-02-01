@@ -1,11 +1,11 @@
 [imageFilter1]
 id=ibp.imagefilter.resample
 bypass=false
-height=200
-heightmode=1
-resamplingmode=normal
-width=200
-widthmode=1
+height=20
+heightmode=percent
+resamplingmode=lanczos
+width=20
+widthmode=percent
 
 [info]
 description=Resample the image to a new size using the selected resampling interpolation mode

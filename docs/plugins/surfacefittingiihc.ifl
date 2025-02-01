@@ -1,7 +1,7 @@
 [imageFilter1]
 id=ibp.imagefilter.surfacefittingiihc
 bypass=false
-outputmode=25
+outputmode=correctedimagemode1
 
 [info]
 description=Removes the artifacts due to a bad illumination using a surface fitting approach

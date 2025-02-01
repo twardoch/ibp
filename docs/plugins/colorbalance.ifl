@@ -1,16 +1,16 @@
 [imageFilter1]
 id=ibp.imagefilter.colorbalance
 bypass=false
-highlightsblue=20
-highlightsgreen=30
-highlightsred=40
-midtonesblue=50
-midtonesgreen=60
-midtonesred=70
-preserveluminosity=1
-shadowsblue=80
-shadowsgreen=10
-shadowsred=50
+highlightsblue=77
+highlightsgreen=60
+highlightsred=63
+midtonesblue=-78
+midtonesgreen=-39
+midtonesred=47
+preserveluminosity=false
+shadowsblue=0
+shadowsgreen=45
+shadowsred=6
 
 [info]
 description=Image filter plugin for colorbalance

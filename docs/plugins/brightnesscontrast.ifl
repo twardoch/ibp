@@ -3,8 +3,13 @@ id=ibp.imagefilter.brightnesscontrast
 bypass=false
 brightness=30
 contrast=20
-usesoftmode=1
-workingchannel=2
+usesoftmode=true
+workingchannel=rgb
+alphabrightnesscontrast=0 0
+bluebrightnesscontrast=0 0
+greenbrightnesscontrast=0 0
+redbrightnesscontrast=0 0
+rgbbrightnesscontrast=27 -35
 
 [info]
 description=Adjust levels of the image in an easy way

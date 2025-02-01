@@ -1,8 +1,8 @@
 [imageFilter1]
 id=ibp.imagefilter.bilateralfilter
 bypass=false
-edgepreservation=80
-radius=40
+edgepreservation=83
+radius=20.96
 
 [info]
 description=Image filter plugin for bilateralfilter

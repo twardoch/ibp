@@ -1,7 +1,7 @@
 [imageFilter1]
 id=ibp.imagefilter.median
 bypass=false
-radius=50
+radius=29
 
 [info]
 description=Smooths the image using a median filter

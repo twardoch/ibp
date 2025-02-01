@@ -16,20 +16,44 @@ import fire
 import yaml
 from loguru import logger
 from pathos.pools import ProcessPool
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from rich.console import Console
 from rich.progress import Progress
+
+from plugins_utils import (
+    FilterInfo,
+    PropertyDict,
+    UIInfo,
+)
 
 console = Console()
 
 # Configure logger
 logger.add("plugins_iflmake.log", rotation="1 MB")
 
+# Constants
+IBP_PATH = Path.cwd() / "build" / "build" / "ibp"
+
 # Type aliases for better readability
 PropertyDict = Dict[str, "PropertyInfo"]
-PluginInfo = Dict[str, str]
 UIInfo = Dict[str, Dict[str, float]]
-IBP_PATH = Path.cwd() / "build" / "build" / "ibp"
+
+
+@dataclass
+class ProcessingTask:
+    """Represents a single image processing task.
+
+    Attributes:
+        input_path: Path to the input image file
+        output_path: Path where the processed image should be saved
+        ifl_path: Path to the .ifl filter configuration file
+        plugin_name: Short identifier of the plugin
+    """
+
+    input_path: Path
+    output_path: Path
+    ifl_path: Path
+    plugin_name: str
 
 
 class PropertyType(str, Enum):
@@ -64,33 +88,6 @@ class PropertyInfo(BaseModel):
     min_value: Optional[Union[int, float]] = None
     max_value: Optional[Union[int, float]] = None
     enum_values: Optional[List[str]] = None
-
-
-class FilterInfo(BaseModel):
-    """Complete information about a filter plugin."""
-
-    id: str
-    name: str
-    description: str
-    example: Dict[str, Union[int, float, str]]
-    properties: PropertyDict
-
-
-@dataclass
-class ProcessingTask:
-    """Represents a single image processing task.
-
-    Attributes:
-        input_path: Path to the input image file
-        output_path: Path where the processed image should be saved
-        ifl_path: Path to the .ifl filter configuration file
-        plugin_name: Short identifier of the plugin
-    """
-
-    input_path: Path
-    output_path: Path
-    ifl_path: Path
-    plugin_name: str
 
 
 class ConfigError(Exception):
@@ -169,29 +166,21 @@ def load_yaml_config(yaml_path: Path) -> FilterInfo:
         raise ConfigError(f"Invalid filter configuration in {yaml_path}: {e}")
 
 
-def sort_dict_recursive(obj: Any) -> Any:
-    """Recursively sort dictionary keys alphabetically."""
-    if isinstance(obj, dict):
-        return {k: sort_dict_recursive(obj[k]) for k in sorted(obj.keys())}
-    if isinstance(obj, list):
-        return [sort_dict_recursive(e) for e in obj]
-    if isinstance(obj, Enum):
-        return obj.value
-    return obj
-
-
-def create_ifl_file(filter_config: FilterInfo, output_dir: Path) -> Optional[str]:
+def create_ifl_file(
+    filter_config: FilterInfo, output_dir: Path, write_file: bool = True
+) -> Optional[str]:
     """Create .ifl file for the filter and return its contents as string.
 
     Args:
         filter_config: FilterInfo containing the filter configuration
         output_dir: Directory where the .ifl file should be created
+        write_file: Whether to write the IFL file to disk (True) or just return contents (False)
 
     Returns:
         String containing the .ifl file contents, or None if creation fails
 
     Raises:
-        OSError: If there are file access issues
+        OSError: If there are file access issues when writing file
     """
     config = create_config_parser()
 
@@ -216,18 +205,25 @@ def create_ifl_file(filter_config: FilterInfo, output_dir: Path) -> Optional[str
     config.set("info", "nFilters", "1")
     config.set("info", "name", filter_config.name)
 
-    # Write to file
-    ifl_path = output_dir / f"{filter_config.id.split('.')[-1]}.ifl"
-    try:
-        with ifl_path.open("w") as f:
-            config.write(f, space_around_delimiters=False)
+    # Get contents as string
+    from io import StringIO
 
-        # Return contents as string for markdown
-        with ifl_path.open("r") as f:
-            return f.read()
-    except OSError as e:
-        logger.error(f"Failed to write .ifl file {ifl_path}: {e}")
-        return None
+    output = StringIO()
+    config.write(output, space_around_delimiters=False)
+    contents = output.getvalue()
+    output.close()
+
+    if write_file:
+        # Write to file
+        ifl_path = output_dir / f"{filter_config.id.split('.')[-1]}.ifl"
+        try:
+            with ifl_path.open("w") as f:
+                f.write(contents)
+        except OSError as e:
+            logger.error(f"Failed to write .ifl file {ifl_path}: {e}")
+            return None
+
+    return contents
 
 
 def get_image_files(input_dir: Path) -> List[Path]:
@@ -371,17 +367,28 @@ def create_markdown(
 
 
 def generate_documentation(
-    yaml_files: List[Path], input_images: List[Path], plugins_output_dir: Path
+    yaml_files: List[Path],
+    input_images: List[Path],
+    plugins_output_dir: Path,
+    list_force: bool = True,
 ) -> None:
     """
     Process each filter.yaml file to create the corresponding .ifl and markdown
     documentation.
+
+    Args:
+        yaml_files: List of YAML configuration files to process
+        input_images: List of input image paths
+        plugins_output_dir: Directory where to output plugin documentation
+        list_force: Whether to write IFL files to disk (True) or just generate contents (False)
     """
     for yaml_path in yaml_files:
         try:
             logger.info(f"Processing documentation for {yaml_path}")
             filter_config = load_yaml_config(yaml_path)
-            ifl_contents = create_ifl_file(filter_config, plugins_output_dir)
+            ifl_contents = create_ifl_file(
+                filter_config, plugins_output_dir, write_file=list_force
+            )
             if ifl_contents is None:
                 continue
             create_markdown(
@@ -461,6 +468,7 @@ def main(
     force: bool = False,
     images: bool = False,
     markdown: bool = False,
+    list_force: bool = False,
 ) -> None:
     """Process filter plugins and generate documentation.
 
@@ -469,6 +477,7 @@ def main(
         force: Whether to overwrite existing output files
         images: Whether to generate output images
         markdown: Whether to generate markdown documentation
+        list_force: Whether to overwrite IFL files in docs/plugins (if False, IFL files are read but not overwritten)
     """
     # Setup paths
     base_dir = Path.cwd()
@@ -506,7 +515,9 @@ def main(
 
     # Documentation generation pass
     if markdown:
-        generate_documentation(yaml_files, input_images, plugins_output_dir)
+        generate_documentation(
+            yaml_files, input_images, plugins_output_dir, list_force=list_force
+        )
 
     # Image processing pass
     if images:

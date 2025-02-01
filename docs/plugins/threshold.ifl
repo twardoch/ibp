@@ -2,8 +2,14 @@
 id=ibp.imagefilter.threshold
 bypass=false
 affectedchannel=1
-colormode=2
+colormode=luma
 threshold=75
+affectedchannels=luma
+alphathreshold=128
+bluethreshold=128
+greenthreshold=128
+lumathreshold=21
+redthreshold=128
 
 [info]
 description=Transforms the channels of the image into binary using a threshold value

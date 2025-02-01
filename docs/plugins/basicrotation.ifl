@@ -1,7 +1,7 @@
 [imageFilter1]
 id=ibp.imagefilter.basicrotation
 bypass=false
-angle=75
+angle=90clockwise
 
 [info]
 description=Rotate the image by 90° increments

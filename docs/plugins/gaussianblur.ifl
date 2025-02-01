@@ -1,9 +1,9 @@
 [imageFilter1]
 id=ibp.imagefilter.gaussianblur
 bypass=false
-bluralpha=1
-blurrgb=1
-radius=50
+bluralpha=true
+blurrgb=true
+radius=11.38
 
 [info]
 description=Blurs the image using a smooth gaussian distribution

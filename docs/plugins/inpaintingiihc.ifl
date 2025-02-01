@@ -1,9 +1,9 @@
 [imageFilter1]
 id=ibp.imagefilter.inpaintingiihc
 bypass=false
-maskexpansion=75
-noisereduction=30
-outputmode=1
+maskexpansion=71
+noisereduction=19.9
+outputmode=correctedimagemode1
 
 [info]
 description=Image filter plugin for inpaintingiihc

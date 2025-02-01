@@ -1,23 +1,26 @@
 [imageFilter1]
 id=ibp.imagefilter.hslcolorreplacement
 bypass=false
-abshue=270
-abssaturation=50
-colorize=1
-hueinterpolationmode=75
+abshue=30
+abssaturation=25
+colorize=false
+hueinterpolationmode=linear
 hueinverted=1
-hueknots=75
-lightnessinterpolationmode=75
+hueknots="0.00 0.00, 0.38 0.00, 0.46 1.00, 0.67 0.04"
+lightnessinterpolationmode=smooth
 lightnessinverted=1
-lightnessknots=75
-outputmode=normal
-preblurradius=40
-relhue=90
-rellightness=50
-relsaturation=50
-saturationinterpolationmode=75
+lightnessknots="0.00 0.00, 0.63 1.00, 1.00 0.00"
+outputmode=keyedimage
+preblurradius=27.86
+relhue=149
+rellightness=15
+relsaturation=54
+saturationinterpolationmode=smooth
 saturationinverted=1
-saturationknots=75
+saturationknots="0.00 0.00, 0.39 0.96, 1.00 1.00"
+hueisinverted=false
+lightnessisinverted=false
+saturationisinverted=false
 
 [info]
 description=Replace colors of the image based on its HSL components

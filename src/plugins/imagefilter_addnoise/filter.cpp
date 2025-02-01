@@ -80,7 +80,7 @@ QImage Filter::process(const QImage &inputImage)
     const double minus_2_times_log_of_RAND_MAX_plus_1 = -2. * log (RAND_MAX + 1.0);
     const double IBP_2PI_over_RAND_MAX = IBP_2PI / RAND_MAX;
 
-    QRandomGenerator::global()->seed(mSeed);
+    QRandomGenerator randomGenerator(mSeed);
 
     if (mColorMode == Monochromatic)
     {
@@ -88,7 +88,7 @@ QImage Filter::process(const QImage &inputImage)
         {
             while (totalPixels--)
             {
-                r = 2 * (long)QRandomGenerator::global()->generate() * amount / RAND_MAX - amount;
+                r = 2 * (long)randomGenerator.generate() * amount / RAND_MAX - amount;
                 dstBits->r = IBP_clamp(0, srcBits->r + r, 255);
                 dstBits->g = IBP_clamp(0, srcBits->g + r, 255);
                 dstBits->b = IBP_clamp(0, srcBits->b + r, 255);
@@ -101,8 +101,8 @@ QImage Filter::process(const QImage &inputImage)
         {
             while (totalPixels--)
             {
-                r = sqrt(-2. * log(QRandomGenerator::global()->generate() + 1) - minus_2_times_log_of_RAND_MAX_plus_1) *
-                         cos(QRandomGenerator::global()->generate() * IBP_2PI_over_RAND_MAX) * amount;
+                r = sqrt(-2. * log(randomGenerator.generate() + 1) - minus_2_times_log_of_RAND_MAX_plus_1) *
+                         cos(randomGenerator.generate() * IBP_2PI_over_RAND_MAX) * amount;
                 dstBits->r = IBP_clamp(0, srcBits->r + r, 255);
                 dstBits->g = IBP_clamp(0, srcBits->g + r, 255);
                 dstBits->b = IBP_clamp(0, srcBits->b + r, 255);
@@ -118,9 +118,9 @@ QImage Filter::process(const QImage &inputImage)
         {
             while (totalPixels--)
             {
-                r = 2 * (long)QRandomGenerator::global()->generate() * amount / RAND_MAX - amount;
-                g = 2 * (long)QRandomGenerator::global()->generate() * amount / RAND_MAX - amount;
-                b = 2 * (long)QRandomGenerator::global()->generate() * amount / RAND_MAX - amount;
+                r = 2 * (long)randomGenerator.generate() * amount / RAND_MAX - amount;
+                g = 2 * (long)randomGenerator.generate() * amount / RAND_MAX - amount;
+                b = 2 * (long)randomGenerator.generate() * amount / RAND_MAX - amount;
                 dstBits->r = IBP_clamp(0, srcBits->r + r, 255);
                 dstBits->g = IBP_clamp(0, srcBits->g + g, 255);
                 dstBits->b = IBP_clamp(0, srcBits->b + b, 255);
@@ -133,12 +133,12 @@ QImage Filter::process(const QImage &inputImage)
         {
             while (totalPixels--)
             {
-                r = sqrt(-2. * log(QRandomGenerator::global()->generate() + 1) - minus_2_times_log_of_RAND_MAX_plus_1) *
-                         cos(QRandomGenerator::global()->generate() * IBP_2PI_over_RAND_MAX) * amount;
-                g = sqrt(-2. * log(QRandomGenerator::global()->generate() + 1) - minus_2_times_log_of_RAND_MAX_plus_1) *
-                         cos(QRandomGenerator::global()->generate() * IBP_2PI_over_RAND_MAX) * amount;
-                b = sqrt(-2. * log(QRandomGenerator::global()->generate() + 1) - minus_2_times_log_of_RAND_MAX_plus_1) *
-                         cos(QRandomGenerator::global()->generate() * IBP_2PI_over_RAND_MAX) * amount;
+                r = sqrt(-2. * log(randomGenerator.generate() + 1) - minus_2_times_log_of_RAND_MAX_plus_1) *
+                         cos(randomGenerator.generate() * IBP_2PI_over_RAND_MAX) * amount;
+                g = sqrt(-2. * log(randomGenerator.generate() + 1) - minus_2_times_log_of_RAND_MAX_plus_1) *
+                         cos(randomGenerator.generate() * IBP_2PI_over_RAND_MAX) * amount;
+                b = sqrt(-2. * log(randomGenerator.generate() + 1) - minus_2_times_log_of_RAND_MAX_plus_1) *
+                         cos(randomGenerator.generate() * IBP_2PI_over_RAND_MAX) * amount;
                 dstBits->r = IBP_clamp(0, srcBits->r + r, 255);
                 dstBits->g = IBP_clamp(0, srcBits->g + g, 255);
                 dstBits->b = IBP_clamp(0, srcBits->b + b, 255);
