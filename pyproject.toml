@@ -1,0 +1,99 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "imagebatchprocessor"
+dynamic = ["version"]
+description = "A C++ application for batch image processing, packaged with Python."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT" # Assuming MIT based on LICENSE file, please verify
+authors = [
+    { name = "Your Name", email = "you@example.com" }, # Please replace
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License", # Assuming MIT
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: C++",
+    "Operating System :: OS Independent", # Will aim for this
+]
+dependencies = [
+    # No runtime Python dependencies for the core app yet,
+    # but might add some for utility scripts or wrappers later.
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "mypy",
+    "pytest",
+    # Add other development tools if needed, e.g., coverage
+    # "pytest-cov",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/imagebatchprocessor" # Please replace
+Repository = "https://github.com/yourusername/imagebatchprocessor" # Please replace
+
+[project.scripts]
+imagebatchprocessor = "imagebatchprocessor:main"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel.hooks.custom]
+path = "hatch_build.py:CustomBuildHook"
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W", "I", "UP", "PL", "TID"]
+ignore = ["E501"] # Handled by formatter
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+# Add more strict options as needed
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+# Configuration for uv (optional, but good practice)
+[tool.uv.sources]
+# Add any custom package sources if needed
+# my-index = { url = "https://my-index.com/simple" }
+
+[tool.uv.pip]
+# Global pip arguments, e.g., timeout
+# timeout = 60
+# index-url = "https://pypi.org/simple"
+# extra-index-url = ["https://test.pypi.org/simple/"]
+# find-links = ["./vendor"]
+# no-deps = false
+# pre = false # Enable pre-releases
+# no-binary = [":all:"]
+# only-binary = ["numpy"]
+# require-hashes = true
+
+# Virtual environment configuration (optional)
+# [tool.uv.venv]
+# seed = false # Don't install seed packages (pip, setuptools, wheel)
+# prompt = "{project_name}-venv"
+# python = "3.10" # Request a specific Python version for the virtual environment
+# exclude-newer = "2024-03-20T00:00:00Z" # Ignore Python versions released after this date
+# system-site-packages = true # Allow access to system site packages

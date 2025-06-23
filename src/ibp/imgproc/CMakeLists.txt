@@ -15,21 +15,16 @@ add_library(
     intensitymapping.cpp
     thresholding.cpp
     imagehistogram.cpp
-    colorconversion.h
-    freeimage.h
-    imagefilter.h
-    imagefilterlist.h
-    lut.h
-    types.h
-    util.h
-    pixelblending.h
-    intensitymapping.h
-    thresholding.h
-    imagehistogram.h
+    # Headers should be exposed via target_include_directories, not listed in add_library
 )
 
+# Add current source dir for its own headers, and potentially for others if they are public API.
+# If these headers are only for this lib's .cpp files, use PRIVATE.
+# If they are part of the public API of this lib, use PUBLIC or INTERFACE.
+# For now, assuming they might be part of a public API for other local libs/exe.
 target_include_directories(ibp.imgproc
     PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR} # For its own headers if they form a public API
     ${FreeImage_INCLUDE_DIRS}
 )
 
