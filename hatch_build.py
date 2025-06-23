@@ -54,7 +54,10 @@ class CustomBuildHook(BuildHookInterface):
                 self.app.display_info(f"Copying core library {built_lib_path} to {target_lib_path}")
                 shutil.copy2(built_lib_path, target_lib_path)
             else:
-                self.app.display_warning(f"Core library {full_lib_name} not found at {built_lib_path}")
+                raise FileNotFoundError(
+                    f"Required core library {full_lib_name} not found at {built_lib_path}. "
+                    "Cannot continue building package."
+                )
 
 
         # --- Actual Plugin Files (*.so, *.dll from src/plugins/*) ---
