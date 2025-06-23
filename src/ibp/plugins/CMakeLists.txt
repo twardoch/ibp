@@ -4,7 +4,12 @@ add_library(
     ibp.plugins
     SHARED
     imagefilterpluginloader.cpp
-    imagefilterpluginloader.h
+    # imagefilterpluginloader.h # Headers via target_include_directories
+)
+
+target_include_directories(ibp.plugins
+    PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR} # Expose headers if part of public API
 )
 
 target_link_libraries(

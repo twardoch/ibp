@@ -1,0 +1,48 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+# Overall settings
+# default_language_version:
+#   python: python3.11 # Or your desired default
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0 # Use the latest stable version
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+    -   id: check-toml
+    # -   id: check-json # If you have JSON files you want to validate
+
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version. Must be kept in sync with pyproject.toml or use a recent one.
+    rev: 'v0.4.4' # Check for the latest ruff version
+    hooks:
+    -   id: ruff
+        args: [--fix, --exit-non-zero-on-fix] # Apply fixes and fail if fixes were made
+    -   id: ruff-format
+        # args: [] # No specific args needed unless customizing
+
+# If you had C++ files and wanted to use clang-format (example, not configured here):
+# -   repo: https://github.com/pre-commit/mirrors-clang-format
+#     rev: v16.0.6 # Choose a version
+#     hooks:
+#     -   id: clang-format
+#         types_or: [c++, c, cuda] # File types to format
+        # args: [-style=file] # Assumes .clang-format file in root
+
+# To use pre-commit:
+# 1. Install pre-commit: `pip install pre-commit` or `uv pip install pre-commit`
+# 2. Install the git hook scripts: `pre-commit install`
+# Now pre-commit will run automatically on `git commit`.
+# To run manually on all files: `pre-commit run --all-files`
+# To update hooks: `pre-commit autoupdate`
+#
+# Make sure ruff is also listed in your [project.optional-dependencies.dev] in pyproject.toml
+# (already done in a previous step).
+# The versions of ruff here and in pyproject.toml should ideally be aligned or compatible.
+# Using a specific rev for ruff-pre-commit is generally recommended.
+# You can find the latest ruff versions at: https://github.com/astral-sh/ruff/releases
+# You can find the latest pre-commit-hooks versions at: https://github.com/pre-commit/pre-commit-hooks/releases
