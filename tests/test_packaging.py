@@ -154,16 +154,7 @@ def find_executable_script():
     # This could be more robust, e.g. checking sys.prefix or user bin paths
     # if shutil.which is not sufficient on all platforms/CI environments.
     import shutil
-    executable_path = shutil.which("imagebatchprocessor")
-    if not executable_path:
-        # Try a common path for editable installs if `which` fails
-        # This is a heuristic and might need adjustment.
-        # For non-editable installs, `shutil.which` should usually work if PATH is set up.
-        # In CI, the environment setup should ensure the installed script is in PATH.
-        # If running tests locally without `uv venv && uv pip install .`, this might fail.
-        # A more robust way in tests might be to use `sys.executable -m imagebatchprocessor`.
-        pass # For now, rely on shutil.which or direct module call below
-    return executable_path
+    return shutil.which("imagebatchprocessor")
 
 @pytest.mark.integration
 def test_cli_application_version():
