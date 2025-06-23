@@ -28,7 +28,12 @@ class CustomBuildHook(BuildHookInterface):
             self.app.display_info(f"Copying application {built_app_path} to {target_app_path}")
             shutil.copy2(built_app_path, target_app_path)
             if sys.platform != "win32":
-                os.chmod(target_app_path, 0o755)
+                try:
+                    os.chmod(target_app_path, 0o755)
+                except OSError as e:
+                    self.app.display_warning(
+                        f"Failed to set executable permissions on {target_app_path}: {e}"
+                    )
         else:
             raise FileNotFoundError(f"Application executable not found at {built_app_path}.")
 
