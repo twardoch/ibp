@@ -30,8 +30,7 @@ class CustomBuildHook(BuildHookInterface):
             if sys.platform != "win32":
                 os.chmod(target_app_path, 0o755)
         else:
-            self.app.display_warning(f"Application executable not found at {built_app_path}.")
-            # Consider raising FileNotFoundError if critical
+            raise FileNotFoundError(f"Application executable not found at {built_app_path}.")
 
         # --- Core Shared Libraries ---
         # These are the libraries like ibp.misc, ibp.imgproc, etc.
