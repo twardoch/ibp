@@ -38,6 +38,12 @@ def main():
         except FileNotFoundError: # Should not happen if exists() check passed but good practice
             print(f"Error: Executable '{executable_name}' not found at {executable_path}", file=sys.stderr)
             sys.exit(1)
+        except PermissionError:
+            print(f"Error: Permission denied when accessing '{executable_name}' at {executable_path}", file=sys.stderr)
+            sys.exit(1)
+        except OSError as e:
+            print(f"Error: OS error when accessing '{executable_name}' at {executable_path}: {e}", file=sys.stderr)
+            sys.exit(1)
     else:
         print(f"Error: Packaged executable '{executable_name}' not found in '{package_dir}'.", file=sys.stderr)
         print("The package might not have been built correctly, or the C++ application was not found during the build.", file=sys.stderr)
