@@ -66,9 +66,13 @@ class CustomBuildHook(BuildHookInterface):
 
         if plugins_source_dir.exists() and plugins_source_dir.is_dir():
             if plugins_target_dir.exists(): # Clean target first if it exists
-                shutil.rmtree(plugins_target_dir)
+                shutil.rmtree(plugins_target_dir, ignore_errors=True)
             # Recreate after cleaning or if it didn't exist
-            plugins_target_dir.mkdir(parents=True, exist_ok=True)
+            try:
+                plugins_target_dir.mkdir(parents=True, exist_ok=False)
+            except FileExistsError:
+                # Directory was created by another process in the meantime
+                pass
 
             self.app.display_info(f"Copying plugins from {plugins_source_dir} to {plugins_target_dir}")
             for item in plugins_source_dir.iterdir():
