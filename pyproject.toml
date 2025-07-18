@@ -8,9 +8,10 @@ dynamic = ["version"]
 description = "A C++ application for batch image processing, packaged with Python."
 readme = "README.md"
 requires-python = ">=3.8"
-license = "MIT" # Assuming MIT based on LICENSE file, please verify
+license = "MIT"
 authors = [
-    { name = "Your Name", email = "you@example.com" }, # Please replace
+    { name = "Deif Lou", email = "deif.lou@example.com" },
+    { name = "Adam Twardoch", email = "adam.twardoch@example.com" },
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -35,19 +36,25 @@ dev = [
     "ruff",
     "mypy",
     "pytest",
-    # Add other development tools if needed, e.g., coverage
-    # "pytest-cov",
+    "pytest-cov",
+    "pytest-benchmark",
+    "pre-commit",
+    "build",
+    "twine",
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/imagebatchprocessor" # Please replace
-Repository = "https://github.com/yourusername/imagebatchprocessor" # Please replace
+Homepage = "https://github.com/twardoch/imagebatchprocessor"
+Repository = "https://github.com/twardoch/imagebatchprocessor"
+Documentation = "https://twardoch.github.io/ibp/"
+Issues = "https://github.com/twardoch/imagebatchprocessor/issues"
 
 [project.scripts]
 imagebatchprocessor = "imagebatchprocessor:main"
 
 [tool.hatch.version]
 source = "vcs"
+tag-regex = "^v(?P<version>[0-9]+\\.[0-9]+\\.[0-9]+)(?P<pre>[-\\.]?(?P<pre_type>alpha|beta|rc)[\\.\\-]?(?P<pre_number>[0-9]+))?$"
 
 [tool.hatch.build.targets.wheel.hooks.custom]
 path = "hatch_build.py:CustomBuildHook"

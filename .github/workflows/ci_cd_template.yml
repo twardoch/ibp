@@ -1,0 +1,395 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master, develop ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+env:
+  PYTHON_VERSION: "3.11"
+  UV_VERSION: "0.4.0"
+
+jobs:
+  build_and_test:
+    name: Build & Test on ${{ matrix.os }} (Python ${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-20.04, ubuntu-22.04, macos-12, macos-14, windows-2022]
+        python-version: ["3.8", "3.11", "3.12"]
+        exclude:
+          # macOS ARM64 (macos-14) doesn't support Python 3.8
+          - os: macos-14
+            python-version: "3.8"
+    
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      is_release: ${{ steps.version.outputs.is_release }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Required for hatch-vcs to get full git history
+
+    - name: Get version information
+      id: version
+      shell: bash
+      run: |
+        if [[ "${{ github.ref }}" == refs/tags/v* ]]; then
+          VERSION="${{ github.ref_name }}"
+          IS_RELEASE="true"
+          echo "version=${VERSION#v}" >> $GITHUB_OUTPUT
+          echo "is_release=true" >> $GITHUB_OUTPUT
+        else
+          # Get version from git describe for development builds
+          VERSION=$(git describe --tags --always --dirty || echo "0.0.0-dev")
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "is_release=false" >> $GITHUB_OUTPUT
+        fi
+        echo "Detected version: $VERSION"
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install uv
+      shell: bash
+      run: |
+        if [[ "${{ runner.os }}" == "Windows" ]]; then
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+        else
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+        fi
+
+    - name: Verify uv installation
+      run: uv --version
+
+    # C++ Dependencies Installation
+    - name: Install C++ Build Tools (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          build-essential \
+          cmake \
+          ninja-build \
+          qtbase5-dev \
+          libqt5widgets5 \
+          libopencv-dev \
+          libfreeimage-dev \
+          liblcms2-dev \
+          libeigen3-dev \
+          pkg-config
+
+    - name: Install C++ Build Tools (macOS)
+      if: runner.os == 'macOS'
+      run: |
+        brew install \
+          cmake \
+          ninja \
+          qt@5 \
+          opencv \
+          freeimage \
+          little-cms2 \
+          eigen
+        # Set up Qt5 environment
+        echo "/usr/local/opt/qt@5/bin" >> $GITHUB_PATH
+        echo "CMAKE_PREFIX_PATH=/usr/local/opt/qt@5:/usr/local/opt/opencv:/usr/local/opt/freeimage:/usr/local/opt/little-cms2" >> $GITHUB_ENV
+
+    - name: Install C++ Build Tools (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        # Use vcpkg to install dependencies
+        git clone https://github.com/Microsoft/vcpkg.git
+        cd vcpkg
+        .\bootstrap-vcpkg.bat
+        .\vcpkg install qt5-base opencv4 freeimage lcms eigen3 --triplet x64-windows
+        echo "CMAKE_TOOLCHAIN_FILE=${{ github.workspace }}\vcpkg\scripts\buildsystems\vcpkg.cmake" >> $env:GITHUB_ENV
+        echo "VCPKG_TARGET_TRIPLET=x64-windows" >> $env:GITHUB_ENV
+
+    - name: Cache vcpkg (Windows)
+      if: runner.os == 'Windows'
+      uses: actions/cache@v4
+      with:
+        path: vcpkg
+        key: vcpkg-${{ runner.os }}-${{ hashFiles('vcpkg.json') }}
+
+    - name: Set up Python virtual environment
+      run: |
+        uv venv .venv
+        echo "VIRTUAL_ENV=${{ github.workspace }}/.venv" >> $GITHUB_ENV
+        if [[ "${{ runner.os }}" == "Windows" ]]; then
+          echo "${{ github.workspace }}/.venv/Scripts" >> $GITHUB_PATH
+        else
+          echo "${{ github.workspace }}/.venv/bin" >> $GITHUB_PATH
+        fi
+
+    - name: Install Python dependencies
+      run: |
+        uv pip install -e ".[dev]"
+        uv pip install build hatch hatch-vcs
+
+    - name: Run Python linting
+      run: |
+        ruff check .
+        ruff format . --check
+
+    - name: Run Python type checking
+      run: |
+        mypy src --ignore-missing-imports
+
+    - name: Build C++ project
+      run: |
+        mkdir -p build
+        cd build
+        cmake .. \
+          -DCMAKE_BUILD_TYPE=Release \
+          -DIBP_BUILD_PLUGINS=ON \
+          -G Ninja
+        ninja -j $(nproc || echo 4)
+
+    - name: Run C++ tests
+      run: |
+        cd build
+        ctest --output-on-failure --parallel $(nproc || echo 4)
+
+    - name: Build Python package
+      run: |
+        python -m build
+
+    - name: Run Python tests
+      run: |
+        pytest tests/ -v --tb=short
+
+    - name: Run integration tests
+      run: |
+        pytest tests/ -v -m integration --tb=short
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-artifacts-${{ matrix.os }}-py${{ matrix.python-version }}
+        path: |
+          dist/*.whl
+          dist/*.tar.gz
+          build/
+        retention-days: 7
+
+    - name: Upload Python package artifacts (release builds only)
+      if: steps.version.outputs.is_release == 'true' && matrix.os == 'ubuntu-22.04' && matrix.python-version == env.PYTHON_VERSION
+      uses: actions/upload-artifact@v4
+      with:
+        name: python-packages
+        path: dist/
+        retention-days: 30
+
+  security_scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    needs: build_and_test
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+
+    - name: Upload Trivy scan results
+      uses: github/codeql-action/upload-sarif@v3
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+  create_release:
+    name: Create Release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [build_and_test, security_scan]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write # For trusted publishing to PyPI
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+      with:
+        pattern: build-artifacts-*
+        merge-multiple: true
+        path: artifacts/
+
+    - name: Download Python packages
+      uses: actions/download-artifact@v4
+      with:
+        name: python-packages
+        path: dist/
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: Install uv
+      run: |
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+    - name: Install release tools
+      run: |
+        uv pip install twine build
+
+    - name: Prepare release assets
+      run: |
+        mkdir -p release-assets
+        
+        # Copy Python packages
+        cp dist/*.whl release-assets/
+        cp dist/*.tar.gz release-assets/
+        
+        # Create platform-specific binary archives
+        for os in ubuntu-20.04 ubuntu-22.04 macos-12 macos-14 windows-2022; do
+          if [ -d "artifacts/build-artifacts-${os}-py${{ env.PYTHON_VERSION }}" ]; then
+            cd "artifacts/build-artifacts-${os}-py${{ env.PYTHON_VERSION }}/build"
+            
+            # Create archive based on OS
+            case $os in
+              ubuntu-*|macos-*)
+                tar -czf "../../../release-assets/imagebatchprocessor-${os}-${{ needs.build_and_test.outputs.version }}.tar.gz" .
+                ;;
+              windows-*)
+                zip -r "../../../release-assets/imagebatchprocessor-${os}-${{ needs.build_and_test.outputs.version }}.zip" .
+                ;;
+            esac
+            
+            cd ../../../
+          fi
+        done
+
+    - name: Generate release notes
+      run: |
+        cat > release-notes.md << 'EOF'
+        # Release ${{ needs.build_and_test.outputs.version }}
+        
+        ## What's Changed
+        
+        EOF
+        
+        # Get changes since last tag
+        PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+        if [ -n "$PREV_TAG" ]; then
+          echo "### Commits since $PREV_TAG:" >> release-notes.md
+          git log --oneline "$PREV_TAG"..HEAD --pretty=format:"- %s" >> release-notes.md
+          echo "" >> release-notes.md
+          echo "" >> release-notes.md
+          echo "[Full Changelog](https://github.com/twardoch/imagebatchprocessor/compare/${PREV_TAG}...v${{ needs.build_and_test.outputs.version }})" >> release-notes.md
+        fi
+        
+        echo "" >> release-notes.md
+        echo "## Installation" >> release-notes.md
+        echo "" >> release-notes.md
+        echo "### Python Package" >> release-notes.md
+        echo '```bash' >> release-notes.md
+        echo "pip install imagebatchprocessor==${{ needs.build_and_test.outputs.version }}" >> release-notes.md
+        echo '```' >> release-notes.md
+        echo "" >> release-notes.md
+        echo "### Binary Downloads" >> release-notes.md
+        echo "Download the appropriate binary for your platform from the assets below." >> release-notes.md
+
+    - name: Create GitHub Release
+      uses: ncipollo/release-action@v1
+      with:
+        name: "Image Batch Processor v${{ needs.build_and_test.outputs.version }}"
+        bodyFile: release-notes.md
+        artifacts: "release-assets/*"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        draft: false
+        prerelease: ${{ contains(github.ref_name, '-') }}
+
+    - name: Publish to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      run: |
+        # Only publish if PYPI_API_TOKEN is available
+        if [ -n "$TWINE_PASSWORD" ]; then
+          twine upload dist/*.whl dist/*.tar.gz --verbose
+        else
+          echo "PYPI_API_TOKEN not set - skipping PyPI upload"
+        fi
+
+  update_docs:
+    name: Update Documentation
+    if: startsWith(github.ref, 'refs/tags/v') && github.repository == 'twardoch/imagebatchprocessor'
+    needs: [create_release]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: Install documentation dependencies
+      run: |
+        pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
+
+    - name: Build documentation
+      run: |
+        # Create basic mkdocs.yml if it doesn't exist
+        if [ ! -f mkdocs.yml ]; then
+          cat > mkdocs.yml << 'EOF'
+        site_name: Image Batch Processor
+        site_url: https://twardoch.github.io/imagebatchprocessor
+        repo_url: https://github.com/twardoch/imagebatchprocessor
+        theme:
+          name: material
+        nav:
+          - Home: index.md
+          - Installation: installation.md
+          - Usage: usage.md
+          - Building: building.md
+          - Contributing: contributing.md
+        EOF
+        fi
+        
+        # Create docs directory structure
+        mkdir -p docs
+        cp README.md docs/index.md
+        
+        # Build documentation
+        mkdocs build
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site
